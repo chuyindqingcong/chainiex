@@ -1,0 +1,77 @@
+<header class="header">
+
+	<div class="header-top">
+		<img src="/images/logo.png" class="onli logo" data-src="/">
+		<!--<span style="font-size: 32px;font-family: Arial !important;font-weight: bold;font-style: italic;color: #2a3c92;margin-right: 52px;float: left;">CHAINIEX</span>-->
+		<div>
+			<ul>
+				<li><span class="onli headerClass" data-src="/">首页</span></li>
+				<li class="li-hover" style="width: 80px;">
+					<span class="forB">购买<svg class="icon diconfont5" aria-hidden="true">
+						  <use xlink:href="#icon-arrow"></use>
+						</svg></span>
+					<i style="width: 78px;"></i>
+					<ul>
+						#foreach($coin in $coins)
+						<li data-src="/coin/sell?type=ask&coin=$!{coin.coin}" class="onli">$!{coin.coin}</li>
+						#end
+					</ul>
+				</li>
+				<li class="li-hover" style="width: 80px;">
+					<span class="forB">出售<svg class="icon diconfont5" aria-hidden="true">
+						  <use xlink:href="#icon-arrow"></use>
+						</svg></span>
+					<i style="width: 78px;"></i>
+					<ul>
+						#foreach($coin in $coins)
+						<li data-src="/coin/sell?type=bid&coin=$!{coin.coin}" class="onli">$!{coin.coin}</li>
+						#end
+					</ul>
+				</li>
+				<li>
+					<span class="onli" data-src="/quoted/create">创建广告</span>
+				</li>
+				<li>
+					<span class="onli" data-src="/wallet/assets">我的资产</span>
+				</li>
+				<li class="li-hover" style="width: 100px;">
+					<span class="forB">语言切换<svg class="icon diconfont5" aria-hidden="true">
+						  <use xlink:href="#icon-arrow"></use>
+						</svg></span>
+					<i style="width: 99px;"></i>
+					<ul>
+						<li class="onli">简体中文</li>
+						<li class="onli">English</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div style="float: right;">
+			<ul>
+				#if($!ch_user)
+				<li class="li-hover" style="width:100px;">
+					<span class="forB">个人中心<svg class="icon diconfont5" aria-hidden="true">
+						  <use xlink:href="#icon-arrow"></use>
+						</svg></span>
+					<i style="width: 99px;"></i>
+					<ul>
+						<li class="onli" data-src="/user/center">概况</li>
+						<li class="onli" data-src="/user/invite">邀请好友</li>
+						<li class="onli" data-src="/user/ad">我的广告</li>
+						<li class="userUp" id="userUp">退出</li>
+					</ul>
+				</li>
+				<li style="position: relative;width: auto;margin-right: 0"><span data-src="/message" class="onli" id="tmess">消息</span><svg class="icon" id="countMess" aria-hidden="true" style="font-size: 25px;display: none">
+					<use xlink:href="#icon-qipao-copy" id="icon-qipao"></use>
+				</svg></li>
+
+				<!--<li><span data-src="/user/center" class="onli">$!{ch_user.mail}</span></li>-->
+				#else
+				<li style="margin-right:10px;"><span class="control" data-src="/user/login">登录</span></li>
+				<!--<li style="width: auto;"><span class="header-register control" data-src="/user/signup">注册</span></li>-->
+				<li style="width: auto;margin-right: 0;"><span class="header-register onli control" data-src="/user/signup">注册</span></li>
+				#end
+			</ul>
+		</div>
+	</div>
+</header>

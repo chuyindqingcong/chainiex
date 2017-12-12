@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/wallet/assets.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <div class="wrap-right">
+        <div class="colorr">
+            <table id="table" class='table table-striped table-bordered' cellspacing="0"  cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>资产</th>
+                    <th>可用余额</th>
+                    <th>冻结委托</th>
+                    <th>总计</th>
+                    <th>折合(CNY)</th>
+                    <th>充值</th>
+                    <th>提现</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div style="border-radius: 6px;box-sizing: border-box;box-shadow: 0 1px 4px #ddd;overflow: hidden;">
+            <div class="uplis">
+                <h3>历史</h3>
+                <div>
+                    <h4>充值<span>BTC</span> <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg></h4>
+                    <ul>
+                        <li data-status="0">BTC</li>
+                        <li data-status="0">DASH</li>
+                        <li data-status="0">NEM</li>
+                        <li data-status="0">WAVES</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>提现<span>BTC</span> <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg></h4>
+                    <ul>
+                        <li data-status="1">BTC</li>
+                        <li data-status="1">DASH</li>
+                        <li data-status="1">NEM</li>
+                        <li data-status="1">WAVES</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="tt" style="display: block;">
+                    <table id="table2" class='table table-striped table-bordered' cellspacing="0"  cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>币种</th>
+                            <th>充值时间</th>
+                            <th>充值地址</th>
+                            <th>TxID地址</th>
+                            <th>数量</th>
+                            <th>充值状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tt">
+                    <table id="table3" class='table table-striped table-bordered' cellspacing="0"  cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>提现金额</th>
+                            <th>提现地址</th>
+                            <th>状态</th>
+                            <th>时间</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+#if($!{ch_user.authGoogle})
+<input type="hidden" id="ecmm" value="1">
+#end
+</div>
+<form id="json1">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+</form>
+<input type="hidden" value="$!{withdrawFee}" id="fee">
+<input type="hidden" id="errorMess" data-wz="请填写完整" data-required="您未输入" data-code1="成功" data-code2="等待" data-code3="失败" data-code4="取消" data-fwq="点击太快，请慢点点击" data-coin="$!{coin}">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/lib/datatables/jquery.dataTables.min.js"></script>
+<script src="/js/private/wallet/assets.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.wrap>div{
+	float: left;
+}
+.upTimeMess{
+	
+}
+.sloz{
+	width: 65%;
+	box-sizing: border-box;
+}
+.mark{
+	width: 35%;
+}
+.slozMark{
+	width:50%;
+}
+
+.sloz .sloz{
+	width: 100%;
+}
+.ryMark{
+	width: 35%;
+}
+.ryMark .mark{
+	width:100%;
+	margin-bottom: 15px;
+}

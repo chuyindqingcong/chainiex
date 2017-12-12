@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/google.css" />
+    <style>
+        body{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--#springMessage('welcome')-->
+#parse('./comm/header.html')
+<div class="wrap" >
+    <div class="wrap-lrg">
+        <div class="regs">
+            #if(${errorCode}==1)
+                <p>缺少参数,请检查链接</p>
+            <script>
+                setTimeout(function () {
+                    window.location.href='/user/confirm'
+                },3000)
+            </script>
+            #elseif(${errorCode}==2)
+                <p>已激活，3秒后返回首页登录</p>
+            <script>
+                setTimeout(function () {
+                    window.location.href='/'
+                },3000)
+            </script>
+            #elseif(${errorCode}==4)
+                 <p>已激活，3秒后返回首页登录</p>
+            <script>
+                setTimeout(function () {
+                    window.location.href='/'
+                },3000)
+            </script>
+            #elseif(${errorCode}==3)
+                <p>链接超时,3秒后返回邮件页</p>
+            <script>
+                setTimeout(function () {
+                    window.location.href='/user/confirm'
+                },3000)
+            </script>
+            #elseif(${errorCode}==5)
+                <p>系统错误,3秒后返回首页</p>
+                <script>
+                    setTimeout(function () {
+                        window.location.href='/'
+                    },3000)
+                </script>
+            #else
+                <p>激活成功,3秒后前往登录页面</p>
+                <script>
+                    setTimeout(function () {
+                        window.location.href='/'
+                    },3000)
+                </script>
+            #end
+        </div>
+    </div>
+</div>
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/google.js"></script>
+</body>
+</html>

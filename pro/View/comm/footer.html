@@ -1,0 +1,25 @@
+	<footer>
+			<div class="upfot">
+				<p>Copyright @ OPENIEX.INC</p>
+			</div>
+			<empty name="user_id">
+
+				<else/>
+					<div class="upfot2">
+						<if condition ="(LANG_SET eq 'en-us')">
+										<img  class="langs" data-lang='en-us' src="/Public/img/language2.png" />
+									<else/>
+										<img  class="langs" data-lang='ch-zn' src="/Public/img/language1.png" />
+									</if>
+						<div class="language">
+							<img src="/Public/img/language1.png" class="langs" data-lang="zh-cn"/>
+							<img src="/Public/img/language2.png" class="langs" data-lang="en-us"/>
+						</div>
+						<!-- <div class="sjx">
+
+						</div> -->
+						<img src="/Public/img/t1.png" class="sjx">
+					</div>
+				</empty>
+				<span class="botSpan">用户在线：<o class="userCount"></o> | 总比特币量：10000    |     1TBC=$ 6300</span>
+		</footer>

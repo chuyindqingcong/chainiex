@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/confirm.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <!--<div class="wrap-left">-->
+        <!--<div class="wrap-dh user-dh">-->
+            <!--<h5>-->
+                <!--<svg class="icon" aria-hidden="true">-->
+                    <!--<use xlink:href="#icon-user"></use>-->
+                <!--</svg>-->
+                <!--注册马上成功</h5>-->
+            <!--<ul>-->
+                <!--<li class="onli" data-src="/single/problem">还差半步</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="wrap-right">-->
+        <!--<div class="hides" >-->
+            <!--<h4>还差半步！</h4>-->
+            <!--<div>-->
+                <!--<div class="deals deta">-->
+                    <!--<div class="dev-information">-->
+                        <!--<div>-->
+                            <!--<div class="div-jd">-->
+                                <!--<li  class="div-this">-->
+                                    <!--<span><o>1</o></span>-->
+                                    <!--<span>检查收件箱！ </span>-->
+                                    <!--<span>没收到邮件？请检查垃圾箱或者点击重发</span>-->
+                                    <!--<button type="button" class="btn-tj btn-sb">重发发送</button>-->
+                                <!--</li>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div></div>-->
+    <!--</div>-->
+    <div class="reload">
+        <h3>还差半步哦！</h3>
+        <img src="/images/email.png">
+        <p>检查收件箱！没收到邮件？请检查垃圾箱或者点击重发</p>
+        <button type="button" class="btn-tj btn-sb">重发发送</button>
+        <span class="onli" data-src="/user/login">登录</span>
+    </div>
+</div>
+<input type="hidden" id="errorMess" data-reload="再次重发">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/confirm.js"></script>
+
+</body>
+</html>

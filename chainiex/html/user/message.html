@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/user/mess.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./user/comm/userLeft.html')
+    <div class="wrap-right">
+        <div class="head">
+            <ul class="type">
+                <li class="" data-type="" data-status="">全部(<o class="mescount">0</o>)</li>
+                <li class="typeLi" data-type="" data-status="1">未读(<o class="dist">0</o>)</li>
+                <li class="" data-type="" data-status="2">已读</li>
+                <li class="" data-type="0" data-status="">系统消息</li>
+                <li class="" data-type="1" data-status="">交易消息</li>
+            </ul>
+        </div>
+        <div class="mess">
+            <div class="mess-top">
+                <label><input name="info" type="checkbox" id="checks" data-status="0"> 全选</label>
+                <div class="laji">
+                    <svg class="icon deletes" aria-hidden="true">
+                        <use xlink:href="#icon-lajixiang"></use>
+                    </svg>
+                    <div class="ycdel">
+                        <p>确定要删除这些信息吗</p>
+                        <span class="yes">确定</span><span class="no">取消</span>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="messLis">
+            <table class="messlis" id="table">
+
+            </table>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+<input type="hidden" id="errorMess" data-xt = "系统" data-lx="没有信息可以删除">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/lib/datatables/jquery.dataTables.min.js"></script>
+<script src="/js/private/user/mess.js"></script>
+
+</body>
+</html>

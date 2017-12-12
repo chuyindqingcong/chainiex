@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/user/index.css" />
+    <link rel="stylesheet" href="/js/lib/cropbox/style.css">
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./user/comm/userLeft.html')
+    <div class="wrap-right">
+        <div class="userName">
+            <div class="userTi">
+               <div>
+                   <div>
+                       #if($!{ch_user.profile}) <img src="$!{ch_user.profile}">  #else  <img src="/images/default.jpg"> #end
+                   </div>
+                   <div>
+                       <h5>#if($!{ch_user.userName}) $!{ch_user.userName} #else $!{ch_user.mail}#end</h5>
+                       <span>UID : $!{ch_user.id}</span>
+                   </div>
+                   <span class="updataImg">
+                       <svg class="icon" aria-hidden="true" style="font-size: 17px;margin-right: 5px;">
+                          <use xlink:href="#icon-xiugai"></use>
+                        </svg>
+                       修改头像</span>
+               </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span>交易次数</span>
+                <span class="spanRi" style="color:#68ddd5">$!{ch_user.tradeAmount}</span>
+            </li>
+            <li>
+                <span>信任人数</span>
+                <span class="spanRi" style="color:#fca44d">$!{ch_user.trust}</span>
+            </li>
+            <li>
+                <span>好评度</span>
+                <span class="spanRi" style="color:#fd6d6c">$!{ch_user.reputation}</span>
+            </li>
+            <!--<li>-->
+                <!--<span>累积成交</span>-->
+                <!--<span class="spanRi" style="color:#6dc825">0.5 BTC</span>-->
+            <!--</li>-->
+            <li>
+                <span>手机号码</span>
+                <o>#if($!{ch_user.mobile} && $!{ch_user.mobile.length()}==11) *******$!{ch_user.mobile.substring(7)} #else #end</o>
+                #if($!{ch_user.mobile} && $!{ch_user.mobile.length()}==11) <span class="spanRi" style="color:#4ba1ee">已验证</span> #else <span class="spanRi"  style="color:#fd7a79">未验证</span> #end
+            </li>
+            <li>
+                <span>电子邮箱</span>
+                <o>$!{createTime}</o>
+                <span class="spanRi"  style="color:#4ba1ee">已验证</span>
+            </li>
+            <li>
+                <span>身份验证</span>
+                #if($!{ch_user.idCert}==0)
+                <!--<o>已认证</o>-->
+                #else
+                <button type="button" class="onli" data-src="/user/security">前去安全中心</button>
+                #end
+
+                #if($!{ch_user.idCert}==0)
+                <span class="spanRi" style="color:#4ba1ee">已验证</span>
+                #else
+               <span class="spanRi" style="color:#fd7a79">未验证</span>
+                #end
+            </li>
+        </ul>
+        <!--<div class="colorr">-->
+            <!--<ul>-->
+                <!--<li><span>Uid :</span><p>$!{ch_user.id}</p></li>-->
+                <!--<li><span>电子邮件 :</span><p>$!{ch_user.mail}</p></li>-->
+                <!--<li><span>注册时间 :</span><p>$!{createTime}</p></li>-->
+                <!--<li><span>手机号 :</span><p> #if($!{ch_user.mobile} && $!{ch_user.mobile.length()}==11) *******$!{ch_user.mobile.substring(7)} #else #end</p></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="rzxt">-->
+            <!--<div>-->
+                <!--<h5> 体验用户请进行C1级别实名认证</h5>-->
+                <!--<p>您实名认证以后，可以进行正常的交易</p>-->
+                <!--<div>您已完成实名认证,真实姓名为***,身份证为:33123098</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<div class="shouUp">
+    <div class="shouUpBg"></div>
+  <div class="container">
+      <h5>修改头像 <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-delete"></use>
+      </svg></h5>
+     <div class="tobg">
+         <div>
+             <div class="imageBox">
+                 <div class="thumbBox"></div>
+                 <div class="spinner" style="display: none">Loading...</div>
+             </div>
+             <div class="action">
+                 <!-- <input type="file" id="file" style=" width: 200px">-->
+                 <span class="ymess">预览框内支持鼠标滑轮缩放，点击裁剪即可</span>
+                 <div class="new-contentarea tc"> <a href="javascript:void(0)" class="upload-img">
+                     <label for="upload-file">
+                         <svg class="icon" aria-hidden="true" style="margin-right: 8px">
+                             <use xlink:href="#icon-shangchuan"></use>
+                         </svg>上传图像</label>
+                 </a>
+                     <input type="file" class="" name="upload-file" id="upload-file" />
+                 </div>
+                 <input type="button" id="btnCrop"  class="Btnsty_peyton" value="裁切">
+                 <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
+                 <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
+                 <div class="shouhi">
+                     <div class="cropped" style="display: none"></div>
+                     <div id="aaa">
+
+                     </div>
+                     <div class="asb">
+                         <span id="rimgs">提交</span>
+                         <span class="yeshide">取消</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+  </div>
+</div>
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/lib/jquery-form/jquery-form.js"></script>
+<script src="/js/lib/cropbox/cropbox.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/user/index.js"></script>
+</body>
+</html>

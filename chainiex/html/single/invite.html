@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/Invitation.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <div class="bglogo">
+        <span class="sh">邀请好友</span>
+    </div>
+    <div class="mess">
+        <div class="userMess">
+            <div class="userSig">
+                <div class="userBG">
+                    #if($!{ch_user.profile}) <img src="$!{ch_user.profile}">  #else  <img src="/images/default.jpg"> #end
+                </div>
+                <p>#if($!{ch_user.userName}) $!{ch_user.userName} #else $!{ch_user.mail}#end</p>
+            </div>
+            <div class="shouyi">
+                <div>
+                    <span>20人</span>
+                    <span>成功邀请</span>
+                </div>
+                <div>
+                    <span>0.1BTC</span>
+                    <span>提成收益</span>
+                </div>
+            </div>
+            <button type="button" class="sh">邀请好友</button>
+        </div>
+        <div class="gz">
+            <h5>活动规则</h5>
+            <div>
+                <li>1. 登录CHAINIEX，在“个人中心”→“邀请好友” 可以分享链接到朋友圈或者微信好友；</li>
+                <li>2. 好友成功通过您的邀请链接注册并成功交易您可以获得比特币奖金，金额为交易额0.1%；</li>
+                <li>3. 奖金已比特币形式，在当笔交易完成之后即刻发送到您的CHAINIEX钱包中；</li>
+                <li>4. 同一用户仅能被邀请一次；</li>
+                <li>5.CHAINIEX保留对活动的解释权。</li>
+            </div>
+            <p>举例：当您带来一个在www.chainiex.com注册的用户，如果他成功交易一笔100 BTC 的交易，您可以从这个交易费中赚取0.1%，您挣得的总数是0.1 BTC 。</p>
+        </div>
+    </div>
+</div>
+<div class="czjm">
+    <div class="czbg"></div>
+    <div class="container">
+        <h5>邀请链接 <svg class="icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use>
+        </svg></h5>
+        <div>
+            <p>复制下面这段链接给好友，好友通过您的专属链接注册成功，您就可以享受好友的交易提成了。</p>
+            <input type="text" id="aa" value="https://www.chainiex.com/user/signup?code=${inviteCode}">
+            <button type="button" id="copy">复制此链接到剪切板</button>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/Invitation.js"></script>
+
+</body>
+</html>

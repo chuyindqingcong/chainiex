@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/toforget/small.css?v=d41d8cd98f" />
+	<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/toforget/middle.css?v=d41d8cd98f" />
+	<link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/toforget/pc.css?v=d41d8cd98f" />
+	<link rel="stylesheet" href="/Public/css/comm/comm.css?v=df5dd660bd" />
+	<link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	<link rel="stylesheet" href="/Public/css/index/toforget/index.css?v=d0c1c4282c" />
+</head>
+<body>
+	<include file="App/Home/View/comm/header.html"/>
+	<div class="wraps">
+		<div>
+			<h4>重置密码</h4>
+			<form id="form1">
+				<input type="password"  placeholder="请输入您的密码" class="password" id="pwd" name="pwd" />
+				<input type="hidden" name="key" id="key">
+				<input type="password"  placeholder="请确认您的密码" class="password" id="repwd"  name="pwd_again" />
+				<span class="spans">密码充值成功，<o class="onli" data-src="{:U('Home/index/login')}">请登录</o></span>
+				<button type="button" id="rsend">提交</button>
+			</form>	
+		</div>
+	</div>
+	<div class="foot">
+		OPENIEX @COPYRIGHT 2017
+	</div>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/private/comm/comm.js?v=dae963a5c4"></script>
+	<script src="/Public/js/private/index/toforget.js?v=9547d0f8cb"></script>
+</body>
+</html>

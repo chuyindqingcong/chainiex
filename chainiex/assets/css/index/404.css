@@ -1,0 +1,14 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+}
+body{
+	background: #fff;
+}
+.imgsa{
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	margin-top: -238px;
+	margin-left: -315px;
+}

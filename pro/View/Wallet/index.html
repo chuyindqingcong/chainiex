@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/wallet/small.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/wallet/middle.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/wallet/pc.css" />
+	    <link rel="stylesheet" href="/Public/css/comm/comm.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/jqueryNanoscroller/nanoscroller.css" />
+	    <link rel="stylesheet" type="text/css" href="/Public/css/wallet/index.css"/>
+	</head>
+	<body>
+		<include file="App/Home/View/comm/header.html"/>
+		<div class="wrap">
+			<div class="mark">
+				<div class="tabH2">
+					<h2 class="tabColors">资产中心</h2>
+					<h2>我的订单</h2>
+					<h2>成交记录</h2>
+				</div>
+				<div class="tabcont">
+					<div class="amdwid">
+						<div class="amdLeft">
+							<div id="abut" class="nano1 nano">
+								<div class="nano-content midcli">
+									
+								</div>
+							</div>
+						</div>
+						<div class="amdRight">
+							<div class="smalld">
+								<span class="spsd">
+									<svg class="icon" aria-hidden="true">
+									  <use xlink:href="#icon-xiala1-copy"></use>
+									</svg>
+								</span>
+								<img src="/Public/img/coin001.png" alt="" />
+								<h5>BTC电子钱包</h5>
+								<p><span>0.0003</span> BTC = <span> CN	141.78</span></p>
+								<div class="divbut">
+									<span class="czz" data-status="0">充值</span>
+									<span class="txx" data-status="0">提现</span>
+								</div>
+							</div>
+							<div>
+								<h6>历史记录</h6>
+								<div class="qhs">
+									<svg class="icon iconc" aria-hidden="true" title="充值记录">
+									  <use xlink:href="#icon-xiazai"></use>
+									</svg>
+									<svg class="icon" aria-hidden="true" title="提现记录">
+									  <use xlink:href="#icon-xiazai9"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="abuts">
+								<div id="abut2" class="nano">
+										<div class="nano-content">
+											
+										</div>
+								</div>
+								<div id="abut3" class="nano" style="display: none;">
+										<div class="nano-content">
+											
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="display: none;">
+						<div class="btcsc">
+								<ul>
+									<li>日期</li>
+									<li>价格(<o>BTC</o>)
+										<svg class="icon iClickIcon" aria-hidden="true" data-status = 0>
+										    <use xlink:href="#icon-xialajiantou"></use>
+										</svg>
+										<div class="icorDiv" id="coin1">
+											<ul>
+												
+											</ul>
+										</div>
+									</li>
+									<li>数量</li>
+									<li>总计</li>
+									<li>取消</li>
+								</ul>
+								<div id="abut1" class="nano">
+									<div class="nano-content">
+										
+									</div>
+								</div>
+							</div>
+					</div>
+					<div style="display: none;">
+						<div class="btcsc">
+								<ul>
+									<li>日期</li>
+									<li>价格(<o>BTC</o>)
+										<svg class="icon iClickIcon" aria-hidden="true" data-status = 0>
+										    <use xlink:href="#icon-xialajiantou"></use>
+										</svg>
+										<div class="icorDiv" id="coin2">
+											<ul>
+
+											</ul>
+										</div>
+									</li>
+									<li>数量</li>
+									<li>总计</li>
+									<li></li>
+								</ul>
+								<div class="nano" id="abut4">
+									<div class="nano-content">
+										
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hideDiv">
+			<div>
+				<div class="chong" style="display: none;">
+					<div class="typ">
+						<div class="czdz">
+							<span>BTC</span> 充值地址
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-guanbi"></use>
+							</svg>
+						</div>
+						<div class="czdzImg"><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg" id="ewm" class="ewm" /></div>
+						<div class="cop"><input type="text" id="aa" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137"><span id="copy">
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-fuzhi"></use>
+							</svg>
+						</span></div>
+					</div>
+					<div class="tmc">
+						<div>
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-tishi1"></use>
+							</svg>
+						</div>
+						<h6>只能发送 BTC 到这个地址</h6>
+						<span>发送非BTC资产充值到BTC地址后不可找回！</span>
+						<button type="button" id="shouch">显示地址</button>
+					</div>
+				</div>
+				<div class="tx" style="display: none;">
+					<div class="typ">
+						<div class="czdz">
+							<span>BTC</span> 提现地址
+							<svg class="icon" aria-hidden="true">
+							  <use xlink:href="#icon-guanbi"></use>
+							</svg>
+						</div>
+						<div class="txs">
+							<label for="">接收地址:<span>请仔细确认您的提现地址，否则资产不可找回</span></label>
+							<div class="txsSave">
+								<input type="text" id="senInput"/>
+								<span>+</span>
+								<svg class="icon iconft" aria-hidden="true">
+								  <use xlink:href="#icon-xialajiantou"></use>
+								</svg>
+							</div>
+							<div class="ulisadd">
+									<ul>
+										<li>123123</li>
+										<li>sadsad</li>
+									</ul>
+								</div>
+							<label for="">量:</label>
+							<div class="txtc">
+								<input type="text" />
+							</div>
+							<div class="txjs" style="margin-top: 16px">
+								<label for="">手续费</label>
+								<div>
+									<span>000000</span>
+									<span>BTC</span>
+								</div>
+							</div>
+							<div class="txjs">
+								<label for="">总计:</label>
+								<div>
+									<span>000000</span>
+									<span>BTC</span>
+								</div>
+							</div>
+							<button type="button" class="utx">确认发送</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hidebg">
+				
+			</div>
+		</div>
+		<include file="App/Home/View/comm/footer.html"/>
+		<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+		<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+		<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+		<script src="/Public/js/private/comm/comm.js"></script>
+		<script src="/Public/js/private/wallet/index.js"></script>
+	</body>
+</html>

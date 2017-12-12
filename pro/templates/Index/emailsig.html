@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/emailsig/small.css?v=d41d8cd98f" />
+	<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/emailsig/middle.css?v=d41d8cd98f" />
+	<link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/emailsig/pc.css?v=d41d8cd98f" />
+	<link rel="stylesheet" href="/Public/css/comm/comm.css?v=df5dd660bd" />
+	<link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	<link rel="stylesheet" href="/Public/css/index/emailsig/index.css?v=4987a9502c" />
+</head>
+<body>
+	<include file="App/Home/View/comm/header.html"/>
+	<div class="wraps">
+		<div>
+			<h4>{$Think.lang.reg_openiex}</h4>
+			<div class="divs1">
+				<div>
+					<svg class="icon" aria-hidden="true">
+					  <use xlink:href="#icon-tishi"></use>
+					</svg>
+				</div>
+				<div>
+					提示：请按步骤填写完邮箱账号点击注册，会有邮件发送至您邮箱，请点击邮件中的链接完成注册信息。
+				</div>
+			</div>
+			<input type="email"  placeholder="请输入您的邮箱" id="email" />
+			<button type="button" id="sendEmail">立即注册</button>
+		
+		</div>
+	</div>
+	<div class="foot">
+		OPENIEX @COPYRIGHT 2017
+	</div>
+	<input type="hidden" id="mess" data-error ="请输入正确的邮件地址" data-ok='邮件发送中...'>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>	
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/private/comm/comm.js?v=dae963a5c4"></script>
+	<script src="/Public/js/private/index/emailsig.js?v=9686514ef5"></script>
+</body>
+</html>

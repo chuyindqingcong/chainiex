@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/cooperation.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./single/comm/singleLeft.html')
+    <div class="wrap-right">
+        1 .本网站旨在不违反国家法律法规的前提下，为广大数字资产好者提供便利的交易场所。<br/><br/>
+        2.凡以任何方式登录本网站或直接、间接使用本网站者，均视为自愿接受本网站声明及相关条款。<br/><br/>
+        3.本网站使用者因为违反本声明的规定而触犯中华人民共和国法律的，一切后果自己负责，本网站不承担任何责任。<br/><br/>
+        4.禁止使用本网站从事洗钱、走私等一切非法交易活动，若发现此类事件，本站将有权冻结账户，立即报送公安机关。<br/><br/>
+        5.本声明未涉及的问题参见国家有关法律法规，当本声明与国家法律法规冲突时，以国家法律法规为准。<br/><br/>
+    </div>
+</div>
+<input type="hidden" data-required="您未输入" data-equalTo="密码不一致" id="errMess">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/user/security.js"></script>
+
+</body>
+</html>

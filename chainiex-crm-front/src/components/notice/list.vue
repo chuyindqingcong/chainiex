@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <el-table :data="tableData" style="width: 100%" fit>
+      <el-table-column prop="title" label="标题" width="280px">
+      </el-table-column>
+      <el-table-column prop="gmtCreate" label="创建时间" width="180" :formatter="dateFormat">
+      </el-table-column>
+      <el-table-column prop="status" label="状态" width="80">
+        <template scope="scope">
+          <el-tag>{{scope.row.status==1?'正常':'删除'}}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column prop="chNotice" label="内容" min-width="70%">
+      </el-table-column>
+      <el-table-column label="操作" width="80px">
+        <template scope="scope">
+          <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <div class="block">
+      <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="this.pageNo" :page-size="this.pageSize" layout="total, prev, pager, next" :total="this.total">
+      </el-pagination>
+    </div>
+  </div>
+</template>
+
+<script>
+  import qs from 'qs'
+  export default {
+    data() {
+      return {
+        tableData: null,
+        pageNo: 1,
+        pageSize: 10,
+        total: 0,
+        names: ''
+      }
+    },
+    mounted() {
+      this.$ajax.get('/notice/list', {
+        params: {
+          current: this.pageNo,
+          pageSize: this.pageSize,
+        }
+      }).then(res => {
+        this.tableData = res.data.data.notices.data;
+        this.total = res.data.data.notices.totalResults
+      })
+    },
+    methods: {
+      handleDelete(index, row) {
+        this.$confirm('此操作将删除公告, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+          this.$ajax.post('/notice/delete', qs.stringify({
+            id: row.id
+          })).then(res => {
+            this.$ajax.get('/notice/list', {
+              params: {
+                current: this.pageNo,
+                pageSize: this.pageSize,
+              }
+            }).then(res => {
+              this.tableData = res.data.data.notices.data;
+              this.total = res.data.data.notices.totalResults
+            })
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });
+        });
+      },
+      dateFormat(row, colum) {
+        return this.getTime(row.gmtCreate)
+      },
+      handleSizeChange(val) {
+      },
+      handleCurrentChange(val) {
+        this.$ajax.get('/notice/list', {
+          params: {
+            current: val,
+            pageSize: this.pageSize,
+          }
+        }).then(res => {
+          this.tableData = res.data.data.notices.data;
+          this.total = res.data.data.notices.totalResults
+        })
+      }
+    }
+  }
+</script>
+
+<style>
+
+</style>

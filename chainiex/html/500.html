@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/index/404.css" />
+</head>
+<body>
+<div class="wrap">
+    <div>500</div>
+    <div style="font-size: 40px;">5秒后自动返回上一页</div>
+</div>
+<script>
+    setTimeout(function () {
+        window.history.go(-1)
+    },5000)
+</script>
+</body>
+</html>

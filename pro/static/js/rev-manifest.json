@@ -1,0 +1,19 @@
+{
+  "private/comm/comm.js": "private/comm/comm.js?v=dae963a5c4",
+  "private/index/emailsig.js": "private/index/emailsig.js?v=9686514ef5",
+  "private/index/forget.js": "private/index/forget.js?v=cd42a06223",
+  "private/index/index.js": "private/index/index.js?v=848ca16ba8",
+  "private/index/login.js": "private/index/login.js?v=e36accd680",
+  "private/index/pro.js": "private/index/pro.js?v=009cff1371",
+  "private/index/sig.js": "private/index/sig.js?v=d15fd0841e",
+  "private/index/toforget.js": "private/index/toforget.js?v=9547d0f8cb",
+  "private/index/website.js": "private/index/website.js?v=0a59a29763",
+  "private/single/details.js": "private/single/details.js?v=6437a49c3f",
+  "private/single/google.js": "private/single/google.js?v=623b1a6f12",
+  "private/single/help.js": "private/single/help.js?v=7c8f0878f9",
+  "private/single/job.js": "private/single/job.js?v=111965a4ec",
+  "private/single/lists.js": "private/single/lists.js?v=b0aec729f6",
+  "private/single/search.js": "private/single/search.js?v=1aeeb1be7b",
+  "private/user/index.js": "private/user/index.js?v=136159e18c",
+  "private/wallet/index.js": "private/wallet/index.js?v=8b9a2a1aa3"
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>OPENIEX</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="openiex,交易所,BTC,coin" name="keywords">
+<!--		<script src="/Public/js/lib/fastclick/fastclick.js"></script>待用-->
+		<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/pro/small.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/pro/middle.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/pro/pc.css" />
+	    <link rel="stylesheet" href="/Public/css/comm/comm.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/jqueryNanoscroller/nanoscroller.css" />
+	    <link rel="stylesheet" href="/Public/css/index/pro/index.css" />
+	</head>
+	<body>
+		<!--<script>
+			  FastClick.attach(document.body);
+		</script>-->
+		<!-- <header class="header">
+			<div class="commhed">
+				<h1>OPENIEX</h1>
+				<ul class="dul">
+					<li>
+						<span>市场</span>
+					</li>
+				</ul>
+				<div class="tiRight">
+					<p style="display: none;"> <a href="login.html">登录</a>或<a href="#">创建账号</a>开始交易</p>
+					<ul>
+						<li class="thisColor">市场</li>
+						<li>
+							余额
+							<div>
+								<span>资产中心</span>
+								<span>历史记录</span>
+							</div>
+						</li>
+						<li>
+							交易
+							<div>
+								<span>我的订单</span>
+								<span>成交记录</span>
+							</div>
+						</li>
+						<li>
+							<svg class="icon" aria-hidden="true" style="font-size: 27px;position: relative;top: 5px;color:#00A63F;">
+							  <use xlink:href="#icon-yonghuzhongxin"></use>
+							</svg>
+							<div>
+								<span class="onli" data-src="/user/index.html">我的信息</span>
+								<span>谷歌验证</span>
+								<span>资金密码</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header> -->
+		<include file="App/Home/View/comm/header.html"/>
+		<div class="wraps">
+			<div>
+				<div class="template1">
+					<div>
+						<div class="tempTitle">
+							<h5>ADA / BTC</h5>
+							<svg class="icon idsa" aria-hidden="true">
+							  <use xlink:href="#icon-xiala1"></use>
+							</svg>
+							<div class="iconSelect">
+								<ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="timpUl">
+							<ul>
+								<li><b>ADA</b><o>0.000000</o><span>提现</span> <span>充值</span></li>
+								<li><b>BTC</b><o>0.000000</o><span>提现</span> <span>充值</span></li>
+							</ul>
+							<h6>量</h6>
+							<div>
+								<input type="text" placeholder="" id="buypri" />
+								<span>ADA</span>
+							</div>
+							<h6>价格</h6>
+							<div>
+								<input type="text" placeholder="" id="buynum" />
+								<span>ADA</span>
+							</div>
+							<h6>总价 = <o id="buysum"></o></h6>
+							<div>
+								<button type="button" class="but1">买入</button>
+								<button type="button" class="but2">卖出</button>
+							</div>
+						</div>
+						<div class="iconNamr">
+							<div class="iconNamrs">
+								<h6>我的市场</h6>
+								<span>ADA</span>
+								<span>IOTA</span>
+								<span>BTC</span>
+							</div>
+							<div>
+								<ul id="ucoins">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="template2">
+					<div>
+						<div class="tempTitle">
+							<h5>买/卖订单</h5>
+						</div>
+						<div>
+							<div class="btcsc">
+								<ul>
+									<li>量</li>
+									<li>价格</li>
+									<li>总计</li>
+								</ul>
+								<div id="abut1" class="nano">
+									<div class="nano-content">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<h6>0.0000054163 BTC</h6>
+						<div>
+							<div class="btcsc">
+								<div id="abut2" class="nano">
+									<div class="nano-content">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="template3 tseml3">
+					<div>
+						<div class="tempTitle">
+							<h5>市场图表</h5>
+							<div class="ech">
+								<span class="thisEch">走势图</span>
+								<span>深度图</span>
+							</div>
+						</div>
+						<div class="echTab">
+							<div>1</div>
+							<div style="display: none;">2</div>
+						</div>
+					</div>
+					<div>
+						<div class="tempTitle">
+							<div class="users">
+								<span class="thison">我的挂单</span> |
+								<span>我的成交记录</span>
+							</div>
+						</div>
+						<div class="userson">
+							<div>
+								<div class="btcsc1">
+									<ul>
+										<li>日期</li>
+										<li>量</li>
+										<li>BTC价格</li>
+										<li>总计</li>
+										<li></li>
+									</ul>
+									<div id="abut3" class="nano">
+										<div class="nano-content">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="display: none;">
+								<div class="btcsc1">
+									<ul>
+										<li>日期</li>
+										<li>量</li>
+										<li>BTC价格</li>
+										<li>总计</li>
+										<li></li>
+									</ul>
+									<div id="abut4" class="nano">
+										<div class="nano-content">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="template4">
+					<div>
+						<div class="tempTitle">
+							<h5>成交记录</h5>
+						</div>
+						<div>
+							<div class="btcsc">
+								<ul>
+									<li>价格</li>
+									<li>数量</li>
+									<li>时间</li>
+								</ul>
+								<div id="abut5" class="nano5 nano">
+									<div class="nano-content">
+										<ul>
+											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<empty name="user_id">
+			<input type="hidden" id="hidden" value=0>		
+		<else/>
+			<input type="hidden" id="hidden" value=1>
+		</empty>
+		<input type="hidden" id="mess" data-ok='提交成功' data-error='价格或数量为填写'>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/private/comm/comm.js"></script>
+	<script src="/Public/js/private/index/pro.js"></script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+.help>div>div{
+	width: 100%;
+}
+.hsoso{
+	display: none;
+}
+.help{
+	margin-top: 0 !important;
+	border-radius: 0 !important;
+	border: none !important;
+}
+.details>div{
+	width: 100%;
+}

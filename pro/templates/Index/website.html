@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/website/small.css?v=6a618fd1cf" />
+	<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/website/middle.css?v=4c8a17fe88" />
+	<link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/website/pc.css?v=f46399788d" />
+	<link rel="stylesheet" href="/Public/css/comm/comm.css?v=df5dd660bd" />
+	<link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	<link rel="stylesheet" href="/Public/css/index/website/index.css?v=2871f5a237" />
+	<link rel="stylesheet" href="/Public/js/lib/swiper/swiper.min.css">
+</head>
+<body>
+	<div class="websote">
+		<header class="header">
+			<div class="commhed">
+				<h1 class="onli" data-src="{:U('Home/index/website')}">OPENIEX</h1>
+				<ul class="dul">
+					<!--<li>
+						<span>市场</span>
+					</li>-->
+				</ul>
+				<div class="tiRight">
+					<empty name="user_id">
+						<ul>
+						<li class="onli" data-src="{:U('Home/index/index')}">{$Think.lang.market}</li>
+						<li class="onli" data-src="{:U('Home/single/help')}">
+								{$Think.lang.help}
+							</li>
+							<li class="onli" data-src="{:U('Home/index/emailsig')}">{$Think.lang.register}</li>
+							<li class="onli" data-src="{:U('Home/index/login')}">{$Think.lang.login}</li>
+							<li class="off">
+								<img src="/Public/img/of1.png">
+							</li>
+							<li>
+								<div class="upfot2">
+									<if condition ="(LANG_SET eq 'en-us')">
+										<img  class="langs" data-lang='en-us' src="/Public/img/language2.png" />
+									<else/>
+										<img  class="langs" data-lang='ch-zn' src="/Public/img/language1.png" />
+									</if>
+									<div class="language">
+										<img src="/Public/img/language2.png"  class="langs" data-lang='en-us'/>
+										<img  class="langs" data-lang='zh-cn' src="/Public/img/language1.png" />
+									</div>
+								<!-- 	<div class="sjx">
+										
+									</div> -->
+										<img src="/Public/img/t1.png" class="sjx">
+								</div>
+							</li>
+						</ul>
+					<else/>
+						<ul>
+							<li class="onli" data-src="{:U('Home/index/index')}">市场</li>
+						<!-- 	<li class="onli" data-src="{:U('Home/index/pro')}">专业版</li> -->
+							<li class="onli" data-src="{:U('Home/wallet/index')}">
+								余额
+							</li>
+							<li class="onli" data-src="{:U('Home/single/help')}">
+								帮助
+							</li>
+							<li class="off">
+								<img src="/Public/img/of1.png">
+							</li>
+							<li>
+								<svg class="icon onli" aria-hidden="true" style="font-size: 27px;position: relative;top: 5px;" data-src="{:U('Home/user/index')}">
+									<use xlink:href="#icon-yonghuzhongxin"></use>
+								</svg>
+							</li>
+							<li class="endlis">
+								<svg class="icon onli extt" aria-hidden="true" style="font-size: 22px;position: relative;top: 4px;" data-src="{:U('Home/user/index')}">
+									<use xlink:href="#icon-exit"></use>
+								</svg>
+							</li>
+						</ul>
+					</empty>
+				</div>
+				<div class="tiRight2">
+					<li class="off">
+									<img src="/Public/img/of1.png">
+								</li>
+					<svg class="icon" aria-hidden="true">
+					  <use xlink:href="#icon-gengduo"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="hideUlis">
+				<div>
+					<ul>
+						<li class="onli" data-src="{:U('Home/index/index')}"><span>市场</span></li>
+				<!-- 		<li class="onli" data-src="{:U('Home/index/pro')}"><span>专业版</span></li> -->
+						<li class="onli" data-src="{:U('Home/single/help')}"><span>{$Think.lang.help}</span></li>
+						<empty name="user_id">
+
+						<else/>
+							<li class="onli" data-src="{:U('Home/wallet/index')}"><span>账户</span></li>
+							<li class="onli" data-src="{:U('Home/user/index')}"><span>个人中心</span></li>
+						</empty>
+						<empty name="user_id">
+							<li class="onli" data-src="{:U('Home/index/login')}"><span>登录</span></li>
+						<else/>
+							<li class="onli" data-src="{:U('Login/loginOut')}"><span>退出</span></li>
+						</empty>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="rsig">
+			<h2>Openiex 安全、迅速的比特币交易平台</h2>
+			<div class="sosouk">
+				<input type="text" placeholder="请输入电子邮箱" id="email" />
+				<button type="button" id="sendEmail">注册</button>
+			</div>
+		</div>
+		<div class="echs">
+			<div id="char1" class="userTb"></div>
+			<div id="char2" class="userTb"></div>
+			<div id="char3" class="userTb"></div>
+		</div>
+	<!-- 	<div class="ssjx">
+			
+		</div> -->
+	</div>
+	<div class="wraps">
+		<div class="jgs">
+			<div class="jgxs">
+				<ul id="iconlists">
+<!-- 					<volist name="currencys" id="vo">
+					<li class="selectLi">
+						<p>{$vo.currency_mark} ({$vo.latest_price})</p>
+						<div>
+							<span>24小时量:{$vo.one_day_trades}</span>
+							<span class="jggreen">{$vo.change_amount}({$vo.ratio}%)</span>
+						</div>
+					</li>
+					</volist> -->
+					<!--<li>-->
+						<!--<p>Bitcoin/USDT (5684.6)</p>-->
+						<!--<div>-->
+							<!--<span>24小时量:10</span>-->
+							<!--<span class="jgred">26.3(5.63%)</span>-->
+						<!--</div>-->
+					<!--</li>-->
+					<!-- <li>
+						<p>Bitcoin/USDT (5684.6)</p>
+						<div>
+							<span>24小时量:10</span>
+							<span class="jggreen">26.3(5.63%)</span>
+						</div>
+					</li> -->
+					<!-- <li>
+						<p>Bitcoin/USDT (5684.6)</p>
+						<div>
+							<span>24小时量:10</span>
+							<span class="jggreen">26.3(5.63%)</span>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+			<div class="swiper-container swpers">
+			    <div class="swiper-wrapper swper" id="swipreList">
+			     
+			    </div>
+			  </div>
+		</div>
+		<div class="yss">
+			<ul>
+				<li>
+					<img src="/Public/img/by1.png" class="icon-ad">
+					<h6>标准</h6>
+					<p>选取优质加密资产，于官方建立合作。</p>
+				</li>
+				<li>
+					<img src="/Public/img/by2.png" class="icon-ad">
+					<h6>交易</h6>
+					<p>允许BTC / UDST 进行各类资产兑换服务。</p>
+				</li>
+				<li style="    margin-bottom: 29px;">
+					<img src="/Public/img/by3.png" class="icon-ad">
+					<h6>安全</h6>
+					<p>超过95%以上资产被分散离线存储，定期审计，确保不放在一个篮子。</p>
+				</li>
+			</ul>
+		</div>
+		<div class="bgimg">
+			<div>
+				<img src="/Public/img/bg2.png"/>
+			</div>
+			<div>
+				<ul>
+					<li><img src="/Public/img/gg.png" alt="" />许可交易</li>
+					<li><img src="/Public/img/gg.png" alt="" />简单的界面，方便的订单管理和实时交换数据</li>
+					<li><img src="/Public/img/gg.png" alt="" />投资加密货币，我们使其更安全，具有止损和盈利特征</li>
+					<li><img src="/Public/img/gg.png" alt="" />没有开始交易的文件</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<footer>
+			<div class="fotdiv">
+				<div class="fotLeft">
+					<div>
+						<p>OPENIEX</p>
+						<span>© CopyRight 2017 China</span>
+						<div class="fotImg">
+							<img src="/Public/img/fx1.png" />
+							<img src="/Public/img/fx2.png" />
+							<img src="/Public/img/fx3.png" />
+						</div>
+					</div>
+				</div>
+				<div class="fotRight">
+					<div>
+						<div>
+							<h6>产品</h6>
+							<ul>
+								<li class="onli" data-src="/Home/wallet/index">余额</li>
+								<li class="onli" data-src="/Home/index/index">买卖</li>
+							<!-- 	<li>专业版</li>	 -->		
+							</ul>
+						</div>
+						<div>
+							<h6>支持</h6>
+							<ul>
+								<li>在线工单</li>
+								<li>用户咨询</li>		
+								<li>API</li>		
+							</ul>
+						</div>
+						<div>
+							<h6>资源</h6>
+							<ul>
+								<li class="onli" data-src="/Home/single/lists.html?status=2">常见问题</li>
+								<li>费率</li>
+								<li>条款</li>			
+							</ul>
+						</div>
+						<div>
+							<h6>公司</h6>
+							<ul>
+								<li>联系方式</li>
+								<li class="onli" data-src="/Home/single/lists.html?status=1">公告</li>
+								<li>招聘</li>			
+							</ul>
+						</div>
+						<div>
+							<h6>关注更多</h6>
+							<img src="/Public/img/fx1.png" />
+							<img src="/Public/img/fx2.png" />
+							<img src="/Public/img/fx3.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/lib/echarts/echarts.min.js"></script>
+	<script src="/Public/js/lib/swiper/swiper.min.js"></script>
+	<script src="/Public/js/private/comm/comm.js?v=dae963a5c4"></script>
+	<script src="/Public/js/private/index/website.js?v=0a59a29763"></script>
+</body>
+</html>

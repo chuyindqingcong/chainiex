@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/deal/deal.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+#if($!{err})
+$!{err}5秒后自动返回上一页
+#else
+<div class="wrapsd">
+    <div class="wraps">
+        <div class="ads">
+            <div class="adsy">
+                #if($!{user.profile}) <img src="$!{user.profile}">  #else  <img src="/images/default.jpg"> #end
+                <div class="adsName">
+                    <h5>#if($!{user.userName}) $!{user.userName} #else  $!{user.mail} #end</h5>
+                    #if($!{user.idCert}==0)
+                    <span>已实名认证</span>
+                    #else
+                    <span>未实名认证</span>
+                    #end
+                </div>
+                <div style="float: left;">
+                    <ul>
+                        <li>
+                            <span>$!{user.tradeAmount}</span>
+                            <span>交易次数</span>
+                        </li>
+                        <li>
+                            <span>$!{user.trust}</span>
+                            <span>信任人数</span>
+                        </li>
+                        <li>
+                            <span>$!{user.reputation}</span>
+                            <span>好评度</span>
+                        </li>
+                        <!--<li>-->
+                            <!--<span>0.5$!{advertisement.coin}</span>-->
+                            <!--<span>累积成交</span>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Specific">
+            <div>
+                <ul>
+                    <li><span>购买数量 :</span><b id="count">$!{leftAmount}</b><o>$!{advertisement.coin}</o> </li>
+                    <li style="color: #828282;"><span style="color: #333;">购买价格 :</span><o class="rate" style="font-weight: bold">$!{price}</o> $!{advertisement.currency}/$!{advertisement.coin} </li>
+                    <li><span>付款方式 :</span>$!{payType}</li>
+                    <li><span>交易限额 :</span>$!{mina} - $!{leftAmount} <o style="font-family: Arial !important;">$!{advertisement.coin}</o></li>
+                    <li><span>付款期限 :</span>$!{advertisement.limitTime}分钟</li>
+                    <li><span>留言板 :</span>$!{remark}</li>
+                </ul>
+            </div>
+        </div>
+        <span class="nxgm">你想出售多少？</span>
+        <div style="position: relative;border-bottom: 1px dashed #ddd;">
+            <div class="sell">
+                <form id="form">
+                    <div style="position: relative;width: 341px;float: left;">
+                        <input type="text" class="yesNum" placeholder="请输入您想出售$!{advertisement.coin}数量" id="btc" name="amount" autocomplete="off">
+                        <span class="CNYS"> $!{advertisement.coin}</span>
+                    </div>
+                    <svg class="icon iconfont1" aria-hidden="true">
+                        <use xlink:href="#icon-zhuanhuan"></use>
+                    </svg>
+                    <div style="position: relative;width: 341px;float: left;">
+                        <input type="text" class="yesNum" placeholder="请输入您想出售金额/CNY" id="cny" name="jyje" autocomplete="off">
+                        <span class="CNYS">CNY</span>
+                    </div>
+                    <!--<input type="text" placeholder="手续费$!{advertisement.coin}" id="sxf" readonly>-->
+                    <input type="text" placeholder="收款人" name="payName"  style="margin-right: 83px;margin-top: 51px;margin-bottom: 13px;">
+                    <input type="text" placeholder="收款账号" name="payId" id="payId" style=margin-top:51px;margin-bottom: 13px;">
+                    <!--<textarea placeholder="您可输入您的联系方式或者其他信息，方便您的交易" class="col-sm-8" name="comment"></textarea>-->
+                    <button type="botton" class="ycshou">出售$!{advertisement.coin}</button>
+                    <div class="shouerr"></div>
+                    <button type="submit" id="sub" style="display: none">提交</button>
+                    <input type="hidden" name="qr" value="" id="qr">
+                    <input type="hidden" value="$!{advertisement.id}" name="advertisement" id="ids">
+                    <input type="hidden" value="$!{advertisement.type}" name="type">
+                    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" >
+                    <input type="hidden" data-required="您未输入数量" data-min="不能低于$!{minp}" id="errorMess" data-max="不能大于$!{leftAmount}" data-mins="$!{minp}" data-requires="不能为空"
+                           data-user="不能和自己交易" data-maxmin="您出售的数量不能低于最小限额" data-fee = "$!{fee}">
+                    <div class="upimg imgsUpdate">
+                        <img src="/images/zf.png">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="textp">
+            <h4>交易须知</h4>
+            <p>在您发起交易请求后，$!{advertisement.coin}被锁定在托管中，受到CHAINIEX保护。 如果您是买家，发起交易请求后,您</p>
+            <p>应在$!{advertisement.limitTime}分钟内付款并把交易标记为付款已完成。卖家在收到付款后将会放行处于托管中的$!{advertisement.coin}。</p>
+            <p>交易前请阅读<span class="onli" data-src="/help/clause">《CHAINIEX条款》</span>以及常见问题、交易指南等帮助文档。</p>
+            <p>当心骗子！交易前请检查该用户收到的评价，并对新近创建的账户多加留意。</p>
+            <p>请注意，四舍五入和价格的波动可能会影响最终成交的$!{advertisement.coin}数额。您输入的固定数额决定最后数额</p>
+            <p>金额将在请求发布的同一时间由即时的汇率算出。</p>
+            <p>托管服务保护网上交易的买卖双方。在发生争议的情况下，我们将评估所提供的所有信息,并将托管的$!{advertisement.coin}</p>
+            <p>币放行给其合法所有者。
+        </div>
+    </div>
+</div>
+#end
+<div class="zzcc">
+    <div class="ycdivv">
+        <div>
+            <div class="yctxt">
+            <h5>系统提示！</h5>
+                1.未进行手机绑定用户，在CHAINIEX上，每日最大可交易限额（买／卖）不得超过1/BTC,如：需要更高的交易需求，请前往个人中心进行高级验证。<br/><br/>
+                2.用户在CHAINIEX买／卖时，应仔细核对交易信息，再三确认买／卖信息后，方可提交，对买／卖双方不核对交易信息的用户，出现损失,与CHAINIEX无关。<br/><br/>
+                3.买／卖双方交易，应提供准确的收款账号／账户，不得利用虚假信息，如出现争议，可上传相关交易明细，提交工单至CHAINIEX进行仲裁。<br/><br/>
+                4.为了保障买／卖双方权益和交易信息的真实性，用户在CHAINIEX交易，每天最多可取消订单3次，超过3次账户将无法交易，连续多天出现此类情况，CHAINIEX将有权冻结相关账户。<br/><br/>
+                5.用户不得进行所谓账号测试，无故发布／取消，买／卖交易信息，一经系统发现，立即冻结相关账户。<br/>
+            </div>
+            <div class="rediss">
+                <botton type="botton" class="rgbbluee">确认</botton>
+                <botton type="botton" class="rgbredd">取消</botton>
+            </div>
+        </div>
+
+    </div>
+</div>
+<form enctype="multipart/form-data" id="form2">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+    <input type="file" id="file1" style="display:none" name="file">
+    <input type="hidden" style="display:none" name="type" value="qr">
+</form>
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/jquery-form/jquery-form.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/deal/deal.js"></script>
+
+</body>
+</html>

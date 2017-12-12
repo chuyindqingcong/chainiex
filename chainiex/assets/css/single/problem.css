@@ -1,0 +1,148 @@
+.wrap {
+    margin-top: 90px;
+    width: 1180px;
+}
+.wrap-left{
+    width: 230px;
+    float: left;
+    text-indent: 36px;
+    color: #000;
+    transition: all .3s;
+    margin-right:20px;
+}
+.wrap-dh{
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+.wrap-dh h5{
+    height: 50px;
+    margin-top: 0px;
+    line-height: 50px;
+    font-size: 15px;
+    border-left: 3px solid red;
+    margin-left: -1px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.wrap-dh ul li{
+    width:100%;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 51px;
+    cursor: pointer;
+    position: relative;
+    margin-left: -1px;
+    border-left: 3px solid transparent;
+}
+.wrap-dh ul{
+    margin-bottom: 0px;
+
+    overflow: hidden;
+}
+.this-li{
+    border-color: #2a3c92 !important;
+}
+.wrap-dh ul li:hover{
+    border-color: #2a3c92;
+    color: #2a3c92 ;
+}
+.color>h5>img{
+    float: right;
+    margin-top: 25px;
+    transition: all .3s;
+}
+.wrap-right{
+    width:930px;
+    float: left;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+.wrap-right>div {
+    width: 100%;
+    margin-bottom: 10px;
+    background: #fff;
+    height: 60px;
+    transition: all .3s;
+    box-shadow: 0px 2px 4px #ddd;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.wrap-right div li{
+    width: 100%;
+    float: left;
+    height:50px;
+    line-height: 50px;
+    text-indent: 36px;
+}
+.wrap-right h4{
+    text-align: center;
+    color: #f9a609;
+    font-size: 26px;
+    margin-top: 29px;
+}
+.wrap-right h5{
+    color: #333;
+    font-size: 16px;
+    height:60px;
+    padding:0 20px;
+    border-bottom: 1px solid #68ddd5;
+    line-height: 60px;
+    font-weight: normal;
+    margin: 0;
+}
+.wrap-right p {
+    font-size: 14px;
+    color: #666;
+    text-indent:24px;
+    padding: 9px 14px 0px 14px;
+}
+.color{
+    cursor: pointer;
+}
+.wrap-left{
+    text-indent: 0;
+}
+.wrap-dh ul li{
+    text-indent: 0;
+}
+.bbb{
+    text-align: center;
+    height: 70px;
+    font-size: 18px;
+    line-height: 70px;
+    color: #68ddd5;
+    border-bottom: 1px solid #68ddd5;
+}
+.wrap-dh{
+    padding: 0 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 1px 4px 4px #ddd;
+}
+.wrap-dh ul li{
+    border:none;
+}
+.wrap-dh ul li{
+    color: #828282;
+}
+.wrap-dh ul li:hover{
+    color: #333;
+}
+.wrap-dh ul li:hover .icon{
+    color: #50a5f5;
+}
+.wrap-dh ul li .icon {
+    color: #e0e0e0;
+    font-size: 21px;
+    margin-right:10px;
+    margin-left: 37px;
+    top:2px;
+    position: relative;
+}
+.this-li {
+    color: #333!important;
+}
+.this-li .icon{
+    color: #50a5f5!important;
+}

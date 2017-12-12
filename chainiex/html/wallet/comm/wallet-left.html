@@ -1,0 +1,21 @@
+<div class="wrap-left">
+    <div class="wrap-dh user-dh">
+        <h5>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-user"></use>
+            </svg>
+            钱包</h5>
+        <ul>
+            <li class="onli" data-src="/wallet/assets">资产中心</li>
+            <!--<li class="onli" data-src="/wallet/btc">充值/提现/比特币</li>-->
+            <!--<li class="onli" data-src="/wallet/dash">充值/提现/达世币</li>-->
+            <!--<li class="onli" data-src="/wallet/nem">充值/提现/新经币</li>-->
+            <!--<li class="onli" data-src="/wallet/waves">充值/提现/海浪币</li>-->
+            #foreach($coin in $coins)
+             <li data-src="/wallet/depandwd?coin=$!{coin.coin}" class="onli kzonli">充值/提现/$!{coin.coin}</li>
+            #end
+            <li class="onli" data-src="/wallet/bill">交易明细</li>
+            <li class="onli" data-src="/wallet/ad">我的广告</li>
+        </ul>
+    </div>
+</div>

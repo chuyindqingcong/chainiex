@@ -1,0 +1,128 @@
+<header class="header">
+	<div class="commhed">
+		<h1 class="onli" data-src="{:U('Home/index/website')}">OPENIEX</h1>
+	
+		<ul class="dul">
+					<!--<li>
+						<span>市场</span>
+					</li>-->
+				</ul>
+				<div class="tiRight">
+					<empty name="user_id">
+						<ul>
+							<li class="onli" data-src="{:U('Home/index/index')}">{$Think.lang.exchange}</li>
+							<li class="onli" data-src="{:U('Home/single/help')}">
+								{$Think.lang.help}
+							</li>
+							<li class="onli" data-src="{:U('Home/index/emailsig')}">{$Think.lang.register}</li>
+							<li class="onli" data-src="{:U('Home/index/login')}">{$Think.lang.login}</li>
+							<li class="off">
+								<img src="/Public/img/of1.png">
+							</li>
+							<li>
+								<div class="upfot2">
+									<if condition ="(LANG_SET eq 'en-us')">
+										<img  class="langs" data-lang='en-us' src="/Public/img/language2.png" />
+									<else/>
+										<img  class="langs" data-lang='ch-zn' src="/Public/img/language1.png" />
+									</if>
+									<div class="language">
+										<img src="/Public/img/language2.png"  class="langs" data-lang='en-us'/>
+										<img  class="langs" data-lang='zh-cn' src="/Public/img/language1.png" />
+									</div>
+									<!-- <div class="sjx">
+										
+									</div> -->
+									<img src="/Public/img/t1.png" class="sjx">
+								</div>
+							</li>
+						</ul>
+					<else/>
+						<ul> 
+							<!-- <li class="thisColor">
+								{$Think.lang.exchange}
+								<div>
+									<span class="onli" data-src="{:U('Home/index/index')}">市场版</span>
+								</div>
+								<div>
+									<span class="onli" data-src="{:U('Home/index/pro')}">专业版</span>
+								</div>
+							</li> -->
+							<li class="onli" data-src="{:U('Home/index/index')}">
+								{$Think.lang.exchange}
+							</li>
+						<!-- 	<li class="onli" data-src="{:U('Home/index/pro')}">
+								专业版
+							</li> -->
+							<li class="onli" data-src="{:U('Home/wallet/index')}">
+								账户
+							</li>
+							<li class="onli" data-src="{:U('Home/single/help')}">
+								{$Think.lang.help}
+							</li>
+							<li class="off">
+								<img src="/Public/img/of1.png">
+							</li>
+							<li class="endlis">
+								<svg class="icon onli" aria-hidden="true" style="font-size: 27px;position: relative;top: 5px;" data-src="{:U('Home/user/index')}">
+									<use xlink:href="#icon-yonghuzhongxin"></use>
+								</svg>
+							</li>
+							<li class="endlis">
+								<svg class="icon onli extt" aria-hidden="true" style="font-size: 22px;position: relative;top: 4px;" data-src="{:U('Login/loginOut')}">
+									<use xlink:href="#icon-exit"></use>
+								</svg>
+							</li>
+							<li class="langgg">
+								<div class="upfot2">
+
+									<if condition ="(LANG_SET eq 'en-us')">
+										<img  class="langs" data-lang='en-us' src="/Public/img/language2.png" />
+									<else/>
+										<img  class="langs" data-lang='ch-zn' src="/Public/img/language1.png" />
+									</if>
+									<div class="language">
+										<img src="/Public/img/language2.png"  class="langs" data-lang='en-us'/>
+										<img  class="langs" data-lang='zh-cn' src="/Public/img/language1.png" />
+									</div>
+									<!-- <div class="sjx">
+										
+									</div> -->
+										<img src="/Public/img/t1.png">
+								</div>
+							</li>
+						</ul>
+					</empty>
+					
+					
+				</div>
+				<div class="tiRight2">
+					<li class="off">
+						<img src="/Public/img/of1.png">
+					</li>
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-gengduo"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="hideUlis">
+				<div>
+					<ul>
+						<li class="onli" data-src="{:U('Home/index/index')}"><span>市场</span></li>
+				<!-- 		<li class="onli" data-src="{:U('Home/index/pro')}"><span>专业版</span></li> -->
+						<li class="onli" data-src="{:U('Home/single/help')}"><span>{$Think.lang.help}</span></li>
+						<empty name="user_id">
+
+						<else/>
+							<li class="onli" data-src="{:U('Home/wallet/index')}"><span>账户</span></li>
+							<li class="onli" data-src="{:U('Home/user/index')}"><span>个人中心</span></li>
+						</empty>
+						<empty name="user_id">
+							<li class="onli" data-src="{:U('Home/index/login')}"><span>登录</span></li>
+						<else/>
+							<li class="onli" data-src="{:U('Login/loginOut')}"><span>退出</span></li>
+						</empty>
+					</ul>
+				</div>
+			</div>
+		</header>

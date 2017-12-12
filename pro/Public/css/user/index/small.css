@@ -1,0 +1,27 @@
+.mark{
+	width:100%;
+	text-align: center;
+}
+.solz{
+	width: 100%;
+}
+.solz .mark{
+	width: 100%;
+	float: left;
+	text-align: left;
+}
+.solz .mark label{
+	width: 35%;
+}
+.markButton button{
+	margin-left: 0 !important;
+}
+.ts{
+	margin-bottom: 20px !important;
+}
+.markButton button{
+	width: 49% !important;
+}
+.solz .mark input[type="text"] {
+    width: 59% !important;
+}

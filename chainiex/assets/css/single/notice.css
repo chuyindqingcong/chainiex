@@ -1,0 +1,85 @@
+.wrap {
+    margin-top: 90px;
+    width: 1190px;
+}
+.wrap-left{
+    width: 238px;
+    float: left;
+    text-indent: 36px;
+    margin-right:15px;
+}
+.wrap-dh{
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+.wrap-dh h5{
+    height: 50px;
+    margin-top: 0px;
+    line-height: 50px;
+    font-size: 15px;
+    border-left: 3px solid red;
+    margin-left: -1px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.wrap-dh ul li{
+    width:100%;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 51px;
+    cursor: pointer;
+    position: relative;
+    margin-left: -1px;
+    border-left: 3px solid transparent;
+}
+.wrap-dh ul{
+    margin-bottom: 0px;
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+.this-li{
+    border-color: #4a90e2 !important;
+    color: #4a90e2 ;
+}
+.wrap-dh ul li:hover{
+    border-color: #4a90e2;
+    color: #4a90e2 ;
+}
+.wrap-right{
+    background: #fff;
+    width:935px;
+    float: left;
+    margin-bottom: 20px;
+}
+.wrap-right>div {
+    width:100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.wrap-right div li{
+    width: 100%;
+    float: left;
+    height:50px;
+    line-height: 50px;
+    border-bottom:1px solid #ddd;
+    text-indent: 36px;
+}
+.wrap-right h4{
+    text-align: center;
+    color: #f9a609;
+    font-size: 26px;
+    margin-top: 29px;
+}
+.wrap-right h5{
+    color: #3bd8c3;
+    font-size: 18px;
+}
+.wrap-right p {
+    font-size: 12px;
+    padding: 14px;
+}
+.wrap-right span{
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+}

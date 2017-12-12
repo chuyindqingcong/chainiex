@@ -1,0 +1,220 @@
+.wrap{
+    width: 1180px;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+.bglogo{
+    height: 200px;
+    border-radius: 6px;
+    background: url(/images/banner.png);
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 4px #ddd;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bglogo span{
+    font-size: 18px;
+    border: 1px solid #fe7273;
+    background: #fe7273;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin-top: 132px;
+}
+.mess{
+    height:380px;
+    margin-top:30px;
+}
+.mess>div{
+    float: left;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px #ddd;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #ddd;
+    height:380px;
+}
+.userMess{
+    width: 220px;
+    margin-right:20px;
+}
+.userBG {
+    margin: 30px auto 20px;
+    background: #d1f5f3;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+}
+.userSig img {
+    width: 70px;
+    height: 70px;
+    margin-top: 6px;
+    border: 1px solid #68ddd5;
+    border-radius: 50%;
+}
+.userSig {
+    text-align: center;
+    padding: 0 20px;
+}
+.userSig p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #68ddd5;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #68ddd5;
+}
+.shouyi{
+    padding: 30px 40px;
+}
+.shouyi>div{
+    float: left;
+    text-align: center;
+}
+.shouyi>div:nth-of-type(2){
+    float: right;
+}
+.shouyi>div span{
+    display: block;
+}
+.shouyi>div span:nth-of-type(2){
+    color: #cdcdcd;
+    font-size: 12px;
+    margin:20px 0 30px 0;
+}
+.userMess{
+    text-align: center;
+}
+.shouyi>div span:nth-of-type(1){
+    font-size:16px;
+}
+.shouyi>div:nth-of-type(1)>span:nth-of-type(1){
+    color: #ff8b8b;
+}
+.shouyi>div:nth-of-type(2)>span:nth-of-type(1){
+    color: #fda54b;
+}
+.userMess button{
+    width: 100px;
+    height: 30px;
+    background: #68ddd5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.gz{
+    width: 940px;
+    height: 380px;
+    padding: 0 40px;
+    text-align: center;
+}
+.gz h5{
+    margin-top: 30px;
+    font-size: 22px;
+    display: inline-block;
+    padding-bottom: 17px;
+    border-bottom: 3px solid #68ddd5;
+}
+.gz>div{
+    text-align: left;
+    padding-top: 30px;
+    border-top: 1px solid #68ddd5;
+}
+.gz>div li{
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+.gz p{
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    line-height: 24px;
+    margin-top:30px;
+}
+
+.czjm{
+    display: none;
+}
+.czbg{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 999999;
+}
+.zjicon{
+    color:#68ddd5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.container{
+    position: fixed!important;
+    width: 380px!important;
+    display: block;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #fff;
+    z-index: 99999999;
+    top: 242px;
+    left: 50%;
+    margin-left: -190px!important;
+}
+.container h5 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #68ddd5;
+    font-weight: 400;
+    text-indent: 24px;
+}
+.container h5 .icon {
+    float: right;
+    margin-right: 30px;
+    font-size: 19px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.container>div{
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container input{
+    display: block;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    text-indent: 12px;
+    color: #333;
+}
+.container button{
+    width: 200px;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 30px;
+    background: #68ddd5;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.container p{
+    color: #333;
+    text-align: left;
+    line-height: 22px;
+}

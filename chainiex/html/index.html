@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/index/index.css" />
+</head>
+<body>
+<!--#springMessage('welcome')-->
+<div class="posit" id="posit">
+    #parse('./comm/header.html')
+</div>
+<div class="wrap">
+    <div class="bglogo">
+        <h2>多币种在线OTC平台</h2>
+        <span class="onli" data-src="/user/signup">快速开启交易</span>
+    </div>
+    <div class="wrap-tos">
+        <div>
+            <div>
+                <svg class="icon icon1" aria-hidden="true">
+                    <use xlink:href="#icon-xiaolaba"></use>
+                </svg>
+                <p>暂无公告</p>
+                <svg class="icon icon2" aria-hidden="true">
+                    <use xlink:href="#icon-delete"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="kaps">
+
+    </div>
+    <div class="advantage">
+        <div>
+            <img src="/images/ip1.png" alt="">
+            <h6>方便快捷</h6>
+            <p>
+                敢于创新，在任何地方，随时随地进行资产转换，以满足您的所需-不仅仅局限于 Bitcoin
+            </p>
+        </div>
+        <div>
+            <img src="/images/ip2.png" alt="">
+            <h6>资金安全</h6>
+            <p>
+                双因素身份验证，支持 Google 验证器、手机短信等二次验证方式，敏感操作发生时，将对您进行身份确认，- 在安全性方面，我们给您安心
+            </p>
+        </div>
+        <div>
+            <img src="/images/ip4.png" alt="">
+            <h6>专业服务</h6>
+            <p>
+                7x24小时全方位等候您的咨询，充值最快 5分钟到账 数字资产小额提现即提即出
+            </p>
+        </div>
+        <div>
+            <img src="/images/ip3.png" alt="">
+            <h6>CHAINIEX保障</h6>
+            <p>
+                CHAINIEX承诺并践行 120% 准备金,不以任何理由挪用用户资产，做到用户提现，百分百支付
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<form id="json1">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" data-x="$!{coin}" id="hideData">
+</form>
+
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/echarts/echarts.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/index/index.js"></script>
+</body>
+</html>

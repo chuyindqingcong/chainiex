@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/email.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./single/comm/singleLeft.html')
+    <div class="wrap-right">
+        <div class="draps">
+            <div>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dizhi"></use>
+                </svg>
+                <p class="ps">公司地址</p>
+                <div class="dps"></div>
+                <p class="ps1">杭州市余杭区荆长路768号</p>
+            </div>
+            <div>
+                <svg class="icon" aria-hidden="true" style="font-size: 25px;">
+                    <use xlink:href="#icon-dianhua-1"></use>
+                </svg>
+                <p class="ps">联系方式</p>
+                <div class="dps"></div>
+                <p class="ps1">0571-88663076</p>
+            </div>
+            <div style="margin-right: 0;">
+                <svg class="icon" aria-hidden="true" style="font-size: 28px">
+                    <use xlink:href="#icon-youxiang"></use>
+                </svg>
+                <p class="ps">电子邮箱</p>
+                <div class="dps"></div>
+                <p class="ps1">service@chainiex.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" data-required="您未输入" data-equalTo="密码不一致" id="errMess">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/email.js"></script>
+
+</body>
+</html>

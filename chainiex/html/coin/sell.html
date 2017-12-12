@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/coin/sell.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <div class="soso">
+        <div class="adUser spaHove">
+            <span>
+                <o>搜广告</o>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+            </span>
+            <ul id="fs">
+                <li data-status="0">搜广告</li>
+                <li data-status="1">搜用户</li>
+            </ul>
+            <input type="hidden" id="puid" value="0">
+        </div>
+        <div class="showfs">
+            <div>
+                <div class="adfs spaHove" id="peytype">
+                    <span>
+                        <o>付款方式</o>
+                        <svg class="icon" aria-hidden="true">
+                          <use xlink:href="#icon-arrow"></use>
+                        </svg>
+                    </span>
+                    <ul>
+                        <li data-status="2">支付宝</li>
+                        <li data-status="3">微信</li>
+                        <li data-status="1">银联支付</li>
+                    </ul>
+                    <input type="hidden" id="pay" name="payType" value="">
+                </div>
+                <div class="adfs">
+                    <input type="text" placeholder="限制数量" id="minal" class="yesNum">
+                </div>
+            </div>
+            <div  class="shouInp">
+                <input type="text" placeholder="昵称" id="username">
+            </div>
+        </div>
+        <div class="but">
+            <svg class="icon iconf1" aria-hidden="true">
+                <use xlink:href="#icon-sousuo"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="tab">
+        <table id="table" class='table table-striped table-bordered' cellspacing="0"  cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>昵称</th>
+                    <th>信用</th>
+                    <th>付款方式</th>
+                    <th>限制数量</th>
+                    <th>价格</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+<input type="hidden" id="errorMess" data->
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/datatables/jquery.dataTables.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/coin/sell.js"></script>
+
+</body>
+</html>

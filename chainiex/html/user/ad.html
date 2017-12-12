@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/user/quoted.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./user/comm/userLeft.html')
+    <div class="wrap-right">
+        <div class="colorr">
+            <table id="table" class='table table-striped table-bordered' cellspacing="0"  cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>币种</th>
+                    <th>时间</th>
+                    <th>买/卖</th>
+                    <th>委托价格</th>
+                    <th>委托数量</th>
+                    <th>成交数量</th>
+                    <th>尚未成交</th>
+                    <th style="position:right;">状态<b class="sel" id="sel" data-status="0"></b>
+                        <div class="ect">
+                            <ul>
+                                <li data-status="0">全部</li>
+                                <li data-status="2">交易完成</li>
+                                <li data-status="1">交易中</li>
+                                <li data-status="4">未激活</li>
+                                <li data-status="3">取消</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+<div id="zzc"></div>
+<form id="json1">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+</form>
+<input type="hidden" id="errorMess" data-code1="已取消" data-code2="待激活" data-code3="尚未成交" data-code4="部分成交" data-code5="交易中" data-code6="交易完成" data-qx="取消" data-jh="激活"
+ data-noqx="交易中,不能取消" data-max="同时挂单只能存在3个,请等待其他订单交易完成">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/lib/datatables/jquery.dataTables.min.js"></script>
+<script src="/js/private/user/quoted.js"></script>
+</body>
+</html>

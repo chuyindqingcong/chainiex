@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/details.css" />
+</head>
+<body>
+<!--<header class="heda">-->
+    <!--<div>-->
+        <!--<h1 class="onli" data-src="/">CHAINIEX</h1>-->
+    <!--</div>-->
+<!--</header>-->
+#parse('./comm/header.html')
+<div class="wrap">
+    <div>
+        <div class="news-left">
+            <h3>公告</h3>
+            <p>尊敬的CHAINIEX用户 ：</p>
+            <!--<span class="zx">公告</span>-->
+            <div style="padding: 20px 0px;line-height: 30px;" class="ddr"></div>
+            <span>2017-08-11 12:13:24</span>
+        </div>
+        <div class="news-right">
+            <img src="/images/news-logo.png" style="margin-bottom:28px;margin-top: 40px;">
+            <div><h6>CHAINIEX团队</h6></div>
+            <div class="news-title">
+            </div>
+            <div>
+                <div class="ulis">
+                    <ul id="news1">
+
+                    </ul>
+                    <div>
+                        <span id="page">上一页</span>
+                        <span id="next" class="props">下一页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" data-required="您未输入" data-equalTo="密码不一致" id="errMess">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/details.js"></script>
+
+</body>
+</html>

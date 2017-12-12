@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/index/sig.css" />
+</head>
+<body>
+<!--#springMessage('welcome')-->
+#parse('./comm/header.html')
+#if($!{errorMsg})
+    <script>
+        alert('$!{errorMsg}')
+    </script>
+#end
+<div class="wraps">
+    <div>
+        <img src="/images/npc.png" style="margin-top: 57px;">
+    </div>
+    <div class="ptxt">
+        <p>首次浏览，了解更多细节请进</p>
+        <span class="onli" data-src="/help/navigation">新手指南>></span>
+    </div>
+    <div class="wrap">
+        <div class="wrap-lrg">
+            <h2>注册</h2>
+            <div class="regs">
+                <form action="/user/signup" method="post" id="reg">
+                    <input type="hidden" name="invite" id="intive">
+                    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="昵称" name="username" id="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="邮箱" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="密码" name="pwd" id="pwd">
+                        <svg class="icon open" aria-hidden="true" id="open1">
+                            <use xlink:href="#icon-openEyes"></use>
+                        </svg>
+                        <input type="text" id="shou1" class="shous">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0">
+                        <input type="password" class="form-control" placeholder="确认密码" name="repwd" id="repwd">
+                        <svg class="icon open" aria-hidden="true" id="open2">
+                            <use xlink:href="#icon-openEyes"></use>
+                        </svg>
+                        <input type="text" id="shou12" class="shous">
+                    </div>
+                    <div class="form-group yzm">
+                        <div class="form-group yzm yzms">
+                            <input type="text" class="form-control yyy" placeholder="验证码" name="captcha">
+                            <img src="/captcha" class="imgY" />
+                        </div>
+                    </div>
+                    <div class="form-group clause">
+                        <img src="/images/circles-1.png" class="check" data-status="0">已阅读并且同意<a class="clau" href="/help/clause" target="_blank" style="cursor: pointer">CHAINIEX</a>条款<input type="checkbox" id="clause" name="clause" style="visibility: hidden">
+                    </div>
+                    <div class="form-group" id="erds">
+
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="regis">注册</button>
+                    </div>
+                    <div class="form-group">
+                        已有一个账户？
+                        <span class="onli" data-src="/user/login">登录</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    2017 CHAINIEX Inc.
+</div>
+<input type="hidden" id="errorMess" data-required="您没有输入" data-email="邮箱出入错误" data-pass="密码包含字母，数字，长度大与8小于16" data-repa="密码不一致" data-label="条款未勾选">
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/index/sig.js"></script>
+</body>
+</html>

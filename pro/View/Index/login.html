@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/login/small.css" />
+	<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/login/middle.css" />
+	<link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/login/pc.css" />
+	<link rel="stylesheet" href="/Public/css/comm/comm.css" />
+	<link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	<link rel="stylesheet" href="/Public/css/index/login/index.css" />
+</head>
+<body>
+	<include file="App/Home/View/comm/header.html"/>
+	<div class="wraps">
+		<div>
+			<h4>{$Think.lang.login_openiex}</h4>
+			<form id="signupForm">
+				<input type="email"  placeholder="{$Think.lang.input_account}" name="email" />
+				<input type="password"  placeholder="{$Think.lang.input_pwd}" name="pwd" id="pwd" />
+				<button type="button" id="login">{$Think.lang.login}</button>
+				<div>
+					<span style="float: left;" class="onli" data-src="{:U('Home/Index/emailsig')}">{$Think.lang.register}</span>
+					<span style="float: right;" class="onli" data-src="{:U('Home/Index/forget')}">{$Think.lang.forget_pwd}</span>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="foot">
+		OPENIEX @COPYRIGHT 2017
+	</div>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/private/comm/comm.js"></script>
+	<script src="/Public/js/private/index/login.js"></script>
+</body>
+</html>

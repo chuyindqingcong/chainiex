@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/index/404.css" />
+</head>
+<body>
+    <div class="wrap">
+        <!--<div class="bg4">-->
+            <!--<img src="/images/404_1.png">-->
+            <!--<p>3秒后自动返回上一页</p>-->
+        <!--</div>-->
+        <img src="/images/404.png" alt="" class="imgsa">
+    </div>
+<script>
+    setTimeout(function () {
+        window.history.go(-1)
+    },3000)
+</script>
+</body>
+</html>

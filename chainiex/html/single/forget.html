@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/forget.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <div class="reload">
+        <div class="hides">
+            <h4>密码重置！</h4>
+            <div>
+                <div class="deals deta">
+                    <div class="dev-information">
+                        <div>
+                            <div class="div-jd">
+                                <li  class="div-this" style="margin-left:39px;">
+                                    <span><o>1</o></span>
+                                    <span>验证邮箱</span>
+                                    <div class="div-x"></div>
+                                </li>
+                                <li style="margin-left: 32px;">
+                                    <span><o>2</o></span>
+                                    <span>检查收件箱</span>
+                                </li>
+                            </div>
+                            <div class="yima">
+                                <input type="text" class="emial" placeholder="注册邮箱" name="emial" id="emial">
+                                <div class="form-group">
+                                    <div class="col-sm-8" style="text-align: right">
+                                        <button type="button" class="btn-tj btn-sb">发送</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+    </div>
+</div>
+<input type="hidden" data-required="您未输入" data-equalTo="密码不一致" id="errorMess" data-fs="我们已发送邮件到text1请点击邮件中的链接，在24小时内重置您的密码。" data-cg="密码重置成功，请登录"
+data-noemail="该邮箱已注册，请去激活" data-loemail="邮箱未注册，请输入正确的邮箱" data-errmail="请检查您的邮箱是否填写正确" data-resend="重新发送" data-send="已发送" data-ljx="没收到邮件？请检查垃圾箱或者点击重发">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/forget.js"></script>
+
+</body>
+</html>

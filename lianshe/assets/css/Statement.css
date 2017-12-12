@@ -1,0 +1,55 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+li{
+	list-style-type: none;
+}
+
+.wraps{
+background: url(../images/bg6.png) no-repeat;
+    background-size: 100% 100%;
+    background-position-y: 50%;
+}
+.wraps h2{
+	font-size: 28px;
+    color: #fff;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+.wraps h2 span{
+	color: #00e8fe;
+}
+.wraps>div{
+	width: 368px;
+}
+.wraps p{
+	color: rgba(255,255,255,.6);
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+.wraps>div>div img{
+	margin-right: 20px;
+	cursor: pointer;
+}
+.wraps>div>div{
+	margin-bottom: 40px;
+}
+.wraps>div>div span{
+	color: rgba(255,255,255,.6);
+}
+.wraps button{
+	width: 120px;
+	height: 40px;
+	font-size: 18px;
+	color: #00e8fe;
+	border: 1px solid #00e8fe;
+	background: transparent;
+	cursor: pointer;
+}
+.wraps>div{
+	position: fixed;
+    left: 20%;
+    bottom: 30%;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/user/index/small.css" />
+	<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/user/index/middle.css" />
+	<link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/user/index/pc.css" />
+	<link rel="stylesheet" href="/Public/css/comm/comm.css" />
+	<link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	<link rel="stylesheet" href="/Public/css/user/index/index.css" />
+</head>
+<body>
+	<include file="App/Home/View/comm/header.html"/>
+	<div class="wraps">
+		<div class="userTab">
+			<ul>
+				<li class="userTabClass">我的信息</li>
+				<li>谷歌验证</li>
+				<li>修改密码</li>
+				<li>邀请好友</li>
+			</ul>
+		</div>
+		<div class="Tabcon">
+			<div>
+					<div class="solz">
+						<div class="contents">
+							<div class="conTitle">
+								<span>1、基本信息</span>
+							</div>
+							<div>
+								<div class="userImg">
+									<!-- <svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-yonghuzhongxin"></use>
+									</svg> -->
+									<img  class="icon" src="/Public/img/user.png">
+									<div>
+										<span>{$user_info.nick}</span>
+										<span>{$user_info.email}</span>
+									</div>
+									<span>注册时间：{$user_info.reg_time|date='Y-m-d',###}</span>
+								</div>
+							</div>
+							<div class="mess">
+								<span>*填写完整基本信息，每日提款限额可达$ 2,000美元</span>
+							</div>
+						</div>
+					</div>
+					<div class="solz">
+						<div class="contents">
+							<div class="conTitle">
+								<span>2、个人资料</span>
+							</div>
+							<div>
+								<form id="formsrzi">
+									<div class="mark">
+										<div>
+											<label>国家：</label>
+											<input type="text" value="{$user_info.country}" name="country" <if condition="($user_info.is_edit eq 1)"> disabled </if> />
+										</div>
+										<div>
+											<label>街道地址：</label>
+											<input type="text" value="{$user_info.street_address}" name="address" <if condition="($user_info.is_edit eq 1)"> disabled </if> />
+										</div>
+									</div>
+									<div class="mark">
+										<div>
+											<label>邮政编码：</label>
+											<input type="text" value="{$user_info.postcode}" name="postcode" <if condition="($user_info.is_edit eq 1)"> disabled </if>/>
+										</div>
+										<div>
+											<label>电话号码：</label>
+											<input type="text" value="{$user_info.phone}" name="phone" <if condition="($user_info.is_edit eq 1)"> disabled </if>/>
+										</div>
+									</div>
+									<div class="mark">
+										<div>
+											<label>证件照正面：</label>
+											<if condition="($user_info.shenhestatus eq 0)">
+												<span class="resImg" id="usd1">上传文件</span>
+												<elseif condition="$user_info.shenhestatus eq 1"/>
+												<span class="resImg" >审核通过</span>
+												<elseif condition="$user_info.shenhestatus eq 2"/>
+												<span class="resImg" id="usd1">审核不通过</span>
+											    <else/>
+												<span class="resImg" >待审核</span>
+											</if>
+										</div>
+									</div>
+									<div class="mark">
+										<div>
+											<label>证件照反面：</label>
+											<if condition="($user_info.shenhestatus eq 0)">
+												<span class="resImg" id="usd2">上传文件</span>
+												<elseif condition="$user_info.shenhestatus eq 1"/>
+												<span class="resImg" >审核通过</span>
+												<elseif condition="$user_info.shenhestatus eq 2"/>
+												<span class="resImg" id="usd2">审核不通过</span>
+											    <else/>
+												<span class="resImg" >待审核</span>
+											</if>
+										</div>
+									</div>
+									<input type="hidden" id="pic1" name="pic1">
+									<input type="hidden" id="pic2" name="pic2">
+									<input type="hidden" id="token" name="token" value="{$user_info.token}">
+								</form>
+							</div>
+							<div class="mess">
+								<span>*填写完整身份证、地址验证、每日提款限额可提至$ 25,000美元</span>
+								<span>*上传证件照时，要以最新证件照为基准，尽量高清，以防别人伪造。</span>
+							</div>
+						</div>
+					</div>
+					<div class="solz">
+						<div class="contents">
+							<div class="conTitle">
+								<span>3、获取更高额度验证</span>
+							</div>
+							<div class="mess">
+								<span>*一旦您的个人资料被验证，并启用了<o>谷歌验证</o>的安全性，您可以通过<o>工单支持</o>人员提供更高的限制。</span>
+								<span>*个人或公司账户需要限额>25,000美元等值</span>
+							</div>
+						</div>
+					</div>
+					<div class="solz">
+						<div class="contents">
+							<div class="conTitle">
+								
+							</div>
+							<div>
+								<div class="mark ts">
+									<div style="visibility: hidden;">
+										<input type="checkbox" />我同意<o>使用条款</o>
+									</div>
+								</div>
+								<div class="mark markButton">
+									<button type="button" id="rsend">提交</button>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+
+			<div class="google" style="display: none;">
+				<if condition="($user_info.is_bind eq 0)">
+				<div class="solz" >
+					<div class="mark">
+						<img src="{:U('Home/user/qrcode', ['url'=>$user_info['qrCodeUrl']])}" id="qrImg">
+						<div class="mess">
+							<h3>秘钥：</h3>
+							<span id="qrspan">{$user_info.secret}</span>
+							<p>注意：每次启用2FA时，此代码都会更改。如果禁用2FA，此代码将不在有效</o>
+							</div>
+						</div>
+						<div class="mark markspan">
+							<h4>启用谷歌身份验证</h4>
+							<span style="margin: 6px 0 15px 0;display: block !important;">每次登入时，输入一个一次性代码，这样可以保护您的用户账号。</span>
+							<span style="margin-bottom: 15px;display: inline-block;width: 80px;">用户名:</span><span>{$user_info.email}</span>
+							<div>
+								<label>密码：</label>
+								<input type="password" id="pwd1" />
+							</div>
+							<div>
+								<label>验证码：</label>
+								<input type="text" id="code1" />
+							</div>
+							<div>
+								<img src="/Public/img/yy1.png" class="yy" data-status=0>
+								<span style="font-size: 12px !important;margin-bottom: 19px">我已经备份了我的16位数字键</span>
+								<input type="checkbox" style="visibility: hidden" id="check1"/>
+							</div>
+							<button type="button" id="sendGool">启用谷歌验证</button>
+						</div>
+					</div>
+					<else/>
+						<div class="solz">
+							<div class="ungoogle">
+								<label>验证码：</label>
+								<input type="text" id="uncode" />
+								<button type="button" id="unGool">解除谷歌验证</button>
+							</div>
+						</div>
+					</if>
+					<div class="mark markp">
+						<p>要使用2FA，请将QR码扫到手机上的Goole Authenticator应用程序中，或输入 QR 码下显示的16位数字键。输入Google Authenticator应用提供的六位数代码，然后输入您的账户密码，然后点击“启用谷歌验证”</p>
+						<a href="http://imtt.dd.qq.com/16891/2658652DEEA2A274C90E111135634E1F.apk?fsname=com.google.android.apps.authenticator2_4.74_2000074.apk&csr=1bbd">
+							<img src="/Public/img/aa1.png" style="    position: relative; top: 5px;margin-right: 5px;" target="_blank">
+							
+							Android
+						</a>
+						
+						<a href="https://itunes.apple.com/cn/app/google-authenticator/id388497605">
+							<img src="/Public/img/aa2.png"  style="    position: relative; top: 5px;margin-right: 5px;" target="_blank" >
+							IOS
+						</a>
+					</div>
+				</div>
+				<div class="upDatePass" style="display: none;">
+					<div>
+						<label for=""><o>*</o>当前密码</label>
+						<input type="text" id="oldpwd2" />
+						<label for=""><o>*</o>新密码</label>
+						<input type="password" id="pwd2" />
+						<label for=""><o>*</o>确认密码</label>
+						<input type="password" id="repwd2" />
+						<button type="button" id="upDataPas">修改密码</button>
+					</div>
+				</div>
+				<div class="yqzc" style="display:none"> 
+					<div>
+						<img src="/Public/img/yqh.png">
+						<h4>邀请好友获得免费比特币</h4>
+						<span>邀请一个买或卖 $ 100(¥662) 的数字货币或更多的朋友，你们都将获得10美元(¥66)d的免费比特币</span>
+					</div>
+					<div class="yqxq">
+						<div>
+							<h6>帮助增长数字货币社区并赚取免费比特币。</h6>
+							<p>使用数字货币更有趣的朋友！您可以通过共享提供的链接来邀请您的朋友。一旦您的朋友购买或出售数字货币或更多的￥100(¥663),您将获得$(10)(¥66)的免费比特币。</p>
+							<p>有问题吗？阅读更多在我们的<o>支持中心</o></p>
+						</div>
+						<div class="srcfx">
+							<a target="_blank" href="http://www.facebook.com/share.php?u=分享網址">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-tuite"></use>
+								</svg>
+								电报
+							</a>
+							<a target="_blank" href="http://www.facebook.com/share.php?u=www.chinexe.com">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-tuite"></use>
+								</svg>
+								电报
+							</a>
+							<a target="_blank" href="http://www.facebook.com/share.php?u=分享網址">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-tuite"></use>
+								</svg>
+								电报
+							</a>
+							<div>
+								<input type="text" id="aa" value="{$user_info.invite_url}"/>
+								<span id="copy">复制</span>
+							</div>
+							<div>
+								<input type="text" id="getEmail" />
+								<span id="Invitation">邀请</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="App/Home/View/comm/footer.html"/>
+		<form enctype="multipart/form-data" id="form5">
+		    <input type="file" id="file5" style="display:none" name="idcard">
+		    <input type="hidden" style="display:none" name="" value="1">
+		</form>
+		<form enctype="multipart/form-data" id="form6">
+		    <input type="file" id="file6" style="display:none" name="idcard">
+		    <input type="hidden" style="display:none" name="file" value="qr">
+		</form>
+		<input type="hidden" id="mess" data-errch="未确定数字键" data-Norequire="你的密码或验证码未填写">
+		<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+		<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+		<script src="/Public/js/lib/jquery-form/jquery-form.js"></script>
+		<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+		<script src="/Public/js/private/comm/comm.js"></script>
+		<script src="/Public/js/private/user/index.js"></script>
+	</body>
+	</html>

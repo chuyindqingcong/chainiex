@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/index/login.css" />
+</head>
+<body>
+$!{user.mail}
+<!--#springMessage('welcome')-->
+#parse('./comm/header.html')
+<div class="wraps">
+    <div>
+        <img src="/images/npc.png">
+    </div>
+    <div class="ptxt">
+        <p>首次浏览，了解更多细节请进</p>
+        <span class="onli" data-src="/help/navigation">新手指南>></span>
+    </div>
+    <div class="wrap">
+        <div class="wrap-lrg">
+            <h2>登录</h2>
+            <div class="regs">
+                <form action="/user/login" method="post" id="sig">
+                    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" >
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="邮箱" name="email" >
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="密码" name="pwd">
+                    </div>
+                    <div class="form-group">
+                        #if($!{errMsg})
+                        <span style="color: red;float: left;">$!{errMsg}</span>
+                        #end
+                        <label for="exampleInputEmail1" style="float: right; cursor: pointer" class="onli" data-src="/help/forget">忘记密码 ?</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="dl">登录</button>
+                        <button type="submit" style="display: none" id="login">登录</button>
+                    </div>
+                    <div class="form-group">
+                       还没有一个账户？  <span class="onli" data-src="/user/signup">立即注册</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    2017 CHAINIEX Inc.
+</div>
+<div class="zzcc">
+    <div class="ycdivv">
+        <div>
+            <div class="yctxt">
+                <h5>交易提示！</h5>
+                1 .本网站旨在不违反国家法律法规的前提下，为广大数字资产好者提供便利的交易场所。<br/>
+                2.凡以任何方式登录本网站或直接、间接使用本网站者，均视为自愿接受本网站声明及相关条款。<br/>
+                3.本网站使用者因为违反本声明的规定而触犯中华人民共和国法律的，一切后果自己负责，本网站不承担任何责任。<br/>
+                4.禁止使用本网站从事洗钱、走私等一切非法交易活动，若发现此类事件，本站将有权冻结账户，立即报送公安机关。<br/>
+                5.本声明未涉及的问题参见国家有关法律法规，当本声明与国家法律法规冲突时，以国家法律法规为准。<br/>
+            </div>
+            <div class="rediss">
+                <botton type="botton" class="rgbbluee">确认</botton>
+                <botton type="botton" class="rgbredd">取消</botton>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/index/login.js"></script>
+</body>
+</html>

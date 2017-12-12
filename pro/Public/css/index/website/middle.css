@@ -1,0 +1,47 @@
+.jgxs{
+	width: 100% !important;
+}
+.jgxs div span {
+    margin: 0px 7% !important;
+}
+.yss{
+	    width: 100% !important;
+}
+.yss p{
+	    padding: 5px;
+    box-sizing: border-box;
+}
+.bgimg{
+	width: 100% !important;
+}
+.bgimg>div{
+	width: 100% !important;
+}
+.fotdiv{
+	width: 100% !important;
+}
+.fotLeft{
+	width: 50% !important;
+}
+
+.fotRight{
+	width: 50% !important;
+}
+footer>div>div{
+	text-align: center;
+}
+.fotRight>div>div{
+	display: none;
+}
+.fotRight>div>div:nth-of-type(5) {
+    display: block;
+}
+.fotRight>div>div{
+	float: none !important;
+}
+.swpers{
+	display: none;
+}
+.fotImg{
+	display: none;
+}

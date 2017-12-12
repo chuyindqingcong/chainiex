@@ -1,0 +1,414 @@
+.wrap {
+    margin-top: 90px;
+    width: 1190px;
+    background: #fff;
+    overflow: hidden;
+}
+body{
+
+}
+.dev {
+    width:1190px;
+    padding:20px;
+    overflow: hidden;
+    width: 1190px;
+}
+.dev h4{
+    font-size: 16px;
+    font-weight: bold;
+}
+.deals>div{
+    float: left;
+}
+.deals>div:nth-of-type(1){
+    width:60%;
+}
+.deals>div:nth-of-type(2){
+    width:40%;
+}
+.deals>div>div{
+    border:1px solid #eee;
+    overflow: hidden;
+    padding: 20px;
+    font-size: 13px;
+}
+.deals:nth-of-type(1)>div>div{
+    height: 377px;
+}
+.deals h5{
+    display: inline-block;
+    border-bottom: 3px solid #6fb5e6;
+    margin-bottom: 0px;
+}
+.deals li {
+    margin-bottom: 23.7px;
+}
+.deals li span:nth-of-type(1){
+    color: #868686;
+    width:90px;
+    display: inline-block;
+}
+.mony{
+    color: #2dd866;
+}
+.dev-information>div{
+    border-right: none !important;
+}
+.dev-form>div{
+    border-left:none !important;
+}
+.dev-form .form-group{
+    overflow: hidden;
+}
+.dev-form textarea{
+    width:100%;
+    resize: none;
+    padding: 10px;
+    height:134px;
+}
+.btn-tj button{
+    border: 1px solid #37556e;
+    background: #fff;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    width: 90px;
+    line-height: 30px;
+    border-radius: 8px;
+    height: 30px;
+    margin-right: 84px;
+    color: #37556e;
+}
+.btn-tj{
+    text-align: right;
+}
+.btn-tj button:hover{
+    background:#37556e ;
+    color: #fff;
+}
+.delt>div{
+    width: 100% !important;
+}
+.delt p{
+    color: #e6b237;
+}
+.shouerr{
+    text-align: center;
+}
+.shouerr label{
+    width: 100%;
+    line-height: 25px;
+    float: left;
+}
+.dev-information b{
+    font-weight: normal;
+}
+.zzcc{
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    display: none;
+    top: 0;
+    z-index:99;
+}
+.zzcc::after{
+    content: " " ;
+
+}
+.rediss{
+    text-align: center;
+    overflow: hidden;
+    margin-top: 11px;
+}
+.rediss botton{
+    border: 1px solid #68ddd5;
+    color: #68ddd5;
+    width: 78px;
+    transition: all .3s ease-in-out;
+    margin-top: 12px;
+    margin-right: 16px;
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.rediss botton:hover{
+    color: #fff;
+    background: #68ddd5;;
+}
+.ycdivv{
+    position: fixed;
+    text-align: left;
+    z-index: 9999;
+    overflow-y: hidden;
+    width: 400px;
+    margin-top: -250px;
+    left: 50%;
+    top: 50%;
+    border-radius: 9px;
+    background: #fff;
+    overflow: auto;
+    height: 516px;
+    margin-left: -200px;
+}
+.ycdivv>div{
+    background: #fff;
+    padding: 30px;
+}
+.ycdivv span{
+    margin-left: 20px;
+}
+#erdss{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.yctxt {
+    font-size: 12px;
+    line-height: 19px;
+    overflow-y: hidden;
+}
+.yctxt h5{
+    font-size:16px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.wraps{
+    width:1180px;
+    margin:100px 20px 50px 0;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    padding: 0 30px;
+    background: #fff;
+}
+.wraps>div{
+    overflow: hidden;
+}
+.ads{
+    height: 140px;
+    color: #333;
+    border-bottom: 1px dashed #ddd;
+}
+.Specific{
+    padding: 30px 0 15px;
+    background: #fff;
+}
+.Specific img{
+    width:162px;
+    margin-right:30px;
+    height:162px;
+    float: right;
+}
+.Specific li span{
+    margin-right:30px;
+    font-size: 16px;
+    color: #333;
+    width: 73px;
+    display: inline-block;
+}
+.Specific li{
+    color: #8c8c8c;
+    font-size:16px;
+    font-family: Arial !important;
+    margin-bottom: 16px;
+}
+.Specific li b{
+    font-weight: normal;
+}
+.Specific li:nth-of-type(6) span{
+    margin-right:44px;
+}
+.sell{
+    padding: 0 0 30px;
+    width: 768px;
+    margin: 0;
+}
+.sell input{
+    border:1px solid #ddd;
+    width:340px;
+    background: transparent;
+    text-indent: 24px;
+    color: #333;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    font-size:14px;
+}
+.sell img{
+    margin-right:50px;
+    margin-top:20px;
+    float: left;
+}
+.sell input:nth-of-type(3){
+    margin-right: 0;
+}
+.sell textarea{
+    width: 560px;
+    color: #fff;
+    height:30px;
+    margin-top:32px;
+    border:none;
+    text-align: left;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+}
+.ycshou{
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    background: #68ddd5;
+    box-shadow: 0 0 8px #fff;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+    clear: both;
+}
+.textp{
+    background: #fff;
+    text-align: left;
+    padding:20px 20px;
+}
+.textp h4{
+    text-align: left;
+    font-size: 18px;
+    margin: 0 auto 13px ;
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+.textp p{
+    font-size:14px;
+    color:#828282;
+    margin: 0 0 4px 0;
+}
+.textp span{
+    color: #1da4db;
+    cursor: pointer;
+}
+.iconfont1{
+    float: left;
+    margin: 11px 31px 0;
+    color: #333333;
+    font-size: 23px;
+}
+.wrapsd{
+    width: 1180px;
+}
+.ads img{
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 50%;
+    margin-right:18px;
+}
+.adsy{
+    margin-top: 30px;
+    height: 80px;
+}
+.adsName{
+    width: 194px;
+    margin-left: 10px;
+    float: left;
+    overflow: hidden;
+}
+.adsName h5{
+    font-size: 16px;
+    margin:10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.adsName span{
+    width: 120px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: #e8f4ff;
+    font-size: 12px;
+    color:#50a6f3;
+    display: block;
+    margin:initial;
+    border-radius: 6px;
+}
+.adsy ul li{
+    width: 271px;
+    text-align: center;
+    float: left;
+    border-right:1px solid #ddd;
+    border-image: linear-gradient(to bottom,#fff,#ddd,#fff) 1 1
+}
+.adsy ul li:nth-of-type(3){
+    border-right: 0;
+}
+.adsy ul li span{
+    display: block;
+}
+.adsy ul li span:nth-of-type(1){
+    font-size: 18px;
+    margin:10px auto 13px;
+}
+.adsy ul li:nth-of-type(1) span:nth-of-type(1){
+    color: #58ddd5;
+}
+.adsy ul li:nth-of-type(2) span:nth-of-type(1){
+    color: #fca44d;
+}
+.adsy ul li:nth-of-type(3) span:nth-of-type(1){
+    color: #fd6d6c;
+}
+.adsy ul li:nth-of-type(4) span:nth-of-type(1){
+    color: #6dc825;
+}
+.Specific>div{
+    float: left;
+}
+.Specific o{
+    font-size: 16px;
+}
+.CNYS{
+    position: absolute;
+    right: 22px;
+    top: 11px;
+    color: #333;
+    font-weight: bold;
+}
+.nxgm{
+    font-size: 18px;
+    margin-bottom: 22px;
+    display: block;
+}
+.upimg{
+    position: absolute;
+    text-align: center;
+    right: 0;
+    cursor: pointer;
+    top: 0;
+}
+.upimg span{
+    font-size: 12px;
+    color: #fff;
+    height: 30px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid #fff;
+    width: 90px;
+    line-height: 30px;
+    display: inline-block;
+}
+.upimg img{
+    margin-bottom: 5px;
+    margin-top: 0;
+    float: right;
+    width: 228px;
+    height: 228px;
+    margin-right: 0;
+    display: inline-block;
+}

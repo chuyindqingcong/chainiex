@@ -1,0 +1,536 @@
+.ad {
+    padding:20px;
+    overflow: hidden;
+    width: 1190px;
+}
+.ad label {
+    text-align: right;
+}
+.deal{
+    clear: both;
+}
+.form-group{
+    padding: 3px;
+    overflow: hidden;
+}
+.orgi{
+    position: relative;
+}
+.orgi span{
+    position: absolute;
+    z-index: 9;
+    right: 26px;
+    top: 6px;
+    color: #9a9a9a;
+}
+.tstext{
+    position: relative;
+}
+.tstext .tal{
+    width: 50%;
+    float: left;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.tal span{
+    position: absolute;
+    right: 14px;
+    top: 8px;
+}
+.bhx{
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    background: #7d7b7b;
+    top: 8px;
+    right: 50%;
+    transform: rotate(28deg);
+}
+.tal:nth-of-type(1){
+    border-right:none;
+}
+.tal:nth-of-type(2){
+    border-left:none;
+}
+.tstext .tal input{
+    height: 34px;
+    appearance:normal;
+    outline:none;
+    border: none;
+    line-height: 34px;
+    transition: all .3s;
+    opacity: 1;
+    text-indent: 13px;
+    width: 100%;
+}
+
+.deal .form-group label{
+    line-height: 27px;
+    text-align: right;
+}
+.qhButt button{
+    color: #333;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 2px 19px;
+    margin-right: 15px;
+}
+.qhButt button:hover{
+    border-bottom: 3px solid#3989d1 !important;
+}
+.thisBut {
+    border-bottom: 3px solid#3989d1 !important;
+}
+.btn-tj{
+    text-align: right;
+    margin-right: 14px;
+    padding: 12px 0px 0px 0px;
+}
+.zcount{
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+    position: relative !important;
+    right: 0 !important;
+    text-align: left;
+}
+#erds{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+}
+#erds .error{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+#erds1{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    line-height: 50px;
+    height: 47px;
+}
+#erds1 .error{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+.zcount i{
+    font-style: normal;
+}
+.btn-tj button{
+    border: 1px solid #37556e;
+    background: #fff;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    width: 90px;
+    line-height: 40px;
+    border-radius: 8px;
+    height: 43px;
+    color: #37556e;
+}
+.btn-tj button:hover{
+    background:#37556e ;
+    color: #fff;
+}
+.form-group textarea{
+    height:60px;
+    width:100%;
+}
+.uplod img{
+    width: 160px;
+    float: right;
+}
+.footer{
+    margin-top: 20px;
+}
+
+/*新版class*/
+.wraps{
+    width:1180px;
+    background: #fff;
+    margin: 96px auto 40px;
+    box-shadow: 0 2px 8px #cac5c5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.ads{
+    height: 70px;
+    line-height: 70px;
+    padding-left: 219px;
+    border-bottom: 1px solid #ddd;
+}
+.ads span{
+    font-size:18px;
+    color: #828282;
+    width: 160px;
+    height: 67px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+.buy{
+    color: #333 !important;
+    border-bottom: 3px solid #68ddd5;
+}
+.ads h5{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0;
+    padding:0;
+    font-family: Arial !important;
+    font-style: italic;
+    font-size:20px;
+}
+.xs>div{
+    float: left;
+    width: 220px;
+    border:1px solid #bbb;
+    height: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    color: #bbb;
+}
+.xs>div:nth-of-type(2){
+    margin-right:0;
+}
+.zf>div{
+    float: left;
+    margin-right: 53px;
+    width: 75px;
+    border: 1px solid #eeeeee;
+    height: 75px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+.xs-img{
+    border:none !important;
+    color: #2595c9 !important;
+    background: url("/images/xs-12.png");
+}
+.ads h5 span{
+    position: relative;
+    top: -2px;
+    margin-left:10px;
+    font-size: 16px;
+    font-style: normal;
+}
+.BDWW {
+    overflow: hidden;
+    height:126px;
+}
+.BDWW li{
+    width: 182px;
+    font-size: 12px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    border-right: 1px solid #fff;
+    height: 126px;
+}
+.BDWW img{
+    width: 50px;
+    height: 50px;
+    margin: 20px 0 12px;
+}
+.BDWW span{
+    display: block;
+    color: #333 !important;
+    font-size: 16px !important;
+}
+.sell, .sellUser{
+    padding: 0 20px;
+}
+.pgone{
+    box-shadow: 0 0 4px #68ddd5;
+    background: #f0fbfb;
+}
+.gmm input{
+    width: 600px;
+    text-align: left;
+    text-indent: 24px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 16px;
+    border: 1px solid #bdbdbd;
+}
+.sell input:nth-of-type(3){
+    width:200px;
+    margin-right: 0;
+}
+.sellUser input{
+    margin-right: 20px;
+    border:none;
+    width:110px;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    font-size:14px;
+    border-bottom:1px solid #bbb
+}
+.sellUser input:nth-of-type(2){
+    width:330px;
+    margin-right: 0;
+}
+.sell>div>input{
+    width: 80px;
+    margin-right:0;
+}
+.sell>div>input:nth-of-type(1){
+    margin-right:10px;
+}
+.sell>div>input:nth-of-type(2){
+    margin-left:10px;
+}
+.sell>div>img{
+    float: left;
+    width: auto;
+    position: relative;
+    top: 20px;
+}
+.zf{
+    margin-top:25px;
+    padding: 0 20px;
+}
+.zf1{
+    text-align: center;
+}
+.zf1 img{
+    float: none !important;
+}
+.zf1 img:nth-of-type(3){
+    margin-right:0 ;
+}
+.zf img{
+    width: 30px;
+    height: 30px;
+    margin: 12px auto 6px;
+    cursor: pointer;
+}
+.imgsUpdate{
+    width: 153px!important;
+    height: 50px!important;
+    margin: 0!important;
+    font-size: 16px;
+    cursor: pointer;
+}
+.ppd{
+    border:none !important;
+}
+.zf img:nth-of-type(4){
+    margin-right: 0;
+}
+.reg>div{
+    overflow: hidden;
+    padding: 30px 10px;
+}
+.xs{
+    margin-top:25px;
+    padding: 0 20px;
+}
+.xs img{
+    float: left;
+    width:220px;
+    height:40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.xs img:nth-of-type(2){
+    margin-right: 0;
+}
+.remark{
+    margin-top:25px;
+    padding: 0 20px;
+}
+.remark textarea{
+    width:460px;
+    padding: 6px 6px 6px 12px;
+    height: 60px;
+    border-color: #bbb;
+}
+.sendtj{
+    text-align: center;
+    position: relative;
+    margin-left: 128px;
+}
+.sendtj>div{
+    height: 50px;
+    overflow: hidden;
+}
+.sendtj button{
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    margin-top:10px;
+    color: #fff;
+    border-radius: 4px;
+    background: #68ddd5;
+}
+.iconfont1{
+    float: left;
+    color: #BBBBBB;
+    width: 20px;
+    margin: 0 18px;
+    position: relative;
+    top: 18px;
+    font-size: 20px;
+}
+.gm{
+    padding-top: 0 !important;
+}
+.gmm{
+    height: auto;
+    line-height: 52px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom:15px;
+}
+.gmm label{
+    width: 130px;
+    float: left;
+    font-size: 16px;
+}
+.gmm label o{
+    color: red;
+    margin-right:10px;
+}
+.gmm>div{
+    width:600px;
+    float: left;
+}
+.gmm span{
+    position: absolute;
+    right: 25px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+.gmms input{
+    width:270px !important;
+}
+.and{
+    right:357px !important;
+}
+.gmm select{
+    height: 50px;
+    text-indent: 24px;
+    width: 100%;
+    color: #333;
+    border: 1px solid #bdbdbd;
+    font-size: 16px;
+}
+.gmm option{
+    height: 50px;
+}
+.gmm textarea{
+    width: 100%;
+    height: 127px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+}
+.czjm{
+    display: none;
+}
+.czbg{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 999999;
+}
+.qqcz{
+    position: fixed!important;
+    width: 400px!important;
+    height: 70px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 6px;
+    line-height: 70px;
+    background: #fff;
+    z-index: 99999999;
+    top: 50%;
+    color: #333;
+    left: 50%;
+    margin-left: -200px!important;
+    margin-top: -35px;
+    display: block;
+}
+.zjicon{
+    color:#68ddd5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.container{
+    position: fixed!important;
+    width: 380px!important;
+    display: none;
+    height: 580px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #fff;
+    z-index: 99999999;
+    top: 100px;
+    left: 50%;
+    margin-left: -190px!important;
+}
+.container h5 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #68ddd5;
+    font-weight: 400;
+    text-indent: 24px;
+}
+.container h5 .icon {
+    float: right;
+    margin-right: 30px;
+    font-size: 19px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.container>div{
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container img{
+    width: 100%;
+    border: 1px solid #ddd;
+}
+.container input{
+    display: block;
+    width: 100%;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.container button{
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    background: #68ddd5;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}

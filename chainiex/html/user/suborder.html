@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/user/suborder.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wraps">
+    <div class="ads">
+        <h5>CHAINIEX<span>工单页</span></h5>
+    </div>
+    <div class="gdy">
+        <ul>
+            <li data-status="1" class="ggdy">充值</li>
+            <li data-status="2">提现</li>
+            <li data-status="3">纠纷</li>
+            <li data-status="4">认证</li>
+        </ul>
+    </div>
+    <div class="form">
+        <form id="form1">
+            <ul>
+                <li>
+                    <span>标 题</span>
+                    <input type="text" name="title" placeholder="标题" id="title">
+                </li>
+                <li class="bdsh">
+                    <span>订单编号</span>
+                    <input type="text" name="tradeId" placeholder="工单号" id="tradeId">
+                </li>
+                <li>
+                    <span class="ds">描 述</span>
+                    <textarea rows="3" name="content" placeholder="问题描述" id="content"></textarea>
+                </li>
+                <li class="dds">
+                    <span class="dd">附 件</span>
+                    <div id="images"></div>
+                    <button type="button" id="sub">提交附件</button>
+                    <svg class="icon" aria-hidden="true" style="color: #FB6565;font-size: 22px;position: relative;top: 4px;margin-right: 10px;">
+                        <use xlink:href="#icon-weibiaoti-"></use>
+                    </svg> <i>图片大小不可超过2M</i>
+                </li>
+                <li style="text-align: center"><button type="button" class="resend">提交</button></li>
+                <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+                <input type="hidden" id="imgs" name="imgs">
+                <input type="hidden" name="type" value="1" id="types">
+            </ul>
+        </form>
+    </div>
+</div>
+<form enctype="multipart/form-data" id="form2">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+    <input type="file" id="file1" style="display:none" name="file">
+    <input type="hidden" style="display:none" name="type" value="qr">
+</form>
+<input type="hidden" id="errorMess" data-ok="提交成功" data-error="工单填写错误" data-gdh="工单号填写错误，请仔细检查" data-title="请填写标题"  data-content="请填写内容">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-form/jquery-form.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/user/suborder.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/quoted/index.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wraps">
+    <div class="ads">
+        <span class="buy">在线出售</span>
+        <span>在线购买</span>
+    </div>
+    <div style="width: 760px">
+        <div class="labqh">
+            <form class="reg" id="reg">
+                <div class="BDWW">
+                    <ul id="BDWN">
+                        <li value="BTC"  data-b="BTC" class="pgone" data-status="1"><img src="/images/BTC.png"></li>
+                        <li value="DASH" data-b="DASH"><img src="/images/DASH.png"></li>
+                        <li value="NEM" data-b="NEM"><img src="/images/NEM.png"></li>
+                        <li value="WAVES" data-b="WAVES" style="border-right: 0"><img src="/images/WAVES.png"></li>
+                        <input type="hidden" name="coin" id="coin" value="BTC">
+                    </ul>
+                </div>
+                <div class="gm">
+                    <div class="gmm">
+                        <label><o>*</o>出售数量</label>
+                        <div>
+                            <input type="text" placeholder="出售数量" name="amount" id="amount"  class="yesNum">
+                            <span class="pgTo">BTC</span>
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>购买单价</label>
+                        <div>
+                            <input type="text" placeholder="出售单价" name="price" id="price"  class="yesNum">
+                            <span>CNY</span>
+                        </div>
+                    </div>
+                    <div class="gmm gmms">
+                        <label><o>*</o>最小限额</label>
+                        <div>
+                            <input type="text" placeholder="最小数量"  id="minAmount" name="minAmount" class="yesNum">
+                            <svg class="icon iconfont1" aria-hidden="true">
+                                <use xlink:href="#icon-zhuanhuan"></use>
+                            </svg>
+                            <input type="text" placeholder="最小限额" id="minb" name="minmin"  class="yesNum">
+                            <span class="and pgTo">BTC</span>
+                            <span>CNY</span>
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>支付方式</label>
+                        <div>
+                            <select id="alip">
+                                <option data-val="ALIPAY">支付宝</option>
+                                <option  data-val="WECHAT">微信支付</option>
+                                <option data-val="BANK">银行卡</option>
+                            </select>
+                            <input type="hidden" name="payType" id="payType" value="ALIPAY">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>收款人</label>
+                        <div>
+                            <input type="text" placeholder="收款人" name="payName" id="payname">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>收款账号</label>
+                        <div>
+                            <input type="text" placeholder="收款账号" name="payId" id="payId">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>支付限时</label>
+                        <div>
+                            <select id="xs">
+                                <option data-val="15">15分钟</option>
+                                <option  data-val="30">30分钟</option>
+                            </select>
+                            <input type="hidden" name="limitTime" id="limitTime" value="15">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label>留言</label>
+                        <div style="height: 127px;">
+                            <textarea placeholder="请填写您的其他要求或信息" class="col-sm-8" name="remark" id="remark"></textarea>
+                        </div>
+                    </div>
+                    <div class="gmm erwei">
+                        <label><o>*</o>支付二维码</label>
+                        <img src="/images/upimg.png" class="imgsUpdate">
+                        <input type="hidden" name="qr" value="" id="qr">
+                    </div>
+                    <div class="gmm">
+                        <div class="sendtj">
+                            <div>
+                                <span class="zcount">总金额 : <i id="zcount"></i></span>
+                                <b id="erds"></b>
+                            </div>
+                            <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+                            <input type="hidden" name="type" value="ask" >
+                            <button type="submit" id="tfrom1">提交</button>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="sell">-->
+                    <!--<input type="text" placeholder="出售数量" name="amount" id="amount"  class="yesNum">-->
+                    <!--<input type="text" placeholder="出售单价" name="price" id="price"  class="yesNum">-->
+                    <!--<div>-->
+                        <!--<input type="text" placeholder="最小限额"  id="minAmount" name="minAmount" class="yesNum">-->
+                        <!--<svg class="icon iconfont1" aria-hidden="true">-->
+                            <!--<use xlink:href="#icon-zhuanhuan"></use>-->
+                        <!--</svg>-->
+                        <!--<input type="text" placeholder="最小CNY" id="minb" name="minmin"  class="yesNum">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </form>
+        </div>
+        <div class="labqh" style="display: none">
+            <form class="reg" id="reg2">
+                <div class="BDWW">
+                    <ul id="BDWN1">
+                        <li value="BTC"  data-b="BTC" class="pgone" data-status="1"><img src="/images/BTC.png"></li>
+                        <li value="DASH" data-b="DASH"><img src="/images/DASH.png"></li>
+                        <li value="NEM" data-b="NEM"><img src="/images/NEM.png"></li>
+                        <li value="WAVES" data-b="WAVES" style="border-right: 0"><img src="/images/WAVES.png"></li>
+                        <input type="hidden" name="coin" id="coin1" value="BTC">
+                    </ul>
+                </div>
+                <div class="gm">
+                    <div class="gmm">
+                        <label><o>*</o>购买数量</label>
+                        <div>
+                            <input type="text" placeholder="出售数量" name="amount" id="amount1"  class="yesNum">
+                            <span class="pgTo1">BTC</span>
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>购买单价</label>
+                        <div>
+                            <input type="text" placeholder="出售单价" name="price" id="price1"  class="yesNum">
+                            <span>CNY</span>
+                        </div>
+                    </div>
+                    <div class="gmm gmms">
+                        <label><o>*</o>最小限额</label>
+                        <div>
+                            <input type="text" placeholder="最小数量"  id="minAmount1" name="minAmount" class="yesNum">
+                            <svg class="icon iconfont1" aria-hidden="true">
+                                <use xlink:href="#icon-zhuanhuan"></use>
+                            </svg>
+                            <input type="text" placeholder="最小限额" id="minb1" name="minmin"  class="yesNum">
+                            <span class="and pgTo1">BTC</span>
+                            <span>CNY</span>
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>支付方式</label>
+                        <div>
+                            <select id="alip1">
+                                <option data-val="ALIPAY">支付宝</option>
+                                <option  data-val="WECHAT">微信支付</option>
+                                <option data-val="BANK">银行卡</option>
+                            </select>
+                            <input type="hidden" name="payType" id="payType1" value="ALIPAY">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label><o>*</o>支付限时</label>
+                        <div>
+                            <select id="xs1">
+                                <option data-val="15">15分钟</option>
+                                <option  data-val="30">30分钟</option>
+                            </select>
+                            <input type="hidden" name="limitTime" id="limitTime1" value="15">
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <label>留言</label>
+                        <div style="height: 127px;">
+                            <textarea placeholder="请填写您的其他要求或信息" class="col-sm-8" name="remark" id="remark1"></textarea>
+                        </div>
+                    </div>
+                    <div class="gmm">
+                        <div class="sendtj">
+                            <div>
+                                <span class="zcount">总金额 : <i id="zcount1"></i></span>
+                                <b id="erds1"></b>
+                            </div>
+                            <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}">
+                            <input type="hidden" name="type" value="bid" >
+                            <button type="submit" id="gfrom1">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<form enctype="multipart/form-data" id="form2">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+    <input type="file" id="file1" style="display:none" name="file">
+    <input type="hidden" style="display:none" name="type" value="qr">
+</form>
+<div class="czjm">
+    <div class="czbg"></div>
+    <div class="qqcz">
+        您的<span class="czicon">BTC</span>已不足 , <span class="zjicon" data-icon="BTC">去充值>></span>
+    </div>
+    <div class="container">
+        <h5>充值地址 <svg class="icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use>
+        </svg></h5>
+        <div>
+            <img src="" id="czimgs">
+            <input type="text" id="aa">
+            <button type="button" id="copy">复制到剪切板</button>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="errorMess" data-required="您未输入" data-min="不能低于200" data-number="只能输入数字" data-max="不能大于出售数量" data-zx="最小限额不能大于数量"
+       data-cg="创建成功" data-no="上个单未完成交易" data-ye="您的余额不足" data-fwq="服务器异常，请刷新页面在试试">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/jquery-form/jquery-form.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/quoted/index.js"></script>
+</body>
+</html>

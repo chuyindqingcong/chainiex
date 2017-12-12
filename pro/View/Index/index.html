@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>OPENIEX</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="openiex,交易所,BTC,coin" name="keywords">
+<!--		<script src="/Public/js/lib/fastclick/fastclick.js"></script>待用-->
+		<link rel="stylesheet" media="screen and (max-width: 600px)" href="/Public/css/index/small.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1000px)" href="/Public/css/index/middle.css" />
+	    <link rel="stylesheet" media="screen and (min-width: 1001px)" href="/Public/css/index/pc.css" />
+	    <link rel="stylesheet" href="/Public/css/comm/comm.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/iconfont/iconfont.css" />
+	    <link rel="stylesheet" href="/Public/js/lib/jqueryNanoscroller/nanoscroller.css" />
+	    <link rel="stylesheet" href="/Public/css/index/index.css" />
+	</head>
+	<body>
+		<!--<script>
+			  FastClick.attach(document.body);
+		</script>-->
+		<include file="App/Home/View/comm/header.html"/>
+		<if condition ="(LANG_SET eq 'en-us')">
+			<input type="hidden" id="dhi" data-id=2 data-name="{$nick}">
+		<else/>
+			<input type="hidden" id="dhi" data-id=1 data-name="{$nick}">
+		</if>
+		<empty name="user_id">
+			<input type="hidden" id="hidden" value=0>		
+		<else/>
+			<input type="hidden" id="hidden" value=1>
+		</empty>
+		<div class="wraps">
+			<div class="wrap">
+				<div class="upTimeMess sloz">
+					<div class="lpx">
+						<div class="timeTitle">
+							<h2><b class="coinName">XRP</b> / BTC</h2>
+							<ul>
+								<li>
+									<span>{$Think.lang.last_price}</span>
+									<span class="upwindow">0</span>
+								</li>
+								<li>
+									<span>{$Think.lang.24h_change}</span>
+									<span class="timeTo upwindow">0%</span>
+								</li>
+								<li>
+									<span>{$Think.lang.24h_high}</span>
+									<span class="upwindow">0</span>
+								</li>
+								<li>
+									<span>{$Think.lang.24h_low}</span>
+									<span class="upwindow">0</span>
+								</li>
+								<li>
+									<span>{$Think.lang.24h_btc_total}：<i class="upwindow">0</i></span>
+									<span style="margin-top: 0">{$Think.lang.24h_xrp_total}：<i class="upwindow">0</i></span>
+								</li>
+							</ul>
+						</div>
+						<div class="timezst">
+						<!-- 	<div class="divLan">
+								 <button class="lanzq" data-lang="zh_CN">中文</button>
+						    	<button class="lanzq" data-lang="en">English</button>
+							</div> -->
+							<div id="container" style="width:100%;max-width:1190px;height:400px;position: relative;top: -41px;z-index: 2">图表加载中...</div>
+						</div>
+						<!-- <div class="selectIcon">
+
+						</div> -->
+					</div>
+				</div>
+				<div class="mark">
+					<div class="rpx">
+						<div class="markTitle">
+							<h3 class="h3active">
+								<span class="tthis">BTC {$Think.lang.exchange}</span>
+			<!-- 					<span>USDT</span> -->
+							</h3>
+							<div class="soso">
+								<input type="" id="souSeach" placeholder="{$Think.lang.search}" />
+								<svg class="icon iconfont1" aria-hidden="true">
+								  <use xlink:href="#icon-sousuo"></use>
+								</svg>
+							</div>	
+						</div>
+						<div class="btcUsd">
+							<div class="btcsc">
+								<ul>
+									<!-- <li>
+										<svg class="icon" aria-hidden="true">
+										  <use xlink:href="#icon-xing"></use>
+										</svg>
+									</li> -->
+									<li>{$Think.lang.coin}</li>
+									<li>{$Think.lang.price}</li>
+									<li>{$Think.lang.volume}</li>
+									<li>{$Think.lang.change}</li>
+									<li>{$Think.lang.name}</li>
+								</ul>
+								<div id="abut" class="nano nsrzo">
+									<div class="nano-content" data-ago="BTC">
+										
+									</div>
+								</div>
+							</div>
+						<!-- 	<div class="btcsc" style="display: none;">
+								<ul> -->
+								<!-- 	<li>
+									<svg class="icon" aria-hidden="true">
+										  <use xlink:href="#icon-xing"></use>
+										</svg>
+									</li> -->
+							<!-- 		<li>{$Think.lang.coin}</li>
+									<li>{$Think.lang.price}</li>
+									<li>{$Think.lang.volume}</li>
+									<li>{$Think.lang.change}</li>
+									<li>{$Think.lang.name}</li>
+								</ul>
+								<div id="abut4" class="nano nsrzo">
+									<div class="nano-content" data-ago="USDT">
+										
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap">
+				<div class="business sloz">
+					<div class="llpx">
+						<div class="slozMark lpt">
+							<div class="ozlpx lpd shouczs1">
+								<h3>购买 <x class="coinName">XRP</x> <span><b class="ozlo">0 BTC</b> | <o class="shouczz1">{$Think.lang.deposit}</o></span></h3>
+								<!--<h4>当前卖价: <span>0.000000123456BTC</span></h4>-->
+								<div>
+									<form id="form1">
+										<ul>
+											<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="buyprice" id="buy1pri" value="0.00000000" /><o>BTC</o></li>
+											<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum" name="buynum" id="buy1num"   value="0.00000000"/> <o><b class="coinName">XRP</b></o></li>
+											<li><label>{$Think.lang.total}</label><input type="text" id="buy1sum" disabled  placeholder="0" /><o>BTC</o></li>
+										</ul>
+										<input type="hidden" class="setcoin1" name="currency_id">
+									</form>
+								</div>
+								<button type="button" class="but but1">购买</button>
+								<div class="bds">
+									<span>费率：<o class='fees'>0</o> %</span>
+									<span class="fsp1">{$Think.lang.withdrawal}</span>
+								</div>
+							</div>
+							<div class="czz ozlpx lpd czz1">
+								<div>
+									充值<o>BTC</o> | <b class="ozlo2">0</b>
+								</div>
+								<img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg">
+								<div>
+									发送非<o>BTC</o>资产充值到<o>BTC</o>地址后不可找回！
+								</div>
+								<div class="cop"><input type="text" id="copVal" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
+									<span id="copy" class="copys">
+										<svg class="icon" aria-hidden="true">
+									  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fuzhi"></use>
+										</svg>
+									</span>
+								</div>
+								<svg class="icon delczz delc1" aria-hidden="true">
+								  <use xlink:href="#icon-guanbi"></use>
+								</svg>
+							</div>
+							<div class="fss ozlpx lpd fss1">
+								<div>
+									发送<o>BTC</o> | <b class="ozlo3">0</b>
+								</div>
+								<div class="txs">
+									<label for="">接收地址:<span>正确提现地址，否则资产不可找回</span></label>
+									<div class="txsSave">
+										<input type="text" id="senInput"/>
+										<span>+</span>
+										<svg class="icon iconft" aria-hidden="true">
+										  <use xlink:href="#icon-xialajiantou"></use>
+										</svg>
+									</div>
+									<div class="ulisadd">
+											<ul>
+												<li>123123</li>
+												<li>sadsad</li>
+											</ul>
+										</div>
+									<label for="">量:</label>
+									<div class="txtc">
+										<input type="text" />
+									</div>
+									<div class="txjs" style="margin-top: 11px">
+										<label for="">手续费</label>
+										<div>
+											<span>000000</span>
+											<span>BTC</span>
+										</div>
+									</div>
+									<div class="txjs">
+										<label for="">总计:</label>
+										<div>
+											<span>000000</span>
+											<span>BTC</span>
+										</div>
+									</div>
+									<button type="button" class="utx" id="utx">确认发送</button>
+									<svg class="icon delczz deld1" aria-hidden="true">
+									  <use xlink:href="#icon-guanbi"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="slozMark lpt">
+							<div class="ozlpx lpd shouczs2">
+								<h3>出售 <x class="coinName">XRP</x> <span><b class="ozlo">0 BTC</b> | <o class="shouczz2">{$Think.lang.deposit}</o></span></h3>
+								<!--<h4>当前买价: <span>0.000000123456BTC</span></h4>-->
+								<div>
+									<form id="form2">
+										<ul>
+											<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="sellprice" id="buy2pri"  value="0.00000000" /><o>BTC</o></li>
+											<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum"  name="sellnum" id="buy2num"  value="0.00000000"/><o class="coinName">XRP</o></li>
+											<li><label>{$Think.lang.total}</label><input type="text" id="buy2sum" disabled   placeholder="0"/><o>BTC</o></li>
+										</ul>
+											<input type="hidden" class="setcoin1" name="currency_id">
+									</form>
+								</div>
+								<button type="button" class="but but2">出售</button>
+								<div class="bds">
+									<span>费率：<o  class='fees'>0</o> %</span>
+									<span class="fsp2">{$Think.lang.withdrawal}</span>
+								</div>
+							</div>
+							<div class="czz ozlpx lpd czz2">
+								<div>
+									充值<o class="coinName">BTC</o> | <b class="ozlo2">0</b>
+								</div>
+								<img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg">
+								<div>
+									发送非<o class="coinName">BTC</o>资产充值到<o class="coinName">BTC</o>地址后不可找回！
+								</div>
+								<div class="cop"><input type="text" id="copVal" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
+									<span id="copy" class="copys">
+										<svg class="icon" aria-hidden="true">
+									  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fuzhi"></use>
+										</svg>
+									</span>
+								</div>
+								<svg class="icon delczz delc2" aria-hidden="true">
+								  <use xlink:href="#icon-guanbi"></use>
+								</svg>
+							</div>
+							<div class="fss ozlpx lpd fss2">
+								<div>
+									发送<o class="coinName">BTC</o> | <b class="ozlo3">0</b>
+								</div>
+								<div class="txs">
+									<label for="">接收地址:<span>填写正确地址，否则资产不可找回</span></label>
+									<div class="txsSave">
+										<input type="text" id="senInput"/>
+										<span>+</span>
+										<svg class="icon iconft" aria-hidden="true">
+										  <use xlink:href="#icon-xialajiantou"></use>
+										</svg>
+									</div>
+									<div class="ulisadd">
+											<ul>
+												<li>123123</li>
+												<li>sadsad</li>
+											</ul>
+										</div>
+									<label for="">量:</label>
+									<div class="txtc">
+										<input type="text" />
+									</div>
+									<div class="txjs" style="margin-top: 11px">
+										<label for="">手续费</label>
+										<div>
+											<span>000000</span>
+											<span>BTC</span>
+										</div>
+									</div>
+									<div class="txjs">
+										<label for="">总计:</label>
+										<div>
+											<span>000000</span>
+											<span>BTC</span>
+										</div>
+									</div>
+									<button type="button" class="utx">确认发送</button>
+									<svg class="icon delczz deld2" aria-hidden="true">
+									  <use xlink:href="#icon-guanbi"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="smanllmm">
+							<div class="ozlpx">
+								<div class="udd pyld">
+									<span class="ttthis">购买 <o class="coinName"></o></span>
+									<span>出售 <o class="coinName"></span>
+								</div>
+								<div class="mmp">
+									<div class='uda'>
+										<span>
+											<b class="ozlo orgur">0</b>
+											<b class="orpt onli" data-src="{:U('Home/wallet/index')}">充值</b>
+										</span>
+										<div>
+											<form id="form3">
+												<ul>
+													<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="buyprice" id="buy3pri"  value="0.00000000"/><o>BTC</o></li>
+													<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum" name="buynum" id="buy3num"  value="0.00000000"/> <o class="coinName">XRP</o></li>
+													<li><label>{$Think.lang.total}</label><input type="text"  id="buy3sum" disabled  placeholder="0"/><o>BTC</o></li>
+												</ul>
+												<input type="hidden" class="setcoin1" name="currency_id">
+											</form>
+										</div>
+										<button type="button" class="mrbot mrbot1">购买</button>
+										<div class="bds">
+											<span>费率：<o  class="fees">0%</o></span>
+											<span class="onli" data-src="{:U('Home/wallet/index')}">提币</span>
+										</div>
+									</div>
+									<div style="display: none;"  class='uda'>
+										<span>
+											<b class="ozlo orgur">0</b>
+											<b class="orpt onli" data-src="{:U('Home/wallet/index')}">充值</b>
+										</span>
+										<div>
+											<form id="form4">
+												<ul>
+													<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="sellprice" id="buy4pri"  value="0.00000000"/><o>BTC</o></li>
+													<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum"  name="sellnum" id="buy4num"  value="0.00000000"/><o class="coinName">XRP</o></li>
+													<li><label>{$Think.lang.total}</label><input type="text" name="" id="buy4sum" disabled  placeholder="0" /><o>BTC</o></li>
+													<input type="hidden" class="setcoin1" name="currency_id">
+												</ul>
+
+											</form>
+										</div>
+										<button type="button" class="mcbot mrbot2">出售</button>
+										<div class="bds">
+											<span class="fee">费率：<o  class="fees">0%</o></span>
+											<span class="onli" data-src="{:U('Home/wallet/index')}">提币</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slozMark">
+							<div class="ozlpx">
+								<h3>购买订单 <span>{$Think.lang.total}：<o class="os1">0.5412</o> BTC</span></h3>
+								<div class="btcsc3">
+									<ul>
+										<li>BTC</li>
+										<li><b class="coinName">XRP</b></li>
+										<li>{$Think.lang.price}</li>
+									</ul>
+									<div id="abut2" class="nano copyGetLi">
+										<div class="nano-content">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slozMark">
+							<div class="ozlpx">
+								<h3>出售订单 <span>{$Think.lang.total}：<o class='os2'>45216 </o> <b class="coinName">XRP</b></span></h3>
+								<div class="btcsc3">
+									<ul>
+										<li>{$Think.lang.price}</li>
+										<li><b class="coinName">XRP</b></li>
+										<li>BTC</li>
+									</ul>
+									<div id="abut1" class="nano copyGetLi">
+										<div class="nano-content">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<empty name="user_id">
+							
+						<else/>
+							<div class="sloz">
+								<div class="lpx">
+									<div class="suerDd udd">
+										<span class="tthis">{$Think.lang.my_order}</span> |
+										<span>{$Think.lang.my_trade_record}</span>
+										<svg class="icon iconxia" aria-hidden="true">
+										  <use xlink:href="#icon-xiala1"></use>
+										</svg>
+									</div>
+									<div class="user_show">
+										<div>
+											<div class="btcsc2">
+												<ul>
+													<li>{$Think.lang.date}</li>
+													<li>{$Think.lang.price}(BTC)</li>
+													<li>{$Think.lang.volume}(<b class="coinName">1</b>)</li>
+													<li>{$Think.lang.total}(BTC)</li>
+													<li>取消</li>
+												</ul>
+												<div id="abut5" class="show nano">
+													<div class="nano-content">
+														
+													</div>
+												</div>
+											</div>
+										</div>
+										<div style="display: none;">
+											<div class="btcsc2">
+												<ul>
+													<li>{$Think.lang.date}</li>
+													<li>{$Think.lang.price}(BTC)</li>
+													<li>{$Think.lang.volume}(<b class="coinName">1</b>)</li>
+													<li>{$Think.lang.total}(BTC)</li>
+												</ul>
+												<div id="abut6" class="show nano">
+													<div class="nano-content">
+														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</empty>
+						<div class="slozco sloz">
+							<div class="lpx">
+								<h3 style="padding: 0 15px 0 15px;">{$Think.lang.transaction}
+								<svg class="icon iconxia" aria-hidden="true">
+									  <use xlink:href="#icon-xiala1"></use>
+									</svg></h3>
+								<div class="btcsc4">
+									<ul>
+										<li>{$Think.lang.date}</li>
+										<li>{$Think.lang.price}(BTC)</li>
+										<li>{$Think.lang.volume}(<b class="coinName">1</b>)</li>
+										<li>{$Think.lang.total}(BTC)</li>
+									</ul>
+									<div id="abut3" class="nano">
+										<div class="nano-content">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ryMark">
+					<div class="mark">
+						<empty name="user_id">
+							<div class="charts lpx">
+								<div class="qq">
+									<h3>在线聊天</h3>
+									
+									<svg class="icon iconxia" aria-hidden="true">
+										<use xlink:href="#icon-xiala1"></use>
+									</svg>
+									<div>
+										<span class="hoverMe" data-us=0>中文
+											<svg class="icon" aria-hidden="true">
+												<use xlink:href="#icon-xialajiantou"></use>
+											</svg>
+										</span>
+										<div class="qhlun">
+											<ul>
+												<li><span class="lang-qh" data-status="1">中文</span><span class="X2" data-us=2>X2</span></li>
+												<li><span class="lang-qh" data-status="2">英文</span><span class="X2" data-us=2>X2</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="message">
+									<div id="abut8" class="nano">
+										<div class="nano-content">
+										
+										</div>
+									</div>
+								</div>
+								<div class="textsend">
+									<div>
+									使用您的账户登录 <t class="onli" data-src="/Home/index/login.html">开始聊天。</t>
+									</div>
+								</div>
+							</div>
+						<else/>
+							<div class="charts lpx">
+								<div class="qq">
+									<h3>在线聊天</h3>
+									
+									<svg class="icon iconxia" aria-hidden="true">
+										<use xlink:href="#icon-xiala1"></use>
+									</svg>
+									<div>
+										<span class="hoverMe" data-us=0>中文
+											<svg class="icon" aria-hidden="true">
+												<use xlink:href="#icon-xialajiantou"></use>
+											</svg>
+										</span>
+										<div class="qhlun">
+											<ul>
+												<li><span class="lang-qh" data-status="1">中文</span><span class="X2" data-us=2>X2</span></li>
+												<li><span class="lang-qh" data-status="2">英文</span><span class="X2" data-us=2>X2</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="message">
+									<div id="abut8" class="nano">
+										<div class="nano-content">
+										
+										</div>
+									</div>
+								</div>
+								<div class="textsend">
+									<input type="text" id="socketMess" placeholder="聊点什么呗......">
+									<!-- <img src="/Public/img/rsend.png" class="imgRs"> -->
+									<span class="imgRs">发送</span>
+								</div>
+							</div>
+						</empty>
+						
+					</div>
+					<div class="mark notice">
+						<div class="rpx">
+							<div class="uddd">
+								<span>{$Think.lang.announcement}</span>
+								<a target="_blank" class="tuite" href="http://www.facebook.com/share.php?u=分享網址">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-tuite"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="adNot">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<footer class="footer">
+			<div class="fotLeft">
+				<div>
+					<p>OPENIEX</p>
+					<span>CopyRight © 2017 China</span>
+				</div>
+			</div>
+			<div class="fotRight">
+				<div>
+					<div>
+						<h6>关于我们</h6>
+						<ul>
+							<li>联系我们</li>
+							<li>费率</li>
+							<li>隐私政策</li>	
+							<li>使用条款</li>			
+						</ul>
+					</div>
+					<div>
+						<h6>支持</h6>
+						<ul>
+							<li>工单支持</li>
+							<li>资源</li>		
+						</ul>
+					</div>
+					<div>
+						<h6>新闻</h6>
+						<ul>
+							<li>公告</li>
+							<li>推特</li>
+							<li>微博</li>			
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>-->
+		<div class="uds ud1">
+			<div class="hidezz"></div>
+			<div class="chong">
+				<div class="czdz">
+					<span>购买<l class="coinName">BTC</l></span>
+					<svg class="icon hideD" aria-hidden="true">
+					  <use xlink:href="#icon-guanbi"></use>
+					</svg>
+				</div>
+				<div class="txssd">
+					<ul>
+						<li><label>价格</label><input type="text" class="yesNum va11" disabled><o>BTC</o></li>
+						<li><label>量</label><input type="text" class="yesNum va12" disabled><o class="coinName">BTC</o></li>
+						<li><label>费率</label><input type="text" class="yesNum va13" disabled><o>BTC</o></li>
+						<li><label>总</label><input type="text" class="yesNum va14" disabled><o>BTC</o></li>
+						<li><p>请在确认之前确认此订单，所有的订单一旦提交就是最终的，我们将无法给您退款。</p></li>
+					</ul>
+				</div>
+				<div class="udBot">
+					<button type="button" class="hideD">取消</button>
+					<button type="button" class="buyBut1">确认</button>
+				</div>
+			</div>
+		</div>
+		<div class="uds ud2">
+			<div class="hidezz"></div>
+			<div class="chong">
+				<div class="czdz">
+					<span>出售<l class="coinName">BTC</l></span>
+					<svg class="icon hideD" aria-hidden="true">
+					  <use xlink:href="#icon-guanbi"></use>
+					</svg>
+				</div>
+				<div class="txssd">
+					<ul>
+						<li><label>价格</label><input type="text" class="yesNum va21" disabled><o>BTC</o></li>
+						<li><label>量</label><input type="text" class="yesNum va22" disabled><o class="coinName">BTC</o></li>
+						<li><label>费率</label><input type="text" class="yesNum va23" disabled><o>BTC</o></li>
+						<li><label>总</label><input type="text" class="yesNum va24" disabled><o>BTC</o></li>
+						<li><p>请在确认之前确认此订单，所有的订单一旦提交就是最终的，我们将无法给您退款。</p></li>
+					</ul>
+				</div>
+				<div class="udBot">
+					<button type="button" class="hideD">取消</button>
+					<button type="button" class="buyBut2">确认</button>
+				</div>
+			</div>
+		</div>
+			<div class="divLan" style="position: absolute;,top: -99999999px">
+								 <button class="lanzq" data-lang="zh_CN">中文</button>
+						    	<button class="lanzq" data-lang="en">English</button>
+							</div>
+		<include file="App/Home/View/comm/footer.html"/>
+		<input type="hidden" id="mess" data-ok='提交成功' data-error='价格或数量为填写' data-login='请登录'>
+		<div class="zzcc" id="zc2">
+		    <div class="ycdivv">
+		        <div>
+		            <div class="yctxt">
+		                <div><span style="margin-right: 12px;color: #333;">请输入您的谷歌验证</span><input type="password" id="mmm2" style="border: 1px solid #d4d4d4;text-indent: 12px;height: 30px;"></div>
+		            </div>
+		            <div class="rediss">
+		                <botton type="botton" id="sub2">确认</botton>
+		                <botton type="botton" class="rgbredd">取消</botton>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
+<!-- 	<script src="/Public/js/lib/echarts/echarts3.7.js"></script> -->
+	<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+	<script src="/Public/js/lib/highcharts/highstock.js"></script>
+    <script src="/Public/js/lib/highcharts/indicators.js"></script>
+    <script src="/Public/js/lib/highcharts/ema.js"></script>
+    <script src="/Public/js/lib/highcharts/highcharts-lang.js"></script>
+	<script src="/Public/js/private/comm/comm.js"></script>
+	<script src="/Public/js/private/index/index.js"></script>
+	</body>
+</html>

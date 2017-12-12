@@ -1,0 +1,42 @@
+<div class="wrap-left">
+    <div class="wrap-dh user-dh">
+        <!--<h5>-->
+            <!--<svg class="icon" aria-hidden="true">-->
+                <!--<use xlink:href="#icon-user"></use>-->
+            <!--</svg>-->
+            <!--账号</h5>-->
+        <div class="userSig">
+            <div class="userBG">
+                #if($!{ch_user.profile}) <img src="$!{ch_user.profile}">  #else  <img src="/images/default.jpg"> #end
+            </div>
+            <p>欢迎您！#if($!{ch_user.userName}) $!{ch_user.userName} #else $!{ch_user.mail}#end</p>
+            <span>退出登录</span>
+        </div>
+        <ul>
+            <li class="onli" data-src="/user/center">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gerenxinxi"></use>
+                </svg>个人信息</li>
+            <li class="onli" data-src="/user/security">
+                <svg class="icon" aria-hidden="true" style="font-size: 26px;margin-right: 6px;position: relative;left: -4px;">
+                    <use xlink:href="#icon-fuwuzhongxinzhanghuanquan"></use>
+                </svg>安全中心</li>
+            <li class="onli" data-src="/message">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaoxi"></use>
+                </svg>消息中心</li>
+            <li class="onli" data-src="/case/list">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-pingjia"></use>
+                </svg>工单列表</li>
+            <li class="onli" data-src="/user/bill">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jiaoyimingxi"></use>
+                </svg>交易明细</li>
+            <li class="onli" data-src="/user/ad">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-guanggao"></use>
+                </svg>我的广告</li>
+        </ul>
+    </div>
+</div>

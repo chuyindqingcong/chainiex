@@ -1,0 +1,7 @@
+.help>div>div{
+	float: left;
+	width: 50%;
+}
+.details>div{
+	min-height: 630px;
+}

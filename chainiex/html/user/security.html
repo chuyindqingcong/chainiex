@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/user/security.css" />
+</head>
+<body>
+<div id="errors" style="display: none">$!{errorCode}</div>
+#parse('./comm/header.html')
+<div class="wrap">
+    #parse('./user/comm/userLeft.html')
+    <div class="wrap-right">
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-shoujiyanzheng"></use>
+                    </svg>
+                    <span>手机验证</span>
+                    #if($!{ch_user.mobile} && $!{ch_user.mobile.length()}==11)
+                    <svg class="icon iconfont1" aria-hidden="true">
+                        <use xlink:href="#icon-seiyw33"></use>
+                    </svg>
+                    #else
+                    <svg class="icon iconfont2" aria-hidden="true">
+                        <use xlink:href="#icon-weibiaoti-"></use>
+                    </svg>
+                    #end
+                </li>
+            </ul>
+        </div>
+        <div class="google">
+            #if($!{ch_user.mobile} && $!{ch_user.mobile.length()}==11)
+            <div class="email"><span>手机号验证 :</span> <span>是</span></div>
+            <div class="email"><span>手机号 : </span><span>*******$!{ch_user.mobile.substring(7)}</span></div>
+            #else
+            <div>
+                <div class="email"><span>手机号: </span><span><input type="text" name="" id="mob"></span><button type="button" class="props mit" style="margin-left: 10px;" id="getmob">获取验证</button></div>
+                <div class="email"><span>手机验证码: </span><span><input type="text" name="" id="sjyz"></span></div>
+                <div class="email"><span></span><button type="button" class="props" id="mitmob">保存</button></div>
+            </div>
+            #end
+
+        </div>
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-shenfenzhengyanzhengicon"></use>
+                    </svg>
+                    <span>身份证验证 </span>
+                    #if($!{userExtendInfo})
+                        #if($!{userExtendInfo.idCardStatus}==1)
+                        <svg class="icon iconfont1" aria-hidden="true">
+                            <use xlink:href="#icon-seiyw33"></use>
+                        </svg>
+                        #else
+                        <svg class="icon iconfont2" aria-hidden="true">
+                            <use xlink:href="#icon-weibiaoti-"></use>
+                        </svg>
+                        #end
+                    #else
+                        <svg class="icon iconfont2" aria-hidden="true">
+                            <use xlink:href="#icon-weibiaoti-"></use>
+                        </svg>
+                    #end
+                </li>
+            </ul>
+        </div>
+        <div class="google tsimg">
+            <div>
+                #if($!{userExtendInfo})
+                    #if($!{userExtendInfo.idCardStatus}==1)
+                    <div class="email"><span>认证完成</span></div>
+                    #elseif($!{userExtendInfo.idCardStatus}==0 || $!{userExtendInfo.idCardStatus}==4)
+                    <form id="form6">
+                        <div class="email"><span>身份证号: </span><span><input type="text" name="idcard" id="idcard"></span></div>
+                        <div class="email"><span>姓名: </span><span><input type="text" name="name" id="cardname" ></span></div>
+                        <div class="email upimg" id="sub1">
+                            <img src="/images/sfz1.png" id="imgs1">
+                            <input type="hidden" name="positiveImg" id="positiveImg">
+                        </div>
+                        <div class="email upimg" id="sub2">
+                            <img src="/images/sfz2.png" id="imgs2">
+                            <input type="hidden" name="negtiveImg" id="negtiveImg">
+                        </div>
+                        <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+                        <div class="email" style="clear: both"><button type="button" class="props" id="subidcard">保存</button></div>
+                    </form>
+                    #else
+                    <div class="email"><span>审核中</span></div>
+                    #end
+                #else
+                <form id="form6">
+                    <div class="email"><span>身份证号: </span><span><input type="text" name="idcard" id="idcard"></span></div>
+                    <div class="email"><span>姓名: </span><span><input type="text" name="name" id="cardname" ></span></div>
+                    <div class="email upimg" id="sub1">
+                        <img src="/images/sfz1.png" id="imgs1">
+                        <input type="hidden" name="positiveImg" id="positiveImg">
+                    </div>
+                    <div class="email upimg" id="sub2">
+                        <img src="/images/sfz2.png" id="imgs2">
+                        <input type="hidden" name="negtiveImg" id="negtiveImg">
+                    </div>
+                    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+                    <div class="email" style="clear: both"><button type="button" class="props" id="subidcard">保存</button></div>
+                </form>
+
+                #end
+            </div>
+
+        </div>
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-jiaoyimima"></use>
+                    </svg>
+                    <span>交易密码</span>
+                    #if($!{tradePwd}==true)
+                    <svg class="icon iconfont1" aria-hidden="true">
+                        <use xlink:href="#icon-seiyw33"></use>
+                    </svg>
+                    #else
+                    <svg class="icon iconfont2" aria-hidden="true">
+                        <use xlink:href="#icon-weibiaoti-"></use>
+                    </svg>
+                    #end
+                </li>
+            </ul>
+        </div>
+        <div class="google">
+            <form id="form">
+                #if($!{tradePwd}==true)
+                <div class="email"><span>资金密码设置 :</span> <span>是</span></div>
+                <div class="email"><span>资金密码 : </span><span><input type="password" name="tradePwd" id="tradePwd"></span></div>
+                <div class="email"><span>重复资金密码 : </span><span><input type="password"  name="tradePwd2"></span></div>
+                <div class="email"><span>原密码 : </span><span><input type="password" name="oldTradePwd" ></span></div>
+                <input type="hidden" value="1" name="type">
+                <div><button type="submit" class="props mit" id="mit">修改</button></div>
+                #else
+                <div class="email"><span>资金密码设置 :</span> <span>否</span></div>
+                <div class="email"><span>设置资金密码 : </span><span><input type="password" name="tradePwd" id="tradePwd"></span></div>
+                <div class="email"><span>重复资金密码 : </span><span><input type="password" name="tradePwd2"></span></div>
+                <div class="email"><span>登录密码 : </span><span><input type="password" name="pwd"></span></div>
+                <input type="hidden" value="2" name="type">
+                <div><button type="submit" class="props mit" id="mit">提交</button></div>
+                #end
+                <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}">
+            </form>
+        </div>
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-iconset0284"></use>
+                    </svg>
+                    <span>谷歌验证</span>
+                    #if($!{ch_user.authGoogle}==true)
+                    <svg class="icon iconfont1" aria-hidden="true">
+                        <use xlink:href="#icon-seiyw33"></use>
+                    </svg>
+                    #else
+                    <svg class="icon iconfont2" aria-hidden="true">
+                        <use xlink:href="#icon-weibiaoti-"></use>
+                    </svg>
+                    #end
+                </li>
+            </ul>
+        </div>
+        <div class="google" style="padding: 30px 30px 30px 66px!important;text-align: left">
+            #if($!{ch_user.authGoogle}==true)
+            <div class="email"><span>解除google : </span><span><input type="text" id="code"></span></div>
+            <div><button type="button" class="props mit" id="nsub">提交</button></div>
+            #else
+            <h5>每次登录时，输入一个一次性代码，这样可以保护您的用户帐户。</h5>
+            <div class="botda">
+                <ul>
+                    <li> <label>google验证代码:</label></li>
+                    <li> <input type="text" id="code" class="code"></li>
+                    <li><img src="/images/circles-1.png" class="check" data-status="0">我已经在纸上写下这串代码 <strong>$!{secret}</strong> <input type="checkbox" id="check" name="clause" style="visibility: hidden"></li>
+                    <li><button type="button" class="props" id="sub" style="width: 160px">启用双重身份验证</button></li>
+                </ul>
+                <img src="$!{barcode}" class="right-img">
+            </div>
+            <h4>如何启用双重身份验证码？</h4>
+            <p class="title">
+                Step1 请在纸上记下这串代码，并保存好避免丢失；<br/>
+                Step2 下载谷歌身份验证器。扫描右侧二维码或手动输入您记下的代码添加账户；<br/>
+                Step3 在输入框中填写谷歌身份验证器中的六位一次性代码，成功开启。
+            </p>
+            <h4>为什么要启用双重身份验证码？</h4>
+            <p>
+                ·启用双重身份验证后，除了需要输入用户名和密码以外，还要求您输入一个谷歌通过手机发送给您的动态密码<br/>
+                · 这无疑为您的CHAINIEX帐户增加了一层额外的保护<br/>
+                · 也就是说，即使入侵者窃取或猜出了您的密码，也会因不能使用您的手机而无法登录帐户！<br/>
+                iphone手机 在APP Store中搜索Google Authenticator <span style="color: red;cursor: pointer" data-src="https://itunes.apple.com/cn/app/google-authenticator/id388497605" class="onli">下载应用</span><br/>
+                Android手机 在安卓应用市场中搜索"谷歌身份验证器" 或者搜索Google Authenticator <span style="color: red;cursor: pointer" data-src="http://imtt.dd.qq.com/16891/2658652DEEA2A274C90E111135634E1F.apk?fsname=com.google.android.apps.authenticator2_4.74_2000074.apk&csr=1bbd" class="onli">下载应用</span>
+            </p>
+            #end
+
+        </div>
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-youxiang"></use>
+                    </svg>
+                    <span>邮箱验证</span>
+                    <svg class="icon iconfont1" aria-hidden="true">
+                        <use xlink:href="#icon-seiyw33"></use>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+        <div class="google">
+            <div class="email"><span>是否邮箱验证 :</span> <span>是</span></div>
+            <div class="email"><span>邮箱地址 : </span><span>$!{ch_user.mail}</span></div>
+        </div>
+        <div class="colorr lis">
+            <ul>
+                <li>
+                    <svg class="icon iconfont3" aria-hidden="true" data-status="0">
+                        <use xlink:href="#icon-unie621"></use>
+                    </svg>
+                    <span>修改密码$!{email}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="google">
+            <form action="/user/password/modify" method="post" id="sig">
+                <div class="email"><span>当前密码 : </span><span><input type="password" name="oldpwd"></span></div>
+                <div class="email"><span>新密码 : </span><span><input type="password" name="pwd" id="tradePwds"></span></div>
+                <div class="email"><span>确认密码 : </span><span><input type="password" name="repwd"></span></div>
+                <input type="hidden" value="$!{ch_user.mail}" name="email">
+                <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}">
+                <div><button type="submit" class="props" style=" margin: 20px 0px 0px 20px;">提交</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<form enctype="multipart/form-data" id="form1">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+    <input type="file" id="sfz1" style="display:none" name="file">
+</form>
+<form enctype="multipart/form-data" id="form2">
+    <input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+    <input type="file" id="sfz2" style="display:none" name="file">
+</form>
+<input type="hidden" data-required="您未输入" data-equalTo="密码不一致" id="errorMess" data-yzmm="密码包含字母，数字，长度大与8小于12" data-nopass="密码错误" data-success="解除成功" data-err="解除失败" data-ymm="您的原密码错误，请重新输入" data-ok="绑定成功"
+       data-bdsb="绑定失败，请仔细检查输入是否错误" data-wtx="您还未在填写代码，或者未勾选" data-dsj="短时间内单击太多,请稍等片刻,再来绑定" data-resend="再次发送" data-sjyz="不是完整的11位手机号或者正确的手机号前七位" data-sfz="请输入您的身份证" data-sfzxm="请输入您的姓名"
+       data-tjsend="提交成功" data-cardimg="请上传您的身份证图片" data-errmob="请检查的验证码,是否正确">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/jquery-form/jquery-form.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/user/security.js"></script>
+
+</body>
+</html>

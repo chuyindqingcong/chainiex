@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/single/toforget.css" />
+</head>
+<body>
+#parse('./comm/header.html')
+<div class="wrap">
+    <div class="reload">
+        #if($!{errMsg})
+            验证链接已失效,5秒后返回首页
+        <script>
+            setTimeout(function () {
+                window.location.href='/'
+            },5000)
+        </script>
+        #else
+        <div class="hides">
+            <h4>密码重置!</h4>
+            <div>
+                <div class="deals deta">
+                    <div class="dev-information">
+                        <div>
+                            <div class="div-jd">
+                                <li class="div-this" style="margin-left:39px;">
+                                    <span><o>3</o></span>
+                                    <span>重置密码</span>
+                                    <div class="div-x"></div>
+                                </li>
+                                <li style="margin-left: 32px;">
+                                    <span><o>4</o></span>
+                                    <span>重置成功</span>
+                                </li>
+                            </div>
+                            <div class="yima">
+                                <input type="password" class="emial" placeholder="新密码" name="emial" id="pwd" style="margin-bottom: 15px;">
+                                <input type="password" class="emial" placeholder="确认新密码" name="emial" id="repwd">
+                                <div class="form-group">
+                                    <div class="col-sm-8" style="text-align: right">
+                                        <button type="button" class="btn-tj btn-db">发送</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+        </div>
+    #end
+    </div>
+</div>
+<input type="hidden" data-required="您未输入" data-equalTo="您输入的密码不一致，请重新输入" id="errorMess" data-cg="密码重置成功，请登录" data-email="$!{mail}" data-code="$!{code}"
+data-errorpw="密码包含字母，数字，长度大与8小于16">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/jquery-validate/jquery.validate.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/private/single/toforget.js"></script>
+
+</body>
+</html>

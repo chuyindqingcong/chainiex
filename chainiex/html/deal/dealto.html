@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include('./comm/title.html')
+    <link rel="stylesheet" href="/css/deal/dealto.css" />
+    <style type="text/css">
+        #if($!{qr})
+        #else
+         .xqnr{
+                width:100% !important;
+            }
+        .xqnr p{
+            width: 100% !important;
+        }
+        .rsends{
+            margin-right:0;
+        }
+        #end
+    </style>
+</head>
+<body>
+#parse('./comm/header.html')
+#if($!{tradePass}==true)
+    <input type="hidden" id="getjy" value="1">
+#end
+<div class="wrap">
+    #if($!err)
+    订单已失效，5秒后自动返回主页
+    <script>
+        setTimeout(function () {
+            window.location.href='/'
+        },5000)
+    </script>
+    #else
+    #if($!order.status==3 || $!order.status==4)
+        <input type="hidden" id="hiddens" value="1">
+    #end
+    #if($!order.type==0)
+    <input id="ttyy" type="hidden" value="1">
+    <div class="wraps">
+        <div class="ads">
+            <h5>订单信息</h5>
+            <span>订单编号：$!{order.tradeId}</span>
+        </div>
+        <div class="Specific">
+            <!--<div>-->
+                <!--<ul>-->
+                    <!--<li><span>订单编号 :</span>$!{order.tradeId}</li>-->
+                    <!--<li><span>出售数量 :</span>$!{amount} (手续费 $!{fee} $!{order.coin})</li>-->
+                    <!--<li><span>出售价格 :</span>$!{totalPrice} $!{order.currency}/$!{order.coin}</li>-->
+                    <!--<li><span>付款方式 :</span>$!{payType}</li>-->
+                    <!--<li><span>收款人 :</span>$!{payId}</li>-->
+                    <!--<li><span>收款账号 :</span>$!{payId}</li>-->
+                    <!--<li><span>订单提交时间 :</span>$!{createTime}</li>-->
+                    <!--<li><span>留言 :</span>$!{order.comment}</li>-->
+                    <!--#if($!order.type==0)-->
+                    <!--<li style="position: relative"><span>转账地址 :</span><div class="timer"><svg class="icon icon-xu" aria-hidden="true">-->
+                        <!--<use xlink:href="#icon-xuanzhuan"></use>-->
+                    <!--</svg></div></li>-->
+                    <!--#end-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div>
+                #if($!buyer==true)
+                <div class="dxx">
+                    <ul>
+                        <li>买方昵称</li>
+                        <li>交易价格</li>
+                        <li>交易数量</li>
+                        <li>手续费</li>
+                        <!--<li>交易金额</li>-->
+                        <li>支付方式</li>
+                        <li>支付名称及账户</li>
+                        <li>支付二维码</li>
+                        <li>转账地址</li>
+                    </ul>
+                </div>
+                <div class="dxxx">
+                    <ul>
+                        <li>#if($!{user.userName}) $!{user.userName} #else $!{user.mail}#end</li>
+                        <li>$!{totalPrice} $!{order.currency}</li>
+                        <li>$!{amount} $!{order.coin}</li>
+                        <li> $!{fee} $!{order.coin}</li>
+                        <!--<li>null</li>-->
+                        <li>$!{payType}</li>
+                        <li style="padding: 20px 0 0 0">
+                            <p>$!{payName}</p>
+                            <p>$!{payId}</p>
+                        </li>
+                        <li>--</li>
+                        <li>
+                            #if($!order.type==0)
+                            <div class="timer"><svg class="icon icon-xu" aria-hidden="true">
+                                <use xlink:href="#icon-xuanzhuan"></use>
+                            </svg></div>
+                            #end
+                        </li>
+                    </ul>
+                </div>
+                #else
+                <div class="dad">
+                    <ul>
+                        <li>卖方昵称</li>
+                        <li>交易价格</li>
+                        <li>交易数量</li>
+                        <!--<li>交易金额</li>-->
+                        <li>支付方式</li>
+                        <li>支付名称及账户</li>
+                        <li>支付二维码</li>
+                        <li>转账地址</li>
+                    </ul>
+                </div>
+                <div class="daad">
+                    <ul>
+
+                        <li>#if($!{user.userName}) $!{user.userName} #else $!{user.mail}#end</li>
+                        <li>$!{totalPrice} $!{order.currency}/$!{order.coin}</li>
+                        <li>$!{amount} $!{order.coin}</li>
+                        <!--<li>null</li>-->
+                        <li>$!{payType}</li>
+                        <li style="padding: 20px 0 0 0">
+                            <p>$!{payName}</p>
+                            <p>$!{payId}</p>
+                        </li>
+                        <li>
+                            #if($!{qr})
+                            <div class="eimg">
+                                <!--#if($!buyer==false)-->
+                                <!--<span>请扫描下方二维码支付</span>-->
+                                <!--#else-->
+                                <!--<span>这是您的二维码</span>-->
+                                <!--#end-->
+                                <img src="$!{qr}" >
+                            </div>
+                            <div class="dtimg"><img src="$!{qr}"> </div>
+                            #else
+                            --
+                            #end
+                        </li>
+                        <li>
+                           --
+                        </li>
+                    </ul>
+                </div>
+                #end
+
+            </div>
+        </div>
+        <div class="sell">
+            <div>
+                <div class="deals">
+                    <div class="dev-information">
+                        #if($!order.status==3)
+                        <div>
+                            <div class="div-jd div-jd2">
+                                <li  class="div-this">
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已转币</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li class="div-this"  >
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已付款</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li  class="div-this"  >
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已确认</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li class="div-this">
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>系统处理中</span>
+                                </li>
+                                <div class="dzz">
+                                    #if($!buyer==true)
+                                    <div class="xqnr">
+                                        <div>
+                                            <button type="button" id="haoping" class="rsend">好评</button>
+                                            <button type="button" id="xinren" class="rsend" style="margin-right: 0px;">信任</button>
+                                        </div>
+                                    </div>
+                                    #end
+
+                                </div>
+                            </div>
+                        </div>
+                        #elseif($!order.status==4)
+                        <div>
+                            <div class="div-jd div-jd2">
+                                <li  class="div-this">
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已转币</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li class="div-this"  >
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已付款</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li  class="div-this"  >
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>已确认</span>
+                                </li>
+                                <img src="/images/right1.png">
+                                <li class="div-this">
+                                    <div class="sbnc">
+                                        <b>
+                                        </b>
+                                    </div>
+                                    <span>交易成功</span>
+                                </li>
+                                <div class="dzz">
+                                    #if($!buyer==true)
+                                    <div class="xqnr">
+                                        <div>
+                                            <button type="button" id="haoping" class="rsend">好评</button>
+                                            <button type="button" id="xinren" class="rsend" style="margin-right: 0px;">信任</button>
+                                        </div>
+                                    </div>
+                                    #end
+
+                                </div>
+                            </div>
+                        </div>
+                        #else
+                        <div>
+                            <div class="div-jd div-jd2">
+                                <li  class="div-this">
+                                    <div class="sbnc">
+                                        <b>
+
+                                        </b>
+                                    </div>
+                                    <span>待转币</span>
+                                </li>
+                                <img src="/images/right.png">
+                                <li #if($!order.status==1 || $!order.status==2) class="div-this" #end >
+                                    <div class="sbnc">
+                                        <b>
+                                            <svg class="icon shoui" aria-hidden="true">
+                                                <use xlink:href="#icon-daifukuan"></use>
+                                            </svg>
+                                        </b>
+                                    </div>
+                                    <span>待付款</span>
+                                </li>
+                                <img src="/images/right.png">
+                                <li #if($!order.status==2) class="div-this" #end >
+                                    <div class="sbnc">
+                                        <b>
+                                            <svg class="icon shoui" aria-hidden="true">
+                                                <use xlink:href="#icon-jinbi"></use>
+                                            </svg>
+                                        </b>
+                                    </div>
+                                    <span>待确认</span>
+                                </li>
+                                <img src="/images/right.png">
+                                <li #if($!order.status==3)  class="div-this" #end>
+                                    <div class="sbnc">
+                                        <b>
+
+                                        </b>
+                                    </div>
+                                    <span>交易成功</span>
+                                </li>
+                            </div>
+                            <div class="dzz"   #if($!{qr}) #else style="text-align: center"   #end>
+                                #if($!buyer==false)<input type="hidden" id="m1" value="1" data-status="买单买家"> #end
+                                #if($!buyer==true)<input type="hidden" id="m2" value="1" data-status="买单卖家"> #end
+                                <div class="xqnr">
+                                    #if($!order.status==0)
+                                    #if($!buyer==false)
+                                    #else
+                                    <P>
+                                        您需要$!{limitTime}分钟内完成转账，完成转账后，稍等片刻
+                                    </P>
+                                    <div>
+                                        <button type="button" id="clear" class="rsends">交易取消</button>
+                                    </div>
+                                    #end
+                                    #end
+                                    #if($!order.status==1 && $!buyer==false)
+                                    <P>
+                                        对方已转账,请付款
+                                        付款完成后，请务必点击“付款完成”。
+                                    </P>
+                                    <div>
+                                        <button type="button" id="orz1" class="rsends">付款完成</button>
+                                    </div>
+                                    #end
+                                    #if($!order.status==1 && $!buyer==true)
+                                    <P>
+                                        等待对方转账
+                                    </P>
+                                    <div>
+                                        <button type="button" id="clear" class="rsends">交易取消</button>
+                                    </div>
+                                    #end
+                                    #if($!order.status==2 && $!buyer==true)
+                                    <P>
+                                        请确认买方是否付款
+                                        到账后，请及时“释放$!{order.coin}”。
+                                    </P>
+                                    <div>
+                                        <button type="button" id="faso1" class="rsends">释放$!{order.coin}</button>
+                                    </div>
+                                    #end
+                                    #if($!order.status==2 && $!buyer==false)
+                                    <P>
+                                        请等待对方发放$!{order.coin}
+                                    </P>
+                                    #end
+                                </div>
+                            </div>
+                        </div>
+                        #end
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        #else
+            <input id="ttyy" type="hidden" value="0">
+            <div class="wraps">
+                <div class="ads">
+                    <h5>订单信息</h5>
+                    <span>订单编号：$!{order.tradeId}</span>
+                </div>
+                <div class="Specific">
+                   <div>
+                       #if($!buyer==true)
+                           <div class="dsd">
+                               <ul>
+                                   <li>买方昵称</li>
+                                   <li>交易价格</li>
+                                   <li>交易数量</li>
+                                   <!--<li>交易金额</li>-->
+                                   <li>支付方式</li>
+                                   <li>支付名称及账户</li>
+                               </ul>
+                           </div>
+                           <div class="dssd">
+                               <ul>
+                                   <li>#if($!{user.userName}) $!{user.userName} #else $!{user.mail}#end</li>
+                                   <li>$!{totalPrice} $!{order.currency}/$!{order.coin}</li>
+                                   <li>$!{amount} $!{order.coin}</li>
+                                   <!--<li>null</li>-->
+                                   <li>$!{payType}</li>
+                                   <li style="padding: 20px 0 0 0">
+                                       <p>$!{payName}</p>
+                                       <p>$!{payId}</p>
+                                   </li>
+
+                               </ul>
+                           </div>
+                       #else
+                           <div class="dss">
+                               <ul>
+                                   <li>卖方昵称</li>
+                                   <li>交易价格</li>
+                                   <li>交易数量</li>
+                                   <li>手续费</li>
+                                   <!--<li>交易金额</li>-->
+                                   <li>支付方式</li>
+                                   <li>支付名称及账户</li>
+                                   <li>支付二维码</li>
+                               </ul>
+                           </div>
+                           <div class="dsss">
+                               <ul>
+                                   <li>#if($!{user.userName}) $!{user.userName} #else $!{user.mail}#end</li>
+                                   <li>$!{totalPrice} $!{order.currency}/$!{order.coin}</li>
+                                   <li>$!{amount} $!{order.coin}</li>
+                                   <li> $!{fee} $!{order.coin}</li>
+                                   <!--<li>null</li>-->
+                                   <li>$!{payType}</li>
+                                   <li style="padding: 20px 0 0 0">
+                                       <p>$!{payName}</p>
+                                       <p>$!{payId}</p>
+                                   </li>
+                                   <li>
+                                       #if($!{qr})
+                                       <div class="eimg">
+                                           <!--#if($!buyer==false)-->
+                                           <!--<span>请扫描下方二维码支付</span>-->
+                                           <!--#else-->
+                                           <!--<span>这是您的二维码</span>-->
+                                           <!--#end-->
+                                           <img src="$!{qr}" >
+                                       </div>
+                                       <div class="dtimg"><img src="$!{qr}"> </div>
+                                       #else
+                                        --
+                                       #end
+                                   </li>
+                               </ul>
+                           </div>
+                       #end
+                   </div>
+                    <!--<div>-->
+                        <!--<ul>-->
+                            <!--<li><span>购买数量 :</span>$!{amount} (手续费 $!{fee} $!{order.coin})</li>-->
+                            <!--<li><span>购买价格 :</span>$!{totalPrice} $!{order.currency}/$!{order.coin}</li>-->
+                            <!--<li><span>付款方式 :</span>$!{payType}</li>-->
+                            <!--<li><span>收款人 :</span>$!{payId}</li>-->
+                            <!--<li><span>收款账号 :</span>$!{payId}</li>-->
+                            <!--<li><span>订单提交时间 :</span>$!{createTime}</li>-->
+                            <!--#if($!order.type==0)-->
+                            <!--<li style="position: relative"><span>转账地址 :</span><div class="timer"><svg class="icon icon-xu" aria-hidden="true">-->
+                                <!--<use xlink:href="#icon-xuanzhuan"></use>-->
+                            <!--</svg>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--#end-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                </div>
+                <div class="sell" style="padding:10px 0;">
+                    <div>
+                        <div class="deals">
+                            <div class="dev-information">
+                                #if($!order.status==3)
+                                <div>
+                                    <div class="div-jd">
+                                        <li  class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-daifukuan"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>已转账</span>
+                                        </li>
+                                        <img src="/images/right1.png">
+                                        <li class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-jinbi"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>已确认</span>
+                                        </li>
+                                        <img src="/images/right1.png">
+                                        <li class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-pingjia"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>系统处理中</span>
+                                        </li>
+                                    </div>
+                                </div>
+                                #elseif($!order.status==4)
+                                <div>
+                                    <div class="div-jd">
+                                        <li  class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-daifukuan"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>已转账</span>
+                                        </li>
+                                        <img src="/images/right1.png">
+                                        <li class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-jinbi"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>已确认</span>
+                                        </li>
+                                        <img src="/images/right1.png">
+                                        <li class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-pingjia"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>交易成功</span>
+                                        </li>
+                                        <div class="dzz" #if($!{qr}) #else style="text-align: center"   #end>
+                                            <!--#if($!buyer==false)<input type="hidden" id="m3" value="1" data-status="卖单买家"> #end-->
+                                            <!--#if($!buyer==true)<input type="hidden" id="m4" value="1" data-status="卖单卖家"> #end-->
+                                            #if($!buyer==false)
+                                            <div class="xqnr">
+                                                <div>
+                                                    <button type="button" id="haoping" class="rsend">好评</button>
+                                                    <button type="button" id="xinren" class="rsend" style="margin-right: 0px;">信任</button>
+                                                </div>
+                                            </div>
+                                            #end
+
+                                        </div>
+                                    </div>
+                                </div>
+                                #else
+                                <div>
+                                    <div class="div-jd">
+                                        <li class="div-this">
+                                            <div class="sbnc">
+                                                <b>
+                                                    <svg class="icon shoui" aria-hidden="true">
+                                                        <use xlink:href="#icon-daifukuan"></use>
+                                                    </svg>
+                                                </b>
+                                            </div>
+                                            <span>待转账</span>
+
+                                        </li>
+                                        <img src="/images/right.png">
+                                        <li #if($!order.status==2) class="div-this" #end>
+                                           <div class="sbnc">
+                                               <b>
+                                                   <svg class="icon shoui" aria-hidden="true">
+                                                       <use xlink:href="#icon-jinbi"></use>
+                                                   </svg>
+                                               </b>
+                                           </div>
+                                            <span>待确认</span>
+
+                                        </li>
+                                        <img src="/images/right.png">
+                                        <li #if($!order.status==3)  class="div-this" #end>
+                                           <div class="sbnc">
+                                               <b>
+                                                   <svg class="icon shoui" aria-hidden="true">
+                                                       <use xlink:href="#icon-pingjia"></use>
+                                                   </svg>
+                                               </b>
+                                           </div>
+                                            <span>交易成功</span>
+
+                                        </li>
+                                    </div>
+                                    <div class="dzz" #if($!{qr}) #else style="text-align: center"   #end>
+                                        #if($!buyer==false)<input type="hidden" id="m3" value="1" data-status="卖单买家"> #end
+                                        #if($!buyer==true)<input type="hidden" id="m4" value="1" data-status="卖单卖家"> #end
+
+                                        <div class="xqnr">
+                                            #if($!order.status!=2 && $!buyer==false)
+                                            <P>
+                                                您需要$!{limitTime}分钟内完成付款， 付款后，请务必点击“付款完成”,否则订单将自动取消
+                                            </P>
+                                            <div>
+                                                <button type="button" id="orz" class="rsend">转账完成</button>
+                                                <button type="button" id="clear" class="rsend" style="margin-right: 0px;">交易取消</button>
+                                            </div>
+                                            #end
+                                            #if($!order.status!=2 && $!buyer==true)
+                                            <P>
+                                                等待对方转账完成
+                                            </P>
+                                            <div>
+                                                <button type="button" id="orz" class="rsend">转账完成</button>
+                                                <button type="button" id="clear" class="rsend" style="margin-right: 0px;">交易取消</button>
+                                            </div>
+                                            #end
+                                            #if($!order.status==2 && $!buyer==true)
+                                            <P>
+                                                请仔细确认是否到账的付款信息
+                                                到账后，请务必点击“发放$!{order.coin}”。
+                                            </P>
+                                           <div>
+                                               <button type="button" id="faso" class="rsends">发放$!{order.coin}</button>
+                                           </div>
+                                            #end
+                                            #if($!order.status==2 && $!buyer==false)
+                                            <P>
+                                                请等待对方发放$!{order.coin}
+                                            </P>
+                                            #end
+                                        </div>
+
+                                    </div>
+                                </div>
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        #end
+    #end
+</div>
+<div class="fbt">
+    <div class="qq">
+        <div class="qqTtitle">聊天</div>
+        <div class="qqmess">
+            <ul>
+                <li class="xtt">
+                    <div>
+                        <span>欢迎来CHAINIEX</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="fsmess">
+            <textarea name="" placeholder="说点什么吧。。。" id="textMess"></textarea>
+            <img src="/images/mess.png" id="sendMess">
+        </div>
+    </div>
+    <div class="umess">
+        <h5>交易提示</h5>
+         <p>1、对方的比特币已被托管锁定，您需要在规定的时间内完成支付并点击“确认付款”,按钮，负责交易将自动取消</p>
+        <p>2、转账时请在留言附上订单编号，否则对方可能无法识别您的付款</p>
+        <span>交易遇到的问题</span>
+        <p>如果对方未响应，不确认或者对交易条款发生纠纷，您可以申诉次交易，申诉期间，比特币将为CHAINIEX托管。</p>
+        <button type="button" class="onli" data-src="/case/create">申诉</button>
+    </div>
+</div>
+<div class="zzcc" id="zc1">
+    <div class="ycdivv">
+        <div>
+            <div class="yctxt">
+                <div><span style="margin-right: 12px;color: #333;">请输入您的交易密码</span><input type="password" id="mmm1" style="border: 1px solid #d4d4d4;text-indent: 12px;height: 30px;"></div>
+            </div>
+            <div class="rediss">
+                <botton type="botton" id="sub1">确认</botton>
+                <botton type="botton" class="rgbredd">取消</botton>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="zzcc" id="zc2">
+    <div class="ycdivv">
+        <div>
+            <div class="yctxt">
+                <div><span style="margin-right: 12px;color: #333;">请输入您的交易密码</span><input type="password" id="mmm2" style="border: 1px solid #d4d4d4;text-indent: 12px;height: 30px;"></div>
+            </div>
+            <div class="rediss">
+                <botton type="botton" id="sub2">确认</botton>
+                <botton type="botton" class="rgbredd">取消</botton>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="users" data-img="#if($!{ch_user.profile}) $!{ch_user.profile} #else /images/ip1.png #end" data-name ="#if($!{ch_user.userName}) $!{ch_user.userName} #else $!{ch_user.mail}#end" data-id="$!{ch_user.id}">
+<input type="hidden" id="usersTo" data-img="#if($!{user.profile}) $!{user.profile} #else /images/ip1.png #end" data-name = "#if($!{user.userName}) $!{user.userName} #else $!{user.mail}#end">
+<input type="hidden" name="$!{_csrf.parameterName}" value="$!{_csrf.token}" id="csrf">
+<input type="hidden"  value="$!{order.tradeId}" id="hidden" data-type="$!{order.type}">
+
+#if($!{ch_user.id} == $!{order.adUid})
+    <input type="hidden" id="mess" data-toId="$!{order.uid}" data-tradeId="$!{order.tradeId}">
+#else
+    <input type="hidden" id="mess" data-toId="$!{order.adUid}" data-tradeId="$!{order.tradeId}">
+#end
+<input type="hidden" id="errorMess" data-paid="已支付" data-paids="已发放" data-ypaids="已付款" data-no="取消成功" data-yff="已发放" data-yqr="已确认" data-passerr="交易密码错误" data-icon="已转币" data-coinname =$!{order.coin}>
+#include('./comm/footer.html')
+<script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/lib/iconfont/iconfont.js"></script>
+<script src="/js/private/comm/comm.js"></script>
+<script src="/js/lib/websocket/sockjs.min.js"></script>
+<script src="/js/lib/websocket/stomp.min.js"></script>
+<script src="/js/private/deal/dealto.js"></script>
+</body>
+</html>

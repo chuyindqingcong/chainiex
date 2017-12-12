@@ -1,0 +1,262 @@
+.wrap {
+    margin-top: 90px;
+    width: 1190px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.wrap-left{
+    width: 220px;
+    float: left;
+    margin-right: 20px;
+    box-sizing: border-box;
+    padding: 0 1px 4px 1px;
+}
+.wrap-dh{
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px #ddd;
+    box-sizing: border-box;
+    padding:0 20px;
+}
+.wrap-dh h5{
+    height: 50px;
+    margin-top: 0px;
+    line-height: 50px;
+    font-size: 15px;
+    border-left: 3px solid red;
+    margin-left: -1px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.wrap-dh ul li{
+    width:100%;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 40px;
+    cursor: pointer;
+    position: relative;
+    margin-left: -1px;
+    border-left: 3px solid transparent;
+}
+.wrap-dh ul{
+    margin-bottom: 0px;
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+.wrap-right{
+    background: #fff;
+    width: 940px;
+    padding:0 30px;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px #ddd;
+}
+.colorr span{
+    border-left: 4px solid red;
+    padding-left: 8px;
+    font-family: Arial !important;
+}
+.colory span{
+    border-left: 4px solid #b7b71d;
+    padding-left: 8px;
+}
+.colorg span{
+    border-left: 4px solid green;
+    padding-left: 8px;
+}
+.wrap-right p{
+    display: inline-block;
+    float: right;
+    width: inherit;
+    margin-right: 110px;
+    text-indent:14px;
+    color:#545151;
+}
+.userSig{
+    text-align: center;
+    padding: 0 20px;
+}
+.userSig img{
+    width: 70px;
+    height: 70px;
+    margin-top: 6px;
+    border: 1px solid #68ddd5;
+
+    border-radius: 50%;
+}
+.userSig p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #68ddd5;
+}
+.userSig span{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    background: #e0e0e0;
+    margin: 16px 20px;
+    cursor: pointer;
+}
+.wrap-left .icon{
+    font-size: 21px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.wrap-dh ul li{
+    color: #828282;
+}
+.wrap-dh ul li .icon{
+    color: #e0e0e0;
+}
+.this-li{
+    color: #333 !important;
+}
+.this-li .icon{
+    color: #50a6f3 !important;
+}
+.wrap-dh ul li:hover{
+    color: #333 ;
+}
+.wrap-dh ul li:hover .icon{
+    color: #50a6f3 !important;
+}
+.userTi{
+    height: 130px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #68ddd5;
+}
+.userTi>div{
+    height: 70px;
+    padding:0 20px;
+}
+.userTi>div img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #68ddd5;
+    border-radius: 50%;
+    margin-right:30px;
+}
+.userTi>div>div{
+    float: left;
+}
+.userTi>div>span{
+    float: right;
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    color: #4ba1ee;
+    background: #edf5fd;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 21px;
+}
+.userTi>div>div span{
+    font-size: 14px;
+    color: #333;
+}
+.userTi h5{
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    font-weight:normal;
+}
+.wrap-right ul li{
+    height:60px;
+    line-height: 60px;
+    padding:0 20px;
+    color:#333;
+    border-bottom:1px solid #d1f5f2;
+}
+.spanRi{
+    float: right;
+}
+.wrap-right ul li o{
+    margin-left: 50px;
+    color: #b2b2b2;
+}
+.wrap-right ul li button{
+    height: 36px;
+    line-height: 36px;
+    width: 120px;
+    border: none;
+    border-radius:4px;
+    color:#4ba1ee;
+    background: #edf5fd;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.updataImg{
+    cursor: pointer;
+}
+.shouUp{
+    display: none;
+}
+.shouUpBg{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,.3);
+    z-index: 999999;
+}
+.container{
+    position: fixed !important;
+    width:400px !important;
+    height:580px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #fff;
+    z-index: 99999999;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px !important;
+}
+.container h5{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #68ddd5;
+    font-weight: normal;
+    text-indent: 24px;
+}
+.container h5 .icon{
+    float: right;
+    margin-right: 30px;
+    font-size: 19px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.userBG {
+    margin: 30px auto 20px;
+    background: #d1f5f3;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+}
+.userSig span:hover{
+    background: #68ddd5;
+}
+.tobg{
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+#aaa{
+    float: left;
+    margin-top: -6px;
+    margin-left: 39px;
+}

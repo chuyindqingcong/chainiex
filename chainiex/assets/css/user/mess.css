@@ -1,0 +1,352 @@
+.wrap {
+    margin-top: 90px;
+    width: 1190px;
+}
+.wrap-left{
+    width: 220px;
+    float: left;
+    margin-right: 20px;
+    box-sizing: border-box;
+    padding: 0 1px 4px 1px;
+}
+.wrap-dh{
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 2px 4px #ddd;
+    box-shadow: 0 2px 4px #ddd;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.wrap-dh h5{
+    height: 50px;
+    margin-top: 0px;
+    line-height: 50px;
+    font-size: 15px;
+    border-left: 3px solid red;
+    margin-left: -1px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.wrap-dh ul li{
+    width:100%;
+    height: 50px;
+    line-height: 50px;
+    color: #000;
+    text-indent: 40px;
+    cursor: pointer;
+    position: relative;
+    margin-left: -1px;
+    border-left: 3px solid transparent;
+}
+.wrap-dh ul{
+    margin-bottom: 0px;
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+.this-li{
+    color: #293c92 !important;
+
+}
+.wrap-dh ul li:hover{
+    color: #293c92 ;
+}
+.wrap-right{
+    background: #fff;
+    width:940px;
+    float: left;
+}
+.wrap-right h5 {
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 4px;
+    padding: 7px;
+}
+.wrap-right h5 span{
+    float: right;
+    font-size: 12px;
+}
+.wrap-right strong{
+    font-size:16px;
+    color: #ff6000;
+}
+.wrap-right span o:nth-of-type(1){
+    color: red;
+}
+.type{
+    overflow: hidden;
+    text-indent: 20px;
+    border-bottom: 1px solid #efefef;
+}
+.type h6{
+    font-size:14px;
+    float: left;
+}
+.type li{
+    float: left;
+    padding: 0 26px 0 7px;
+    color: #666;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+}
+.type li:hover{
+    color: #68ddd5 !important;
+    border-bottom: 2px solid #68ddd5;
+}
+.typeLi{
+    color: #68ddd5 !important;
+    border-bottom: 2px solid #68ddd5;
+}
+.mess {
+    clear: both;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 50px;
+}
+.mess-top>label{
+    position: relative;
+    text-indent: 24px;
+    display: inline-block;
+}
+.mess-top>label>input{
+    position: absolute;
+    margin-top: 19px;
+    left: 0;
+}
+#messLis{
+    padding: 0 30px;
+    color: #000;
+}
+.mess-top{
+    border-bottom: 1px dashed #ddd;
+}
+.laji {
+    float:right;
+    margin-right:10px;
+    position: relative;
+}
+.not{
+    clear: both;
+}
+.not li{
+    width:100%;
+    text-align: center;
+    color: #a7a7a7;
+}
+.messlis{
+    width: 100%;
+}
+.messlis tr td{
+    position: relative;
+}
+.messlis tr td:nth-of-type(1){
+    width: 10%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.messlis tr td:nth-of-type(1) input{
+    position: relative;
+    top:2px;
+    margin-right:12px;
+}
+.messlis tr td:nth-of-type(2){
+    width:80%;
+}
+.messlis td:nth-of-type(3){
+    width: 10%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+.messlis td:nth-of-type(3) .icon{
+    margin-right:9px;
+    font-size: 14px;
+    color: #d4d4d4;
+}
+.icon {
+    cursor: pointer;
+}
+.messlis tr label{
+    font-weight: normal;
+}
+.messlis span{
+    cursor: pointer;
+}
+.messlis tr td{
+    padding: 18px 0px;
+}
+a{
+    color: #68ddd5;
+    text-decoration: underline !important;
+}
+.liscount {
+    text-align: right;
+    font-size: 12px;
+    padding:5px 20px;
+}
+.liscount span{
+    color: #ff6000;
+    margin: 0px 5px;
+}
+.yema span{
+    float: left;
+    margin-right:10px;
+    cursor: pointer;
+}
+.yema ul{
+    float: left;
+    margin-right:10px;
+}
+.yema{
+    float: left;
+}
+.yema li{
+    cursor: pointer;
+    float: left;
+    margin-right: 4px;
+}
+.ycdel{
+    display: block;
+    position: absolute;
+    width: 155px;
+    right: -21px;
+    top: -70px;
+    background: #fff;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 7px;
+    display: none;
+}
+.ycdel p{
+    margin: 0;
+    padding: 0;
+    height: 15px;
+    line-height: 32px;
+}
+.ycdel::after{
+    position: absolute;
+    content: "";
+    top: 59px;
+    left: 115px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 11px solid #ddd;
+}
+.ycdel i::after{
+    position: absolute;
+    content: "";
+    top: 58px;
+    z-index: 99;
+    left: 115px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 11px solid #ffffff;
+}
+.ycdel span{
+    color:#5757f7;
+    cursor: pointer;
+    margin-right: 12px;
+}
+.ycdel span:hover{
+    color: red;
+}
+.wrap-right {
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px #ddd;
+}
+.prev{
+    display: none;
+}
+.next{
+    display: block;
+}
+.yima {
+    color: red;
+}
+#lli li:hover{
+    color: red;
+}
+table.dataTable{
+    border:none !important;
+}
+.messLis label{
+    cursor: pointer;
+}
+.dataTables_empty{
+    text-align: center !important;
+}
+.even{
+
+}
+.paging_simple_numbers{
+    margin-top:20px
+}
+.head{
+    height: 60px;
+    line-height: 60px;
+}
+.userSig{
+    text-align: center;
+    padding: 0 20px;
+}
+.userSig img{
+    width: 70px;
+    height: 70px;
+    margin-top: 7px;
+    border-radius: 50%;
+}
+.userBG {
+    margin: 30px auto 20px;
+    background: #d1f5f3;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+}
+.userSig p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #68ddd5;
+}
+.userSig span{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    background: #e0e0e0;
+    margin: 16px 20px;
+    cursor: pointer;
+}
+.wrap-left .icon{
+    font-size: 21px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.wrap-dh ul li{
+    color: #828282;
+}
+.wrap-dh ul li .icon{
+    color: #e0e0e0;
+}
+.this-li{
+    color: #333 !important;
+}
+.this-li .icon{
+    color: #50a6f3 !important;
+}
+.wrap-dh ul li:hover{
+    color: #333 ;
+}
+.wrap-dh ul li:hover .icon{
+    color: #50a6f3 !important;
+}
+.userSig span:hover{
+    background: #68ddd5;
+}
