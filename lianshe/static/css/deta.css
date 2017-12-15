@@ -13,10 +13,25 @@ li{
 	height: 70px;
 	line-height: 70px;
 }
+.one-header h1 img{
+    width: 60px;
+    margin-top: 15px;
+}
 .one-header h1{
 	font-size: 28px;
 	color: #fff;
 	float: left;
+}
+.one-header ul>span{
+    color: #fff;
+    float: left;
+}
+.one-header a{
+    color: #fff;
+    text-decoration: none;
+}
+.one-header a:hover{
+    color: #0ac2ba
 }
 .one-header>div{
 	float: right;
@@ -623,4 +638,24 @@ input:focus::-moz-input-placeholder {
 }
 .xxx button:nth-of-type(2){
 	background: #b9babe;
+}
+.shouD .shou-wrap {
+    width: 620px;
+    margin-left: -340px;
+    padding: 50px 90px;
+}
+.rcion{
+    cursor: pointer;
+}
+.los button {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    border: 1px solid #02daf1;
+    color: #02daf1;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 0;
+    margin-top: 30px;
 }

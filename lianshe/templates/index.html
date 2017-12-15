@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>lianshe</title>
+	<link rel="stylesheet" href="/css/index.css" />
+</head>
+	<body>
+		<div class="one">
+			<div class="one-wrap">
+				<div class="one-header">
+					<h1><img src="/images/logo.png"></h1>
+					<div>
+						<ul>
+							#if($!ets_user)
+							<span>$!ets_user.email 欢迎您</span>
+							<li><a href="/user/logout">注销</a> </li>
+							#else
+							<li class="heali logi"><span>login</span></li>
+							<li class="heali regi"><span>Register</span></li>
+							#end
+							<!--<li class="lang">-->
+								<!--<span>EngLish</span>-->
+								<!--<div>-->
+									<!--<ul>-->
+										<!--<li>English</li>-->
+										<!--<li>中文</li>-->
+									<!--</ul>-->
+								<!--</div>-->
+							<!--</li>-->
+						</ul>
+					</div>
+				</div>
+				<h3>Email-Tokensale</h3>
+				<h4>Getting the &best coversion ratio!  And thue clearer financial records,the more secure token delivery.</h4>
+				<h5>whitelist registration plan</h5>
+				<div class="one-in">
+					<input type="text" placeholder="whitelist registration plan" id="em1"/>
+					<button type="button" class="Join">Join Now</button>
+				</div>
+			</div>
+		</div>
+		<div class="to">
+			<div class="to-wrap">
+				<img src="images/bg2.png" class="to-hea"/>
+				<h3>PROJECT DISPLAY</h3>
+				<div class="divList">
+					<div>
+						<img src="images/bg3.png" class="logos"/>
+						<h5>
+							THE&nbsp;GNX TOKEN SLAE STARTS
+							 ON NOV.17,2017 AND ENDS IN
+						</h5>
+						<span class="to-span"><a href="/detal" >JOIN GNX TOKEN SALE NOW</a></span>
+						<img src="images/dw.png"/>
+						<span class="to-sp-to">DownLoad Genoro White Paper</span>
+					</div>
+					<div>
+						<img src="images/bg4.png" class="logos"/>
+						<h5>
+							THE&nbsp;GNX TOKEN SLAE STARTS
+							 ON NOV.17,2017 AND ENDS IN
+						</h5>
+						<span class="to-span">JOIN GNX TOKEN SALE NOW</span>
+						<img src="images/dw.png"/>
+						<span class="to-sp-to">DownLoad Genoro White Paper</span>
+					</div>
+					<div>
+						<img src="images/bg5.png" class="logos"/>
+						<h5>
+							THE&nbsp;GNX TOKEN SLAE STARTS
+							 ON NOV.17,2017 AND ENDS IN
+						</h5>
+						<span class="to-span">JOIN GNX TOKEN SALE NOW</span>
+						<img src="images/dw.png"/>
+						<span class="to-sp-to">DownLoad Genoro White Paper</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shouS" style="display: none;">
+			<div class="zz"></div>
+			<div class="shou-wrap">
+				<form id="login">
+					<div class="los login">
+						<h3>LOGIN</h3>
+						<ui>
+							<li>
+								<label>YOUR EMAIL</label>
+								<input type="text" placeholder="email" name="email" />
+							</li>
+							<li>
+								<label>PASSWORD</label>
+								<input type="text" placeholder="密码" name="password" />
+							</li>
+							<li>
+								<button type="button" class="but1">LOGIN</button>
+							</li>
+							<li>
+								<span class="t1">Signup</span>
+								<span class="t2">Forget your password?</span>
+							</li>
+						</ui>
+					</div>
+				</form>
+				<form id="sig">
+					<div class="los signup">
+						<h3>SIGN UP</h3>
+						<ui>
+							<li>
+								<label>YOUR EMAIL</label>
+								<input type="text" name="email" id="email1" />
+							</li>
+							<li>
+								<label>CONFIRMATION CODE</label>
+								<input type="text" style="width: 332px;" name="ver_code"/>
+								<bit class="getCode">GET THE CODE</bit>
+							</li>
+							<li>
+								<label>PASSWORD</label>
+								<input type="password" name="password" />
+							</li>
+							<li>
+								<label>CONFIRM PASSWORD</label>
+								<input type="password" name="password_2"/>
+							</li>
+							<li>
+								<button type="button" class="but2">SIGN UP</button>
+							</li>
+							<li>
+								<span class="t3">LOGIN</span>
+
+							</li>
+						</ui>
+					</div>
+				</form>
+				<form id="forget">
+					<div class="los request">
+						<h3>Request Password Reset</h3>
+						<ui>
+							<li>
+								<label>YOUR EMAIL</label>
+								<input type="text" id="email2" name="email" />
+							</li>
+							<li>
+								<label>CONFIRMATION CODE</label>
+								<input type="text" style="width: 332px;" name="ver_code"/>
+								<bit class="noCode">GET THE CODE</bit>
+							</li>
+							<li>
+								<label>NEW PASSWORD</label>
+								<input type="password" name="new_password" />
+							</li>
+							<li>
+								<button type="button" id="reset">Reset</button>
+							</li>
+							<li>
+								<span class="onli">Signup</span>
+								<span class="t4">Forget your password?</span>
+							</li>
+						</ui>
+					</div>
+				</form>
+			</div>
+		</div>
+		<input type="hidden" id="mess" data-erEmial="请输入邮箱">
+		<script type="text/javascript" src="/js/comm/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="/js/index.js"></script>
+	</body>
+</html>

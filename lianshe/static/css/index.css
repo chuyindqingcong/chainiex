@@ -18,6 +18,17 @@ li{
 	color: #fff;
 	float: left;
 }
+.one-header ul>span{
+    color: #fff;
+    float: left;
+}
+.one-header a{
+    color: #fff;
+    text-decoration: none;
+}
+.one-header a:hover{
+    color: #0ac2ba
+}
 .one-header>div{
 	float: right;
 }
@@ -284,7 +295,12 @@ input:focus::-moz-input-placeholder {
 .signup span:nth-of-type(1){
 	float: left;
 	color: #02daf1;
+    cursor: pointer;
 	font-size: 14px;
+}
+.one-header h1 img{
+    width: 60px;
+    margin-top: 15px;
 }
 .signup bit{
 	height: 40px;
@@ -310,4 +326,19 @@ input:focus::-moz-input-placeholder {
     left: 50%;
     margin-left: -187px;
         top: 55px;
+}
+.noCode{
+    height: 40px;
+    line-height: 40px;
+    background: #02daf1;
+    color: #fff;
+    display: block;
+    width: 100px;
+    float: right;
+    cursor: pointer;
+    font-size: 12px;
+}
+.to-span a{
+    color: #fff;
+    text-decoration: none;
 }
