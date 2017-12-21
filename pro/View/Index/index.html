@@ -18,6 +18,7 @@
 		<!--<script>
 			  FastClick.attach(document.body);
 		</script>-->
+		<input type="hidden" id="fees">
 		<include file="App/Home/View/comm/header.html"/>
 		<if condition ="(LANG_SET eq 'en-us')">
 			<input type="hidden" id="dhi" data-id=2 data-name="{$nick}">
@@ -63,7 +64,8 @@
 								 <button class="lanzq" data-lang="zh_CN">中文</button>
 						    	<button class="lanzq" data-lang="en">English</button>
 							</div> -->
-							<div id="container" style="width:100%;max-width:1190px;height:400px;position: relative;top: -41px;z-index: 2">图表加载中...</div>
+							<div id="container" style="width:100%;height:400px;position: relative;top: -41px;z-index: 2;display: none">图表加载中...</div>
+							<div id="container1" style="width:100%;height:400px;position: relative;top: -41px;z-index: 2;display: none">图表加载中...</div>
 						</div>
 						<!-- <div class="selectIcon">
 
@@ -92,7 +94,7 @@
 										  <use xlink:href="#icon-xing"></use>
 										</svg>
 									</li> -->
-									<li>{$Think.lang.coin}</li>
+									<li>名称</li>
 									<li>{$Think.lang.price}</li>
 									<li>{$Think.lang.volume}</li>
 									<li>{$Think.lang.change}</li>
@@ -137,9 +139,9 @@
 								<div>
 									<form id="form1">
 										<ul>
-											<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="buyprice" id="buy1pri" value="0.00000000" /><o>BTC</o></li>
+											<li><label>{$Think.lang.price}</label><input type="text" name="buyprice" id="buy1pri" value="0.00000000" /><o>BTC</o></li>
 											<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum" name="buynum" id="buy1num"   value="0.00000000"/> <o><b class="coinName">XRP</b></o></li>
-											<li><label>{$Think.lang.total}</label><input type="text" id="buy1sum" disabled  placeholder="0" /><o>BTC</o></li>
+											<li><label>{$Think.lang.total}</label><input type="text" id="buy1sum"  placeholder="0" /><o>BTC</o></li>
 										</ul>
 										<input type="hidden" class="setcoin1" name="currency_id">
 									</form>
@@ -154,11 +156,11 @@
 								<div>
 									充值<o>BTC</o> | <b class="ozlo2">0</b>
 								</div>
-								<img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg">
+								<span id="qrcode1" class="qrcode"></span>
 								<div>
 									发送非<o>BTC</o>资产充值到<o>BTC</o>地址后不可找回！
 								</div>
-								<div class="cop"><input type="text" id="copVal" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
+								<div class="cop"><input type="text" id="copVal1" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
 									<span id="copy" class="copys">
 										<svg class="icon" aria-hidden="true">
 									  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fuzhi"></use>
@@ -174,10 +176,10 @@
 									发送<o>BTC</o> | <b class="ozlo3">0</b>
 								</div>
 								<div class="txs">
-									<label for="">接收地址:<span>正确提现地址，否则资产不可找回</span></label>
+									<label for="">接收地址:<span>填写正确地址，否则资产不可找回</span></label>
 									<div class="txsSave">
-										<input type="text" id="senInput"/>
-										<span>+</span>
+										<input type="text" id="senInput1"/>
+										<span id="adp1">+</span>
 										<svg class="icon iconft" aria-hidden="true">
 										  <use xlink:href="#icon-xialajiantou"></use>
 										</svg>
@@ -190,23 +192,23 @@
 										</div>
 									<label for="">量:</label>
 									<div class="txtc">
-										<input type="text" />
+										<input type="text" id="chang1" />
 									</div>
 									<div class="txjs" style="margin-top: 11px">
 										<label for="">手续费</label>
 										<div>
-											<span>000000</span>
+											<span class="ft1">000000</span>
 											<span>BTC</span>
 										</div>
 									</div>
 									<div class="txjs">
 										<label for="">总计:</label>
 										<div>
-											<span>000000</span>
+											<span class="zj1">000000</span>
 											<span>BTC</span>
 										</div>
 									</div>
-									<button type="button" class="utx" id="utx">确认发送</button>
+									<button type="button" class="utx" id="utx1">确认发送</button>
 									<svg class="icon delczz deld1" aria-hidden="true">
 									  <use xlink:href="#icon-guanbi"></use>
 									</svg>
@@ -220,9 +222,9 @@
 								<div>
 									<form id="form2">
 										<ul>
-											<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="sellprice" id="buy2pri"  value="0.00000000" /><o>BTC</o></li>
+											<li><label>{$Think.lang.price}</label><input type="text" name="sellprice" id="buy2pri"  value="0.00000000" /><o>BTC</o></li>
 											<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum"  name="sellnum" id="buy2num"  value="0.00000000"/><o class="coinName">XRP</o></li>
-											<li><label>{$Think.lang.total}</label><input type="text" id="buy2sum" disabled   placeholder="0"/><o>BTC</o></li>
+											<li><label>{$Think.lang.total}</label><input type="text" id="buy2sum"   placeholder="0"/><o>BTC</o></li>
 										</ul>
 											<input type="hidden" class="setcoin1" name="currency_id">
 									</form>
@@ -237,11 +239,11 @@
 								<div>
 									充值<o class="coinName">BTC</o> | <b class="ozlo2">0</b>
 								</div>
-								<img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg">
+								<span id="qrcode2" class="qrcode"></span>
 								<div>
 									发送非<o class="coinName">BTC</o>资产充值到<o class="coinName">BTC</o>地址后不可找回！
 								</div>
-								<div class="cop"><input type="text" id="copVal" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
+								<div class="cop"><input type="text" id="copVal2" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137">
 									<span id="copy" class="copys">
 										<svg class="icon" aria-hidden="true">
 									  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fuzhi"></use>
@@ -259,8 +261,8 @@
 								<div class="txs">
 									<label for="">接收地址:<span>填写正确地址，否则资产不可找回</span></label>
 									<div class="txsSave">
-										<input type="text" id="senInput"/>
-										<span>+</span>
+										<input type="text" id="senInput2"/>
+										<span id="adp2">+</span>
 										<svg class="icon iconft" aria-hidden="true">
 										  <use xlink:href="#icon-xialajiantou"></use>
 										</svg>
@@ -273,23 +275,23 @@
 										</div>
 									<label for="">量:</label>
 									<div class="txtc">
-										<input type="text" />
+										<input type="text"  id="chang2" />
 									</div>
 									<div class="txjs" style="margin-top: 11px">
 										<label for="">手续费</label>
 										<div>
-											<span>000000</span>
+											<span class="ft1">000000</span>
 											<span>BTC</span>
 										</div>
 									</div>
 									<div class="txjs">
 										<label for="">总计:</label>
 										<div>
-											<span>000000</span>
+											<span class="zj1">000000</span>
 											<span>BTC</span>
 										</div>
 									</div>
-									<button type="button" class="utx">确认发送</button>
+									<button type="button" class="utx" id="utx2">确认发送</button>
 									<svg class="icon delczz deld2" aria-hidden="true">
 									  <use xlink:href="#icon-guanbi"></use>
 									</svg>
@@ -313,7 +315,7 @@
 												<ul>
 													<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="buyprice" id="buy3pri"  value="0.00000000"/><o>BTC</o></li>
 													<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum" name="buynum" id="buy3num"  value="0.00000000"/> <o class="coinName">XRP</o></li>
-													<li><label>{$Think.lang.total}</label><input type="text"  id="buy3sum" disabled  placeholder="0"/><o>BTC</o></li>
+													<li><label>{$Think.lang.total}</label><input type="text"  id="buy3sum"  placeholder="0"/><o>BTC</o></li>
 												</ul>
 												<input type="hidden" class="setcoin1" name="currency_id">
 											</form>
@@ -334,7 +336,7 @@
 												<ul>
 													<li><label>{$Think.lang.price}</label><input type="text" class="yesNum" name="sellprice" id="buy4pri"  value="0.00000000"/><o>BTC</o></li>
 													<li><label>{$Think.lang.volume}</label><input type="text" class="yesNum"  name="sellnum" id="buy4num"  value="0.00000000"/><o class="coinName">XRP</o></li>
-													<li><label>{$Think.lang.total}</label><input type="text" name="" id="buy4sum" disabled  placeholder="0" /><o>BTC</o></li>
+													<li><label>{$Think.lang.total}</label><input type="text" name="" id="buy4sum"  placeholder="0" /><o>BTC</o></li>
 													<input type="hidden" class="setcoin1" name="currency_id">
 												</ul>
 
@@ -521,7 +523,7 @@
 									</div>
 								</div>
 								<div class="textsend">
-									<input type="text" id="socketMess" placeholder="聊点什么呗......">
+									<input type="text" id="socketMess" placeholder="聊点什么呗......" autocomplete="off">
 									<!-- <img src="/Public/img/rsend.png" class="imgRs"> -->
 									<span class="imgRs">发送</span>
 								</div>
@@ -656,8 +658,19 @@
 	<script src="/Public/js/lib/highcharts/highstock.js"></script>
     <script src="/Public/js/lib/highcharts/indicators.js"></script>
     <script src="/Public/js/lib/highcharts/ema.js"></script>
+    <script src="/Public/js/lib/highcharts/high-one.js"></script>
     <script src="/Public/js/lib/highcharts/highcharts-lang.js"></script>
+    <script src="/Public/js/lib/qrcode/jquery.qrcode.min.js"></script>
 	<script src="/Public/js/private/comm/comm.js"></script>
 	<script src="/Public/js/private/index/index.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?b9d7045008d5eed6338afca2e1eeb069";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 	</body>
 </html>

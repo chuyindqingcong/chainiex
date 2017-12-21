@@ -14,6 +14,7 @@
 	</head>
 	<body>
 		<include file="App/Home/View/comm/header.html"/>
+		<input type="hidden" id="fees">
 		<div class="wrap">
 			<div class="mark">
 				<div class="tabH2">
@@ -74,8 +75,8 @@
 						<div class="btcsc">
 								<ul>
 									<li>日期</li>
-									<li>价格(<o>BTC</o>)
-										<svg class="icon iClickIcon" aria-hidden="true" data-status = 0>
+									<li class="iClickIcon" data-status = 0>价格(<o>BTC</o>)
+										<svg class="icon" aria-hidden="true">
 										    <use xlink:href="#icon-xialajiantou"></use>
 										</svg>
 										<div class="icorDiv" id="coin1">
@@ -99,8 +100,8 @@
 						<div class="btcsc">
 								<ul>
 									<li>日期</li>
-									<li>价格(<o>BTC</o>)
-										<svg class="icon iClickIcon" aria-hidden="true" data-status = 0>
+									<li class="iClickIcon" data-status = 0>价格(<o>BTC</o>)
+										<svg class="icon" aria-hidden="true">
 										    <use xlink:href="#icon-xialajiantou"></use>
 										</svg>
 										<div class="icorDiv" id="coin2">
@@ -133,7 +134,9 @@
 							  <use xlink:href="#icon-guanbi"></use>
 							</svg>
 						</div>
-						<div class="czdzImg"><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7bcb659c9745d688a302b5a29cf91a23/2934349b033b5bb571dc8c5133d3d539b600bc12.jpg" id="ewm" class="ewm" /></div>
+						<div class="czdzImg">
+							<div id="qrcode" class="qrcode"></div>
+						</div>
 						<div class="cop"><input type="text" id="aa" value="12ykhUFIASDHIADHAKDHKAHDUIAHDIUH29137"><span id="copy">
 							<svg class="icon" aria-hidden="true">
 							  <use xlink:href="#icon-fuzhi"></use>
@@ -154,7 +157,7 @@
 				<div class="tx" style="display: none;">
 					<div class="typ">
 						<div class="czdz">
-							<span>BTC</span> 提现地址
+							<span class="coinName">BTC</span> 提现地址
 							<svg class="icon" aria-hidden="true">
 							  <use xlink:href="#icon-guanbi"></use>
 							</svg>
@@ -163,33 +166,32 @@
 							<label for="">接收地址:<span>请仔细确认您的提现地址，否则资产不可找回</span></label>
 							<div class="txsSave">
 								<input type="text" id="senInput"/>
-								<span>+</span>
+								<span id="addres">+</span>
 								<svg class="icon iconft" aria-hidden="true">
 								  <use xlink:href="#icon-xialajiantou"></use>
 								</svg>
 							</div>
 							<div class="ulisadd">
 									<ul>
-										<li>123123</li>
-										<li>sadsad</li>
+										
 									</ul>
 								</div>
 							<label for="">量:</label>
 							<div class="txtc">
-								<input type="text" />
+								<input type="text" id="chanCoin" />
 							</div>
 							<div class="txjs" style="margin-top: 16px">
 								<label for="">手续费</label>
 								<div>
-									<span>000000</span>
-									<span>BTC</span>
+									<span class="fee">000000</span>
+									<span class="coinName">BTC</span>
 								</div>
 							</div>
 							<div class="txjs">
 								<label for="">总计:</label>
 								<div>
-									<span>000000</span>
-									<span>BTC</span>
+									<span class="zjs">000000</span>
+									<span class="coinName">BTC</span>
 								</div>
 							</div>
 							<button type="button" class="utx">确认发送</button>
@@ -205,6 +207,7 @@
 		<script src="/Public/js/lib/jquery/jquery-3.2.1.min.js"></script>
 		<script src="/Public/js/lib/jqueryNanoscroller/jquery.nanoscroller.js"></script>
 		<script src="/Public/js/lib/iconfont/iconfont.js"></script>
+		<script src="/Public/js/lib/qrcode/jquery.qrcode.min.js"></script>
 		<script src="/Public/js/private/comm/comm.js"></script>
 		<script src="/Public/js/private/wallet/index.js"></script>
 	</body>
